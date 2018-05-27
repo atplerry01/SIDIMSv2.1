@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="en-US" class="no-js" data-ng-app="app">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Whycespace Educational Portals" />
+    <meta name="author" content="" />
+    <title>SIDIMS - SecureID Event Management System</title>
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">-->
+
+    <script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+
+    <link href="contentbuild/css/styles.min.css" rel="stylesheet" />
+    <link href="content/custom.css" rel="stylesheet" />
+  
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script>
+        var appHelper = {
+            // Vars (paths without trailing slash)
+            templatesDir: 'app',
+            assetsDir: 'assets',
+
+            // Methods
+            templatePath: function (features, view_name) {
+                if (features) {
+                    console.log(this.templatesDir + '/' + features + '/' + view_name + '.html');
+                    return this.templatesDir + '/' + features + '/' + view_name + '.html';
+                }
+                return this.templatesDir + '/' + view_name + '.html';
+            },
+
+            assetPath: function (file_path) {
+                return this.assetsDir + '/' + file_path;
+            }
+        };
+    </script>
+
+
+</head>
+
+<body class="page-body" data-ng-controller="MainCtrl" ng-class="{'settings-pane-open': layoutOptions.settingsPane.isOpen, 'chat-open': layoutOptions.chat.isOpen, 'login-page': isLoginPage && isMainPage == false, 'login-light': isLightLoginPage && isMainPage == false, 'lockscreen-page': isLockscreenPage && isMainPage == false, 'right-sidebar': layoutOptions.sidebar.isRight, 'boxed-container': layoutOptions.container.isBoxed}">
+
+    <settings-pane></settings-pane>
+    <horizontal-menu ng-if="layoutOptions.horizontalMenu.isVisible"></horizontal-menu>
+
+    <div class="page-container" data-ng-include="'app/layout/app-body.html'" ng-cloak></div>
+
+    <!--Todo-->
+    <!-- Remove this code if you want to disable Loading Overlay in the beginning of document loading -->
+    <div class="page-loading-overlay">
+        <div class="loader-2"></div>
+    </div>
+
+    <!-- inject-vendor:js -->
+    <script src="assets/scripts/angular.js"></script>
+    <script src="assets/scripts/angular-route.js"></script>
+    <script src="assets/scripts/angular-animate.js"></script>
+    <script src="contentbuild/vendor/vendors.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/services/controllers.js"></script>
+    <script src="app/services/directive.js"></script>
+    <script src="app/services/directives.js"></script>
+    <script src="app/services/factory.js"></script>
+    <script src="app/services/MainCtrl.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/services/resourceService.js"></script>
+    <script src="app/services/routemediator.js"></script>
+
+    <script src="contentbuild/app/service.min.js"></script>
+    <script src="contentbuild/app/all.min.js"></script>
+
+</body>
+</html>

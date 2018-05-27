@@ -1,0 +1,745 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CC3E593-8D10-44F2-B265-3B301A45A776}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sidims.Web5</RootNamespace>
+    <AssemblyName>Sidims.Web5</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="contentbuild\fonts\fontawesome-webfont.eot" />
+    <Content Include="contentbuild\fonts\fontawesome-webfont.ttf" />
+    <Content Include="contentbuild\fonts\fontawesome-webfont.woff" />
+    <Content Include="contentbuild\fonts\FontAwesome.otf" />
+    <Content Include="contentbuild\fonts\linecons.eot" />
+    <Content Include="contentbuild\fonts\linecons.ttf" />
+    <Content Include="contentbuild\fonts\linecons.woff" />
+    <Content Include="contentbuild\font\linecons.eot" />
+    <Content Include="contentbuild\font\linecons.ttf" />
+    <Content Include="contentbuild\font\linecons.woff" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\account\changepassword.html" />
+    <Content Include="app\account\changepassword.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\cardengr\firstcard-print.ce.html" />
+    <Content Include="app\cardengr\firstcard-print.ce.js" />
+    <Content Include="app\cardengr\firstcarddeatil.ce.html" />
+    <Content Include="app\cardengr\firstcarddetail.ce.js" />
+    <Content Include="app\cardengr\flagjob\unitflaggedjob.ce.html" />
+    <Content Include="app\cardengr\flagjob\unitflaggedjob.ce.js" />
+    <Content Include="app\cardengr\incoming-perso.ce.html" />
+    <Content Include="app\cardengr\incoming-perso.ce.js" />
+    <Content Include="app\cardengr\incoming-print.ce.html" />
+    <Content Include="app\cardengr\incoming-print.ce.js" />
+    <Content Include="app\cardengr\issuance-confirmation.ce.html" />
+    <Content Include="app\cardengr\issuance-confirmation.ce.js" />
+    <Content Include="app\cardengr\report\carddeliveryreport.ce.html" />
+    <Content Include="app\cardengr\report\carddeliveryreport.ce.js" />
+    <Content Include="app\cardengr\report\cardmisreport.ce - Copy.html" />
+    <Content Include="app\cardengr\report\cardmisreport.ce - Copy.js" />
+    <Content Include="app\cardengr\report\cardmisreport.ce.html" />
+    <Content Include="app\cardengr\report\cardmisreport.ce.js" />
+    <Content Include="app\cardengr\report\issuancereport.ce.html" />
+    <Content Include="app\cardengr\report\issuancereport.ce.js" />
+    <Content Include="app\cardengr\report\jobarchive.ce.html" />
+    <Content Include="app\cardengr\report\jobarchive.ce.js" />
+    <Content Include="app\cardengr\report\jobdeliveryreport.ce.html" />
+    <Content Include="app\cardengr\report\jobdeliveryreport.ce.js" />
+    <Content Include="app\cardengr\report\jobpersoreport.ce.html" />
+    <Content Include="app\cardengr\report\jobpersoreport.ce.js" />
+    <Content Include="app\cardengr\resumable-newperso.ce.html" />
+    <Content Include="app\cardengr\resumable-newperso.ce.js" />
+    <Content Include="app\cardengr\resumable-newpersodetail.ce.html" />
+    <Content Include="app\cardengr\resumable-newpersodetail.ce.js" />
+    <Content Include="app\cardengr\resumable-partialperso.ce.html" />
+    <Content Include="app\cardengr\resumable-partialperso.ce.js" />
+    <Content Include="app\cardengr\resumable-pendingperso.ce.html" />
+    <Content Include="app\cardengr\resumable-pendingperso.ce.js" />
+    <Content Include="app\cardengr\resumable-pendingpersodetail.ce.html" />
+    <Content Include="app\cardengr\resumable-pendingpersodetail.ce.js" />
+    <Content Include="app\cardops\features\accordion.html" />
+    <Content Include="app\cardops\features\accordion.js" />
+    <Content Include="app\cardops\features\add-user.html" />
+    <Content Include="app\cardops\features\gallery.html" />
+    <Content Include="app\cardops\features\table.html" />
+    <Content Include="app\cardops\features\user1.html" />
+    <Content Include="app\cardops\features\userprofile.html" />
+    <Content Include="app\cardops\flagjob\unitflaggedjob.co.html" />
+    <Content Include="app\cardops\flagjob\unitflaggedjob.co.js" />
+    <Content Include="app\cardops\job\deletedjob.co.html" />
+    <Content Include="app\cardops\job\deletedjob.co.js" />
+    <Content Include="app\cardops\job\job.co.html" />
+    <Content Include="app\cardops\job\job.co.js" />
+    <Content Include="app\cardops\job\jobarchive.co.html" />
+    <Content Include="app\cardops\job\jobarchive.co.js" />
+    <Content Include="app\cardops\job\jobdetail.co.html" />
+    <Content Include="app\cardops\job\jobdetail.co.js" />
+    <Content Include="app\cardops\job\joblist.co.html" />
+    <Content Include="app\cardops\job\joblist.co.js" />
+    <Content Include="app\cardops\job\jobserviceupdate.co.html" />
+    <Content Include="app\cardops\job\jobserviceupdate.co.js" />
+    <Content Include="app\cardops\job\jobsetup.co.html" />
+    <Content Include="app\cardops\job\jobsetup.co.js" />
+    <Content Include="app\cardops\job\jobsetupupdate.co.html" />
+    <Content Include="app\cardops\job\jobsetupupdate.co.js" />
+    <Content Include="app\cardops\job\jobstatus.co.html" />
+    <Content Include="app\cardops\job\jobstatus.co.js" />
+    <Content Include="app\cardops\job\nonpersojob.co.html" />
+    <Content Include="app\cardops\job\nonpersojob.co.js" />
+    <Content Include="app\cardops\job\nonpersojobsetup.co.html" />
+    <Content Include="app\cardops\job\nonpersojobsetup.co.js" />
+    <Content Include="app\cardops\job\pendingjob.co.html" />
+    <Content Include="app\cardops\job\pendingjob.co.js" />
+    <Content Include="app\cardops\job\reverted-job.co.html" />
+    <Content Include="app\cardops\job\reverted-job.co.js" />
+    <Content Include="app\cardops\lookup\cardtypedetail.co.html" />
+    <Content Include="app\cardops\lookup\cardtypedetail.co.js" />
+    <Content Include="app\cardops\lookup\cardvariant.co.html" />
+    <Content Include="app\cardops\lookup\cardvariant.co.js" />
+    <Content Include="app\cardops\lookup\client.co.html" />
+    <Content Include="app\cardops\lookup\client.co.js" />
+    <Content Include="app\cardops\lookup\dictionary.co - Copy.js" />
+    <Content Include="app\cardops\lookup\dictionary.co.html" />
+    <Content Include="app\cardops\lookup\dictionary.co.js" />
+    <Content Include="app\cardops\lookup\remark.co.html" />
+    <Content Include="app\cardops\lookup\remark.co.js" />
+    <Content Include="app\cardops\lookup\variant.co.html" />
+    <Content Include="app\cardops\lookup\variant.co.js" />
+    <Content Include="app\common\bootstrap\bootstrap.dialog.js" />
+    <Content Include="app\common\common.js" />
+    <Content Include="app\common\logger.js" />
+    <Content Include="app\common\spinner.js" />
+    <Content Include="app\config.exceptionHandler.js" />
+    <Content Include="app\config.js" />
+    <Content Include="app\config.route.js" />
+    <Content Include="app\constant.js" />
+    <Content Include="app\CS\flagjob\unitflaggedjob.cs.html" />
+    <Content Include="app\CS\flagjob\unitflaggedjob.cs.js" />
+    <Content Include="app\CS\incoming-job.cs.html" />
+    <Content Include="app\CS\incoming-job.cs.js" />
+    <Content Include="app\CS\jobdetail.cs.html" />
+    <Content Include="app\CS\jobdetail.cs.js" />
+    <Content Include="app\dashboard\dashboard.html" />
+    <Content Include="app\dashboard\dashboard.js" />
+    <Content Include="app\dashboard\flaggedjob.html" />
+    <Content Include="app\dashboard\flaggedjob.js" />
+    <Content Include="app\dashboard\jobflag.html" />
+    <Content Include="app\dashboard\jobflag.js" />
+    <Content Include="app\dashboard\jobstatus.html" />
+    <Content Include="app\dashboard\jobstatus.js" />
+    <Content Include="app\dashboard\jobstatusdetail.html" />
+    <Content Include="app\dashboard\jobstatusdetail.js" />
+    <Content Include="app\dashboard\nonpersojobsetup.co.js" />
+    <Content Include="app\dashboard\resolvedflagjob.html" />
+    <Content Include="app\dashboard\resolvedflagjob.js" />
+    <Content Include="app\finance\flagjob\unitflaggedjob.co.html" />
+    <Content Include="app\finance\flagjob\unitflaggedjob.co.js" />
+    <Content Include="app\finance\incoming-print.pr.html" />
+    <Content Include="app\finance\incoming-print.pr.js" />
+    <Content Include="app\finance\printdetail.pr.html" />
+    <Content Include="app\finance\printdetail.pr.js" />
+    <Content Include="app\inventory\dispatch\client-job.dp.html" />
+    <Content Include="app\inventory\dispatch\client-job.dp.js" />
+    <Content Include="app\inventory\dispatch\confirm-receipt.dp.html" />
+    <Content Include="app\inventory\dispatch\confirm-receipt.dp.js" />
+    <Content Include="app\inventory\dispatch\delivery-note.dp.html" />
+    <Content Include="app\inventory\dispatch\delivery-note.dp.js" />
+    <Content Include="app\inventory\dispatch\delivery-profile.dp.html" />
+    <Content Include="app\inventory\dispatch\delivery-profile.dp.js" />
+    <Content Include="app\inventory\dispatch\delivery-report.dp.html" />
+    <Content Include="app\inventory\dispatch\delivery-report.dp.js" />
+    <Content Include="app\inventory\dispatch\delivery-reportdetail.dp.html" />
+    <Content Include="app\inventory\dispatch\delivery-reportdetail.dp.js" />
+    <Content Include="app\inventory\dispatch\incoming-job.dp.html" />
+    <Content Include="app\inventory\dispatch\incoming-job.dp.js" />
+    <Content Include="app\inventory\flagjob\unitflaggedjob.in.html" />
+    <Content Include="app\inventory\flagjob\unitflaggedjob.in.js" />
+    <Content Include="app\inventory\inventory\card-receipt.in.html" />
+    <Content Include="app\inventory\inventory\card-receipt.in.js" />
+    <Content Include="app\inventory\inventory\card-receiptdetail.in.html" />
+    <Content Include="app\inventory\inventory\card-receiptdetail.in.js" />
+    <Content Include="app\inventory\inventory\card-receiptlog.in.html" />
+    <Content Include="app\inventory\inventory\card-receiptlog.in.js" />
+    <Content Include="app\inventory\inventory\card-receiptlogdetail.in.html" />
+    <Content Include="app\inventory\inventory\card-receiptlogdetail.in.js" />
+    <Content Include="app\inventory\inventory\card-request.in.html" />
+    <Content Include="app\inventory\inventory\card-request.in.js" />
+    <Content Include="app\inventory\inventory\card-requestdetail.in.html" />
+    <Content Include="app\inventory\inventory\card-requestdetail.in.js" />
+    <Content Include="app\inventory\inventory\stationary-receipt.in.html" />
+    <Content Include="app\inventory\inventory\stationary-receipt.in.js" />
+    <Content Include="app\inventory\inventory\stationary-request.in.html" />
+    <Content Include="app\inventory\inventory\stationary-request.in.js" />
+    <Content Include="app\inventory\job\card-issuance-log.in.html" />
+    <Content Include="app\inventory\job\card-issuance-log.in.js" />
+    <Content Include="app\inventory\job\card-issuance-logdetail.in.html" />
+    <Content Include="app\inventory\job\card-issuance-logdetail.in.js" />
+    <Content Include="app\inventory\job\card-issuance-partialdetail.in.html" />
+    <Content Include="app\inventory\job\card-issuance-partialdetail.in.js" />
+    <Content Include="app\inventory\job\card-issuancedetail.in.html" />
+    <Content Include="app\inventory\job\card-issuancedetail.in.js" />
+    <Content Include="app\inventory\job\card-partial-issuancedetail.in.html" />
+    <Content Include="app\inventory\job\card-partial-issuancedetail.in.js" />
+    <Content Include="app\inventory\job\card-productdetail.in.html" />
+    <Content Include="app\inventory\job\card-productdetail.in.js" />
+    <Content Include="app\inventory\job\card-setupdetail.in.html" />
+    <Content Include="app\inventory\job\card-setupdetail.in.js" />
+    <Content Include="app\inventory\job\card-waste-issuancedetail.in.html" />
+    <Content Include="app\inventory\job\card-waste-issuancedetail.in.js" />
+    <Content Include="app\inventory\job\held-carddetail.in.html" />
+    <Content Include="app\inventory\job\held-carddetail.in.js" />
+    <Content Include="app\inventory\job\incoming-job.in.html" />
+    <Content Include="app\inventory\job\incoming-job.in.js" />
+    <Content Include="app\inventory\job\incomingheldcards.in.html" />
+    <Content Include="app\inventory\job\incomingheldcards.in.js" />
+    <Content Include="app\inventory\job\incomingheldprints.in.html" />
+    <Content Include="app\inventory\job\incomingheldprints.in.js" />
+    <Content Include="app\inventory\job\jobissuance.in.html" />
+    <Content Include="app\inventory\job\joblist.in.html" />
+    <Content Include="app\inventory\job\joblist.in.js" />
+    <Content Include="app\inventory\job\nonpersojob.in.html" />
+    <Content Include="app\inventory\job\nonpersojob.in.js" />
+    <Content Include="app\inventory\job\nonpersojobdetail.in.html" />
+    <Content Include="app\inventory\job\nonpersojobdetail.in.js" />
+    <Content Include="app\inventory\job\partial-job.in.html" />
+    <Content Include="app\inventory\job\partial-job.in.js" />
+    <Content Include="app\inventory\job\print-waste-issuancedetail.in.html" />
+    <Content Include="app\inventory\job\print-waste-issuancedetail.in.js" />
+    <Content Include="app\inventory\job\print-waste-job.in.html" />
+    <Content Include="app\inventory\job\print-waste-job.in.js" />
+    <Content Include="app\inventory\job\reverted-jobs.html" />
+    <Content Include="app\inventory\job\reverted-jobs.js" />
+    <Content Include="app\inventory\job\waste-job.in.html" />
+    <Content Include="app\inventory\job\waste-job.in.js" />
+    <Content Include="app\inventory\job\waste-joblog.in.html" />
+    <Content Include="app\inventory\job\waste-joblog.in.js" />
+    <Content Include="app\inventory\lookup\cardtypedetail.in.html" />
+    <Content Include="app\inventory\lookup\cardtypedetail.in.js" />
+    <Content Include="app\inventory\lookup\cardvariant.in.html" />
+    <Content Include="app\inventory\lookup\cardvariant.in.js" />
+    <Content Include="app\inventory\lookup\createproduct.in.html" />
+    <Content Include="app\inventory\lookup\createproduct.in.js" />
+    <Content Include="app\inventory\lookup\remark.in.html" />
+    <Content Include="app\inventory\lookup\remark.in.js" />
+    <Content Include="app\inventory\lookup\sidclient.in.html" />
+    <Content Include="app\inventory\lookup\sidclient.in.js" />
+    <Content Include="app\inventory\lookup\variant.in.html" />
+    <Content Include="app\inventory\lookup\variant.in.js" />
+    <Content Include="app\inventory\mis\cards\clientlists.in.html" />
+    <Content Include="app\inventory\mis\cards\clientlists.in.js" />
+    <Content Include="app\inventory\mis\cards\createproduct.in.html" />
+    <Content Include="app\inventory\mis\cards\createproduct.in.js" />
+    <Content Include="app\inventory\mis\cards\deliverynotereports.in.html" />
+    <Content Include="app\inventory\mis\cards\deliverynotereports.in.js" />
+    <Content Include="app\inventory\mis\cards\dispatchreports.in.html" />
+    <Content Include="app\inventory\mis\cards\dispatchreports.in.js" />
+    <Content Include="app\inventory\mis\cards\heldcardreports.in.html" />
+    <Content Include="app\inventory\mis\cards\heldcardreports.in.js" />
+    <Content Include="app\inventory\mis\cards\issuancereports.in.html" />
+    <Content Include="app\inventory\mis\cards\issuancereports.in.js" />
+    <Content Include="app\inventory\mis\cards\misclientcardtypereports.in.html" />
+    <Content Include="app\inventory\mis\cards\misclientcardtypereports.js" />
+    <Content Include="app\inventory\mis\cards\misclientcardtypes.in.html" />
+    <Content Include="app\inventory\mis\cards\misclientcardtypes.in.js" />
+    <Content Include="app\inventory\mis\cards\misclientreports.in.html" />
+    <Content Include="app\inventory\mis\cards\misclientreports.in.js" />
+    <Content Include="app\inventory\mis\cards\misclients.in.html" />
+    <Content Include="app\inventory\mis\cards\misclients.js" />
+    <Content Include="app\inventory\mis\cards\misreportdetail.in.html" />
+    <Content Include="app\inventory\mis\cards\misreportdetail.in.js" />
+    <Content Include="app\inventory\mis\cards\misreports.in.html" />
+    <Content Include="app\inventory\mis\cards\misreports.in.js" />
+    <Content Include="app\inventory\mis\cards\misstockreports.in.html" />
+    <Content Include="app\inventory\mis\cards\misstockreports.in.js" />
+    <Content Include="app\inventory\mis\cards\productdetail.in.html" />
+    <Content Include="app\inventory\mis\cards\productdetail.in.js" />
+    <Content Include="app\inventory\mis\cards\productlists.in.html" />
+    <Content Include="app\inventory\mis\cards\productlists.in.js" />
+    <Content Include="app\inventory\mis\cards\receiptlogreports.in.html" />
+    <Content Include="app\inventory\mis\cards\receiptlogreports.in.js" />
+    <Content Include="app\inventory\mis\cards\vaultreports.in.html" />
+    <Content Include="app\inventory\mis\cards\vaultreports.in.js" />
+    <Content Include="app\inventory\mis\cards\vaultupdate.in.html" />
+    <Content Include="app\inventory\mis\cards\vaultupdate.in.js" />
+    <Content Include="app\inventory\mis\cards\wastereports.in.html" />
+    <Content Include="app\inventory\mis\cards\wastereports.in.js" />
+    <Content Include="app\inventory\mis\stationary\card-product-lists.in.js" />
+    <Content Include="app\inventory\mis\stationary\card-stock-monitor.in.html" />
+    <Content Include="app\inventory\mis\stationary\card-stock-monitor.in.js" />
+    <Content Include="app\inventory\mis\stationary\card-summary.in.html" />
+    <Content Include="app\inventory\mis\stationary\card-summary.in.js" />
+    <Content Include="app\inventory\mis\stationary\card-usage.in.html" />
+    <Content Include="app\inventory\mis\stationary\card-usage.in.js" />
+    <Content Include="app\inventory\mis\stationary\cardclient-misreports.in.html" />
+    <Content Include="app\inventory\mis\stationary\cardclient-misreports.in.js" />
+    <Content Include="app\inventory\mis\stationary\stationary-stock-monitor.in.html" />
+    <Content Include="app\inventory\mis\stationary\stationary-stock-monitor.in.js" />
+    <Content Include="app\inventory\mis\stationary\stationary-summary.in.html" />
+    <Content Include="app\inventory\mis\stationary\stationary-summary.in.js" />
+    <Content Include="app\inventory\mis\stationary\stationary-usage.in.html" />
+    <Content Include="app\inventory\mis\stationary\stationary-usage.in.js" />
+    <Content Include="app\inventory\stockmgt\card-history.in.html" />
+    <Content Include="app\inventory\stockmgt\card-history.in.js" />
+    <Content Include="app\inventory\stockmgt\card-item-logs.in.html" />
+    <Content Include="app\inventory\stockmgt\card-item-logs.in.js" />
+    <Content Include="app\inventory\stockmgt\card-low-stock.in.html" />
+    <Content Include="app\inventory\stockmgt\card-low-stock.in.js" />
+    <Content Include="app\inventory\stockmgt\stationary-history.in.html" />
+    <Content Include="app\inventory\stockmgt\stationary-history.in.js" />
+    <Content Include="app\inventory\stockmgt\stationary-item-logs.in.html" />
+    <Content Include="app\inventory\stockmgt\stationary-item-logs.in.js" />
+    <Content Include="app\inventory\stockmgt\stationary-low-stock.in.html" />
+    <Content Include="app\inventory\stockmgt\stationary-low-stock.in.js" />
+    <Content Include="app\inventory\stock\card-client-lists.in.html" />
+    <Content Include="app\inventory\stock\card-client-lists.in.js" />
+    <Content Include="app\inventory\stock\cardclient-misreports.in.html" />
+    <Content Include="app\inventory\stock\cardclient-misreports.in.js" />
+    <Content Include="app\inventory\stock\stock-product-lists.in.html" />
+    <Content Include="app\inventory\stock\stock-product-lists.in.js" />
+    <Content Include="app\inventory\stock\stock-product-mis.in.html" />
+    <Content Include="app\inventory\stock\stock-product-mis.in.js" />
+    <Content Include="app\inventory\stock\stock-productdetail.in.html" />
+    <Content Include="app\inventory\stock\stock-productdetail.in.js" />
+    <Content Include="app\inventory\stock\stock-productreceipt.in.html" />
+    <Content Include="app\inventory\stock\stock-productreceipt.in.js" />
+    <Content Include="app\inventory\stock\stock-productrequest.in.html" />
+    <Content Include="app\inventory\stock\stock-productrequest.in.js" />
+    <Content Include="app\inventory\stock\stock-receipt.in.html" />
+    <Content Include="app\inventory\stock\stock-receipt.in.js" />
+    <Content Include="app\inventory\stock\stock-receiptdetail.in.html" />
+    <Content Include="app\inventory\stock\stock-receiptdetail.in.js" />
+    <Content Include="app\inventory\wastemgt\card-history.in.html" />
+    <Content Include="app\inventory\wastemgt\card-history.in.js" />
+    <Content Include="app\inventory\wastemgt\card-request.in.html" />
+    <Content Include="app\inventory\wastemgt\card-request.in.js" />
+    <Content Include="app\inventory\wastemgt\stationary-history.in.html" />
+    <Content Include="app\inventory\wastemgt\stationary-history.in.js" />
+    <Content Include="app\inventory\wastemgt\stationary-request.in.html" />
+    <Content Include="app\inventory\wastemgt\stationary-request.in.js" />
+    <Content Include="app\layout\app-body.html" />
+    <Content Include="app\layout\footer-chat.html" />
+    <Content Include="app\layout\footer.html" />
+    <Content Include="app\layout\horizontal-menu.html" />
+    <Content Include="app\layout\layout.module.js" />
+    <Content Include="app\layout\page-title.html" />
+    <Content Include="app\layout\page-title.js" />
+    <Content Include="app\layout\settings-pane.html" />
+    <Content Include="app\layout\shell.html" />
+    <Content Include="app\layout\shell.js" />
+    <Content Include="app\layout\sidebar-chat.html" />
+    <Content Include="app\layout\sidebar-logo.html" />
+    <Content Include="app\layout\sidebar-menu.html" />
+    <Content Include="app\layout\sidebar-profile.html" />
+    <Content Include="app\layout\sidebar.html" />
+    <Content Include="app\layout\sidebar.js" />
+    <Content Include="app\layout\user-info-navbar.html" />
+    <Content Include="app\layout\user-info-navbar.js" />
+    <Content Include="app\login\login.html" />
+    <Content Include="app\login\login.js" />
+    <Content Include="app\mailing\flagjob\unitflaggedjob.ma.html" />
+    <Content Include="app\mailing\flagjob\unitflaggedjob.ma.js" />
+    <Content Include="app\mailing\incoming-job.ma.html" />
+    <Content Include="app\mailing\incoming-job.ma.js" />
+    <Content Include="app\mailing\job-delivery.ma.html" />
+    <Content Include="app\mailing\job-delivery.ma.js" />
+    <Content Include="app\mailing\job-deliverydetail.ma.html" />
+    <Content Include="app\mailing\job-deliverydetail.ma.js" />
+    <Content Include="app\mailing\job-run.ma.html" />
+    <Content Include="app\mailing\job-run.ma.js" />
+    <Content Include="app\mailing\reports\carddeliveryreport.ma.html" />
+    <Content Include="app\mailing\reports\carddeliveryreport.ma.js" />
+    <Content Include="app\mailing\reports\cardmisreport.ma.html" />
+    <Content Include="app\mailing\reports\cardmisreport.ma.js" />
+    <Content Include="app\management\incoming-print.pr.html" />
+    <Content Include="app\management\incoming-print.pr.js" />
+    <Content Include="app\management\printdetail.pr.html" />
+    <Content Include="app\management\printdetail.pr.js" />
+    <Content Include="app\materialaudit\driverassignment.au.html" />
+    <Content Include="app\materialaudit\driverassignment.au.js" />
+    <Content Include="app\materialaudit\incoming-job.au.html" />
+    <Content Include="app\materialaudit\incoming-job.au.js" />
+    <Content Include="app\printing\carddeliveryreport.pr.html" />
+    <Content Include="app\printing\carddeliveryreport.pr.js" />
+    <Content Include="app\printing\flagjob\unitflaggedjob.pr.html" />
+    <Content Include="app\printing\flagjob\unitflaggedjob.pr.js" />
+    <Content Include="app\printing\incoming-print.pr.html" />
+    <Content Include="app\printing\incoming-print.pr.js" />
+    <Content Include="app\printing\print-misreport.pr.html" />
+    <Content Include="app\printing\print-misreport.pr.js" />
+    <Content Include="app\printing\printanalysis.pr.html" />
+    <Content Include="app\printing\printanalysis.pr.js" />
+    <Content Include="app\printing\printanalysisdetail.pr.html" />
+    <Content Include="app\printing\printanalysisdetail.pr.js" />
+    <Content Include="app\printing\printdeliverable.pr.html" />
+    <Content Include="app\printing\printdeliverable.pr.js" />
+    <Content Include="app\printing\printdetail.pr - Copy.html" />
+    <Content Include="app\printing\printdetail.pr - Copy.js" />
+    <Content Include="app\printing\printdetail.pr.html" />
+    <Content Include="app\printing\printdetail.pr.js" />
+    <Content Include="app\qac\cardcompleteddelivery.qc.html" />
+    <Content Include="app\qac\cardcompleteddelivery.qc.js" />
+    <Content Include="app\qac\cardcompleteddeliverydetail.qc.html" />
+    <Content Include="app\qac\cardcompleteddeliverydetail.qc.js" />
+    <Content Include="app\qac\carddelivery.qc.html" />
+    <Content Include="app\qac\carddelivery.qc.js" />
+    <Content Include="app\qac\carddeliverydetail.qc.html" />
+    <Content Include="app\qac\carddeliverydetail.qc.js" />
+    <Content Include="app\qac\flagjob\unitflaggedjob.qa.html" />
+    <Content Include="app\qac\flagjob\unitflaggedjob.qa.js" />
+    <Content Include="app\qac\flagjob\unitflaggedjob.qc.html" />
+    <Content Include="app\qac\flagjob\unitflaggedjob.qc.js" />
+    <Content Include="app\qac\incoming-perso.qa.html" />
+    <Content Include="app\qac\incoming-perso.qa.js" />
+    <Content Include="app\qac\incoming-perso.qc.html" />
+    <Content Include="app\qac\incoming-perso.qc.js" />
+    <Content Include="app\qac\incoming-print.qa.html" />
+    <Content Include="app\qac\incoming-print.qa.js" />
+    <Content Include="app\qac\incoming-print.qc.html" />
+    <Content Include="app\qac\incoming-print.qc.js" />
+    <Content Include="app\qac\job-check.qa.html" />
+    <Content Include="app\qac\job-check.qa.js" />
+    <Content Include="app\qac\job-run-print.qc.html" />
+    <Content Include="app\qac\job-run-print.qc.js" />
+    <Content Include="app\qac\job-run.qc.html" />
+    <Content Include="app\qac\job-run.qc.js" />
+    <Content Include="app\qac\pending-perso.qc.html" />
+    <Content Include="app\qac\pending-perso.qc.js" />
+    <Content Include="app\qac\perso-jobsplit-list.qa.html" />
+    <Content Include="app\qac\perso-jobsplit-list.qa.js" />
+    <Content Include="app\qac\perso-waste-request.qa.html" />
+    <Content Include="app\qac\perso-waste-request.qa.js" />
+    <Content Include="app\qac\print-jobsplit-list.qa.html" />
+    <Content Include="app\qac\print-jobsplit-list.qa.js" />
+    <Content Include="app\qac\print-waste-request.qa - Copy.html" />
+    <Content Include="app\qac\print-waste-request.qa - Copy.js" />
+    <Content Include="app\qac\print-waste-request.qa.html" />
+    <Content Include="app\qac\print-waste-request.qa.js" />
+    <Content Include="app\qac\printcompleteddelivery.qc.html" />
+    <Content Include="app\qac\printcompleteddelivery.qc.js" />
+    <Content Include="app\qac\printcompleteddeliverydetail.qc.html" />
+    <Content Include="app\qac\printcompleteddeliverydetail.qc.js" />
+    <Content Include="app\qac\printdeliverable.qc.html" />
+    <Content Include="app\qac\printdeliverable.qc.js" />
+    <Content Include="app\qac\printdelivery.qc.html" />
+    <Content Include="app\qac\printdelivery.qc.js" />
+    <Content Include="app\qac\printdeliverydetail.qc.html" />
+    <Content Include="app\qac\printdeliverydetail.qc.js" />
+    <Content Include="app\qac\waste-analysis.qa.html" />
+    <Content Include="app\qac\waste-analysis.qa.js" />
+    <Content Include="app\qac\waste-approved.qa.html" />
+    <Content Include="app\qac\waste-approved.qa.js" />
+    <Content Include="app\qac\waste-pending.qa.html" />
+    <Content Include="app\qac\waste-pending.qa.js" />
+    <Content Include="app\report\report.html" />
+    <Content Include="app\RM\clientproducts.rm.html" />
+    <Content Include="app\RM\clientproducts.rm.js" />
+    <Content Include="app\RM\clients.rm.html" />
+    <Content Include="app\RM\clients.rm.js" />
+    <Content Include="app\RM\flagjob\unitflaggedjob.co.html" />
+    <Content Include="app\RM\flagjob\unitflaggedjob.co.js" />
+    <Content Include="app\RM\nonpersojob.rm.html" />
+    <Content Include="app\RM\nonpersojob.rm.js" />
+    <Content Include="app\RM\nonpersojobdetail.rm.html" />
+    <Content Include="app\RM\nonpersojobdetail.rm.js" />
+    <Content Include="app\RM\printdetail.pr.html" />
+    <Content Include="app\RM\printdetail.pr.js" />
+    <Content Include="app\sadmin\clientaccount\accountdetail.sa.html" />
+    <Content Include="app\sadmin\clientaccount\accountdetail.sa.js" />
+    <Content Include="app\sadmin\clientaccount\clientlist.sa.html" />
+    <Content Include="app\sadmin\clientaccount\clientlist.sa.js" />
+    <Content Include="app\sadmin\clientaccount\clientuserlist.sa.html" />
+    <Content Include="app\sadmin\clientaccount\clientuserlist.sa.js" />
+    <Content Include="app\sadmin\clientaccount\createclientuser.sa.html" />
+    <Content Include="app\sadmin\clientaccount\createclientuser.sa.js" />
+    <Content Include="app\sadmin\clientaccount\useraccount.sa.html" />
+    <Content Include="app\sadmin\clientaccount\useraccount.sa.js" />
+    <Content Include="app\sadmin\useraccount\accountdetail.sa.html" />
+    <Content Include="app\sadmin\useraccount\accountdetail.sa.js" />
+    <Content Include="app\sadmin\useraccount\createuser.sa.html" />
+    <Content Include="app\sadmin\useraccount\createuser.sa.js" />
+    <Content Include="app\sadmin\useraccount\useraccount.sa.html" />
+    <Content Include="app\sadmin\useraccount\useraccount.sa.js" />
+    <Content Include="app\serviceScript.min.js" />
+    <Content Include="app\services\accountService.js" />
+    <Content Include="app\services\authInterceptorService.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\cardengr\repository.cardengraccount.js" />
+    <Content Include="app\services\cardengr\repository.cardengrflag.js" />
+    <Content Include="app\services\cardengr\repository.cardengrjob.js" />
+    <Content Include="app\services\cardengr\repository.cardengrproduct.js" />
+    <Content Include="app\services\cardengr\repository.cardengrtracker.js" />
+    <Content Include="app\services\cardops\repository.cardopsaccount.js" />
+    <Content Include="app\services\cardops\repository.cardopsflag.js" />
+    <Content Include="app\services\cardops\repository.cardopsjob.js" />
+    <Content Include="app\services\cardops\repository.cardopslookup.js" />
+    <Content Include="app\services\cardops\repository.cardopsproduct.js" />
+    <Content Include="app\services\cardops\repository.cardopstracker.js" />
+    <Content Include="app\services\controllers.js" />
+    <Content Include="app\services\customerservice\repository.customerservice.js" />
+    <Content Include="app\services\datacontext.js" />
+    <Content Include="app\services\directive.js" />
+    <Content Include="app\services\directives.js" />
+    <Content Include="app\services\directives2.js" />
+    <Content Include="app\services\entityManagerFactory.js" />
+    <Content Include="app\services\factory.js" />
+    <Content Include="app\services\inventory\repository.dispatchjob.js" />
+    <Content Include="app\services\inventory\repository.inventaccount.js" />
+    <Content Include="app\services\inventory\repository.inventflag.js" />
+    <Content Include="app\services\inventory\repository.inventjob.js" />
+    <Content Include="app\services\inventory\repository.inventory.js" />
+    <Content Include="app\services\inventory\repository.inventproduct.js" />
+    <Content Include="app\services\inventory\repository.inventtracker.js" />
+    <Content Include="app\services\mailing\repository.mailingjob.js" />
+    <Content Include="app\services\MainCtrl.js" />
+    <Content Include="app\services\management\repository.manageraccount.js" />
+    <Content Include="app\services\management\repository.managerflag.js" />
+    <Content Include="app\services\management\repository.managerjob.js" />
+    <Content Include="app\services\management\repository.managerproduct.js" />
+    <Content Include="app\services\management\repository.managertracker.js" />
+    <Content Include="app\services\materialaudit\repository.materialaudit.js" />
+    <Content Include="app\services\model.js" />
+    <Content Include="app\services\printing\repository.printingjob.js" />
+    <Content Include="app\services\qac\repository.qaaccount.js" />
+    <Content Include="app\services\qac\repository.qacjob.js" />
+    <Content Include="app\services\qac\repository.qaflag.js" />
+    <Content Include="app\services\qac\repository.qaproduct.js" />
+    <Content Include="app\services\qac\repository.qatracker.js" />
+    <Content Include="app\services\qualitycontrol\repository.qcaccount.js" />
+    <Content Include="app\services\qualitycontrol\repository.qcflag.js" />
+    <Content Include="app\services\qualitycontrol\repository.qcjob.js" />
+    <Content Include="app\services\qualitycontrol\repository.qcproduct.js" />
+    <Content Include="app\services\qualitycontrol\repository.qctracker.js" />
+    <Content Include="app\services\relationmanager\repository.rmaccount.js" />
+    <Content Include="app\services\relationmanager\repository.rmjob.js" />
+    <Content Include="app\services\relationmanager\repository.rmproduct.js" />
+    <Content Include="app\services\relationmanager\repository.rmtracker.js" />
+    <Content Include="app\services\relationmanager\repository.rmventflag.js" />
+    <Content Include="app\services\repositories.js" />
+    <Content Include="app\services\repository.abstract.js" />
+    <Content Include="app\services\repository.application.js" />
+    <Content Include="app\services\repository.lookup.js" />
+    <Content Include="app\services\resourceService.js" />
+    <Content Include="app\services\resource\repository.resourcejob - Copy.js" />
+    <Content Include="app\services\resource\repository.resourcejob.js" />
+    <Content Include="app\services\rm\repository.rm.js" />
+    <Content Include="app\services\routemediator.js" />
+    <Content Include="app\services\sadmin\repository.sadminaccount.js" />
+    <Content Include="app\services\services.js" />
+    <Content Include="app\services\supervisor\repository.supervisor.js" />
+    <Content Include="app\services\test.js" />
+    <Content Include="app\supervisor\co\co-job.sv.html" />
+    <Content Include="app\supervisor\co\co-job.sv.js" />
+    <Content Include="app\supervisor\co\co-jobsetup.sv.html" />
+    <Content Include="app\supervisor\co\co-jobsetup.sv.js" />
+    <Content Include="app\supervisor\co\jobarchive.co.html" />
+    <Content Include="app\supervisor\co\jobarchive.co.js" />
+    <Content Include="app\supervisor\co\jobdetail.co.html" />
+    <Content Include="app\supervisor\co\jobdetail.co.js" />
+    <Content Include="app\supervisor\co\joblist.co.html" />
+    <Content Include="app\supervisor\co\joblist.co.js" />
+    <Content Include="app\supervisor\co\jobstatus.co.html" />
+    <Content Include="app\supervisor\co\jobstatus.co.js" />
+    <Content Include="app\supervisor\co\nonpersojob.co.html" />
+    <Content Include="app\supervisor\co\nonpersojob.co.js" />
+    <Content Include="app\supervisor\co\nonpersojobsetup.co.html" />
+    <Content Include="app\supervisor\co\pendingjob.co.html" />
+    <Content Include="app\supervisor\co\pendingjob.co.js" />
+    <Content Include="app\supervisor\flaggedjob.sv.html" />
+    <Content Include="app\supervisor\flaggedjob.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\completed.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\completed.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\completedjobs\oldercompletedjobs.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\completedjobs\oldercompletedjobs.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\completedjobs\recentcompletedjobs.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\completedjobs\recentcompletedjobs.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\olderjob.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\olderjob.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\pending.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\pending.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\pendingjobs\olderpendingjobs.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\pendingjobs\olderpendingjobs.sv.js" />
+    <Content Include="app\supervisor\jobstatusreport\pendingjobs\recentpendingjobs.sv.html" />
+    <Content Include="app\supervisor\jobstatusreport\pendingjobs\recentpendingjobs.sv.js" />
+    <Content Include="app\supervisor\resolvedjob.sv.html" />
+    <Content Include="app\supervisor\resolvedjob.sv.js" />
+    <Content Include="app\xenon-custom.js" />
+    <Content Include="contentbuild\fonts\font-awesome.css" />
+    <Content Include="contentbuild\fonts\font-awesome.min.css" />
+    <Content Include="contentbuild\fonts\fontawesome-webfont.svg" />
+    <Content Include="contentbuild\fonts\linecons.css" />
+    <Content Include="contentbuild\fonts\linecons.svg" />
+    <Content Include="contentbuild\font\linecons.svg" />
+    <Content Include="content\bootstrap-responsive.css" />
+    <Content Include="content\bootstrap-theme.css" />
+    <Content Include="content\bootstrap.css" />
+    <Content Include="content\breeze.directives.css" />
+    <Content Include="content\customtheme.css" />
+    <Content Include="content\font-awesome.css" />
+    <Content Include="content\fonts\font-awesome.css" />
+    <Content Include="content\fonts\font-awesome.min.css" />
+    <Content Include="content\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\fonts\linecons.svg" />
+    <Content Include="content\fonts\linecons.css" />
+    <Content Include="content\ie10mobile.css" />
+    <Content Include="content\images\logo%402x.png" />
+    <Content Include="content\images\logo-collapsed%402x.png" />
+    <Content Include="content\images\logo-collapsed.png" />
+    <Content Include="content\images\user-2.png" />
+    <Content Include="content\images\user-4.png" />
+    <Content Include="content\styles.css" />
+    <Content Include="content\table.css" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\xenon\custom.css" />
+    <Content Include="content\xenon\xenon-components.css" />
+    <Content Include="content\xenon\xenon-core.css" />
+    <Content Include="content\xenon\xenon-forms.css" />
+    <Content Include="content\xenon\xenon-skins.css" />
+    <Content Include="gulpfile.js" />
+    <Content Include="index.html" />
+    <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-cookies.js" />
+    <Content Include="scripts\angular\angular-fullscreen.js" />
+    <Content Include="scripts\angular\angular-local-storage.js" />
+    <Content Include="scripts\angular\angular-route.js" />
+    <Content Include="scripts\angular\angular-sanitize.js" />
+    <Content Include="scripts\angular\angular.js" />
+    <Content Include="scripts\breeze\breeze.angular.js" />
+    <Content Include="scripts\breeze\breeze.debug.js" />
+    <Content Include="scripts\breeze\breeze.directives.js" />
+    <Content Include="scripts\vendors\bootstrap.js" />
+    <Content Include="scripts\vendors\joinable.js" />
+    <Content Include="scripts\jquery-2.1.1.js" />
+    <Content Include="scripts\vendors\moment.js" />
+    <Content Include="scripts\vendors\ngplus-overlay.js" />
+    <Content Include="scripts\vendors\ngPrint.js" />
+    <Content Include="scripts\vendors\ocLazyLoad.js" />
+    <Content Include="scripts\vendors\resizeable.js" />
+    <Content Include="scripts\vendors\toastr.js" />
+    <Content Include="scripts\vendors\TweenMax.min.js" />
+    <Content Include="scripts\vendors\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="scripts\vendors\xenon-custom.js" />
+    <Content Include="Web.config" />
+    <Content Include="content\fonts\fontawesome-webfont.eot" />
+    <Content Include="content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="content\fonts\fontawesome-webfont.woff" />
+    <Content Include="content\fonts\FontAwesome.otf" />
+    <Content Include="content\fonts\linecons.eot" />
+    <Content Include="content\fonts\linecons.ttf" />
+    <Content Include="content\fonts\linecons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\cardops\sort\" />
+    <Folder Include="app\inventory\supervisor\card\" />
+    <Folder Include="app\inventory\supervisor\stationery\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51100</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51100/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

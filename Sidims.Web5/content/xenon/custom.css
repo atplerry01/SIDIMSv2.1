@@ -1,0 +1,81 @@
+
+.sidebar-menu {
+    display: table-cell;
+    position: relative;
+    width: 240px;
+    background: #193048; /*#2c2e2f;*/
+    z-index: 1;
+}
+
+    .sidebar-menu .main-menu {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0; /*20px;*/
+        margin-bottom: 20px;
+        list-style: none;
+    }
+
+        .sidebar-menu .main-menu a {
+            font-family: "HelveticaNeueRoman", Helvetica, Arial, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #c0d0e4;
+            text-decoration: none;
+            display: block;
+            padding: 13px 5px;
+            /*border-bottom: 1px solid #464141;*/
+        }
+
+
+/*Chat Section*/
+#chat {
+    width: 230px !important;
+}
+
+
+.emp-details {
+}
+
+.employee-header {
+    font-size: 2.2em;
+}
+
+.emp-title {
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+ol.emp-details {
+    padding-left: 0;
+}
+
+    ol.emp-details li.employee {
+        list-style: decimal-leading-zero;
+        /*font-size: 2em;*/
+        margin: 0 0 0 2em;
+        padding: 10px;
+    }
+
+    ol.emp-details li a, ol.emp-details li i {
+        font-size: 13px;
+    }
+
+
+.widget-content .padd:hover {
+    cursor: pointer;
+}
+
+.dash-small-icon {
+    margin-right:10px
+}
+
+.table > tbody > tr > td, .table > tfood > tr > td, .table > thead > tr > th, .table > tbody > tr > th, .table > tfood > tr > th {
+    padding: 12px 15px !important;
+}
+
+td.action-col{
+    width: 300px !important;
+}

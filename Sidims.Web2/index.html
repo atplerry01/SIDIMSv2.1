@@ -1,0 +1,187 @@
+﻿<!doctype html>
+<html lang="en-US" class="no-js" data-ng-app="app">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Whycespace Educational Portals" />
+    <meta name="author" content="" />
+    <title>SIDIMS - SecureID Event Management System</title>
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">-->
+
+    <script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+
+    <link rel="shortcut icon" href="ccfavicon.ico" />
+    <link href="content/ie10mobile.css" rel="stylesheet" />
+    <link href="content/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/toastr.css" rel="stylesheet" />
+    <link href="content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="content/styles.css" rel="stylesheet" />
+    <link href="content/breeze.directives.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+    <link rel="stylesheet" href="assets/css/xenon-forms.css">
+    <link rel="stylesheet" href="assets/css/xenon-components.css">
+    <link rel="stylesheet" href="assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="assets/css/ngPrint.css" type="text/css" media="print" />
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script>
+        var appHelper = {
+            // Vars (paths without trailing slash)
+            templatesDir: 'app',
+            assetsDir: 'assets',
+
+            // Methods
+            templatePath: function (features, view_name) {
+                if (features) {
+                    console.log(this.templatesDir + '/' + features + '/' + view_name + '.html');
+                    return this.templatesDir + '/' + features + '/' + view_name + '.html';
+                }
+                return this.templatesDir + '/' + view_name + '.html';
+            },
+
+            assetPath: function (file_path) {
+                return this.assetsDir + '/' + file_path;
+            }
+        };
+    </script>
+
+
+</head>
+
+<body class="page-body" data-ng-controller="MainCtrl" ng-class="{'settings-pane-open': layoutOptions.settingsPane.isOpen, 'chat-open': layoutOptions.chat.isOpen, 'login-page': isLoginPage && isMainPage == false, 'login-light': isLightLoginPage && isMainPage == false, 'lockscreen-page': isLockscreenPage && isMainPage == false, 'right-sidebar': layoutOptions.sidebar.isRight, 'boxed-container': layoutOptions.container.isBoxed}">
+
+    <settings-pane></settings-pane>
+    <horizontal-menu ng-if="layoutOptions.horizontalMenu.isVisible"></horizontal-menu>
+
+    <div class="page-container" data-ng-include="'app/layout/app-body.html'" ng-cloak></div>
+
+    <!--Todo-->
+    <!-- Remove this code if you want to disable Loading Overlay in the beginning of document loading -->
+    <div class="page-loading-overlay">
+        <div class="loader-2"></div>
+    </div>
+
+    <!-- inject-vendor:js -->
+    <!--<script src="assets/Scripts/jquery-2.1.1.js"></script>-->
+
+    <script src="assets/Scripts/angular.js"></script>
+    <!--<script src="app/vendor.min.js"></script>-->
+
+    <script src="assets/js/oc-lazyload/ocLazyLoad.min.js"></script>
+
+    <script src="assets/Scripts/angular-sanitize.js"></script>
+    <script src="assets/Scripts/bootstrap.js"></script>
+    <script src="assets/Scripts/moment.js"></script>
+    <script src="assets/Scripts/angular-route.js"></script>
+    <script src="assets/Scripts/toastr.js"></script>
+    <script src="assets/Scripts/angular-animate.js"></script>
+    <script src="assets/Scripts/ngplus-overlay.js"></script>
+    <script src="assets/Scripts/angular-fullscreen.js"></script>
+    <script src="assets/Scripts/ngPrint.js"></script>
+
+    <script src="assets/Scripts/angular-cookies.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/Scripts/angular-local-storage.min.js"></script>
+
+
+
+    <!-- #region Breeze -->
+    <script src="assets/scripts/breeze.debug.js"></script>
+    <script src="assets/scripts/breeze.angular.js"></script>
+    <script src="assets/scripts/breeze.directives.js"></script>
+    <script src="assets/scripts/breeze.saveErrorExtensions.js"></script>
+    <script src="assets/Scripts/breeze.metadata-helper.js"></script>
+
+    <script src="assets/Scripts/angular.breeze.storagewip.js"></script>
+    <script src="assets/Scripts/ngplus-overlay.js"></script>
+    <script src="assets/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
+
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/joinable.js"></script>
+    <script src="assets/js/resizeable.js"></script>
+
+    <script src="app/xenon-custom.js"></script>
+
+    <!-- #endregion -->
+    <!-- Bootstrapping -->
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/config.exceptionHandler.js"></script>
+    <script src="app/config.route.js"></script>
+    <script src="app/constant.js"></script>
+
+    <!-- common Modules -->
+    <script src="app/common/common.js"></script>
+    <script src="app/common/logger.js"></script>
+    <script src="app/common/spinner.js"></script>
+
+    <!-- common.bootstrap Modules -->
+    <script src="app/common/bootstrap/bootstrap.dialog.js"></script>
+
+    <!-- Anonymous Page App -->
+    <!-- app Services -->
+    <!--/////////////////-->
+
+    <script src="app/services/controllers.js"></script>
+    <script src="app/services/directive.js"></script>
+    <script src="app/services/directives.js"></script>
+    <script src="app/services/factory.js"></script>
+    <script src="app/services/MainCtrl.js"></script>
+    <script src="app/services/resourceService.js"></script>
+    <script src="app/services/services.js"></script>
+
+    <script src="app/services/accountService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/datacontext.js"></script>
+    <script src="app/services/entityManagerFactory.js"></script>
+    <script src="app/services/model.js"></script>
+    <script src="app/services/routemediator.js"></script>
+
+    <script src="app/services/repositories.js"></script>
+    <script src="app/services/repository.abstract.js"></script>
+    <script src="app/services/resourceService.js"></script>
+    <script src="app/services/repository.lookup.js"></script>
+
+    <script src="app/services/resource/repository.resourcejob.js"></script>
+    <script src="app/services/clients/repository.clients.js"></script>
+    <script src="app/services/repository.application.js"></script>
+
+    <script src="app/dashboard/dashboard.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/layout/user-info-navbar.js"></script>
+    <script src="app/account/changepassword.js"></script>
+
+    <script src="app/inventory/client-product.js"></script>
+    <script src="app/inventory/dispatchnote.js"></script>
+    <script src="app/inventory/deliverynotedetail.js"></script>
+    <script src="app/inventory/misreport.js"></script>
+    <script src="app/job/completed-job.js"></script>
+    <script src="app/job/pending-job.js"></script>
+    <script src="app/product/receivable.js"></script>
+    <script src="app/product/stockreport.js"></script>
+    <script src="app/inventory/misstockreports.js"></script>
+
+    <!--<script src="app/serviceScript.min.js"></script>
+    <script src="app/all.min.js"></script>-->
+
+</body>
+</html>
