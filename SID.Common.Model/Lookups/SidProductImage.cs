@@ -10,7 +10,7 @@ namespace SID.Common.Model.Lookups
     {
         public int Id { get; set; }
         public int SidProductId { get; set; }
-        public string ImagePath { get; set; }
+        public string ImageName { get; set; }
 
         [ForeignKey("SidProductId")]
         public SidProduct SidProduct { get; set; }

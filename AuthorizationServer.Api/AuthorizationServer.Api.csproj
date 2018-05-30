@@ -236,9 +236,6 @@
     <Content Include="Scripts\breeze.min.js" />
     <Content Include="Scripts\q.js" />
     <Content Include="Scripts\q.min.js" />
-    <Content Include="uploads\15672683.jpg" />
-    <Content Include="uploads\15672683_120805.jpg" />
-    <Content Include="uploads\image006.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -325,6 +322,14 @@
     <Compile Include="Migrations\201805271625007_AddImage02.Designer.cs">
       <DependentUpon>201805271625007_AddImage02.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805300741322_UpdateProductImage.cs" />
+    <Compile Include="Migrations\201805300741322_UpdateProductImage.Designer.cs">
+      <DependentUpon>201805300741322_UpdateProductImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805301043011_UpdateProductImage1.cs" />
+    <Compile Include="Migrations\201805301043011_UpdateProductImage1.Designer.cs">
+      <DependentUpon>201805301043011_UpdateProductImage1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\CardAnalysisModel.cs" />
@@ -372,6 +377,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SID.Common.Model\SID.Common.Model.csproj">
@@ -391,6 +397,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271625007_AddImage02.resx">
       <DependentUpon>201805271625007_AddImage02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805300741322_UpdateProductImage.resx">
+      <DependentUpon>201805300741322_UpdateProductImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301043011_UpdateProductImage1.resx">
+      <DependentUpon>201805301043011_UpdateProductImage1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

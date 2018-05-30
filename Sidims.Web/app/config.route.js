@@ -1108,6 +1108,18 @@
                     }
                 }
             }, {
+                url: '/in/mis/card/product/:productId/image/update',
+                config: {
+                    title: 'MISReportsIN',
+                    templateUrl: 'app/inventory/mis/cards/updateproductimage.in.html',
+                    controller: 'MISUpdateProductImageIN',
+                    controllerAs: 'vm',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
                 url: '/in/mis/card/product/:productId/service-type',
                 config: {
                     title: 'MISReportsIN',

@@ -5,19 +5,21 @@
         .module('app')
         .controller('JobCheckQA', JobCheckQA);
 
-    JobCheckQA.$inject = ['$location', '$routeParams', '$scope', '$window', 'common', 'datacontext', 'model', 'resourceService'];
+    JobCheckQA.$inject = ['$location', '$routeParams', '$scope', '$window', 'common', 'datacontext', 'model', 'ngAuthSettings', 'resourceService'];
 
-    function JobCheckQA($location, $routeParams, $scope, $window, common, datacontext, model, resourceService) {
+    function JobCheckQA($location, $routeParams, $scope, $window, common, datacontext, model, ngAuthSettings, resourceService) {
         /* jshint validthis:true */
         var vm = this;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
+        var serviceBase = ngAuthSettings.apiResourceBaseUri;
 
         vm.gotoJobDetails = gotoJobDetails;
         vm.jobs = [];
         vm.qaIncomingPersos = [];
         vm.save = save;
         vm.requireMailing = false;
+        vm.productImagePath = undefined;
 
         vm.checkboxModel = {
             chip: false,
@@ -89,6 +91,8 @@
                 .then(function (data) {
                     vm.productImage = '';
                     vm.productImage = data[0];
+                    vm.productImagePath = serviceBase + 'uploads/' + vm.productImage.imageName;
+                    console.log(vm.productImagePath);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });

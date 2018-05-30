@@ -19,6 +19,7 @@
         vm.update = updateProduct;
         vm.gotoAddProduct = gotoAddProduct;
         vm.serviveType = serviveType;
+        vm.createImage = createImage;
 
         activate();
 
@@ -77,6 +78,10 @@
             var val = $routeParams.clientId;
             console.log(val);
             $location.path('/in/mis/card/product/' + val + '/create');
+        }
+
+        function createImage(product) {
+            $location.path('/in/mis/card/product/' + product.id + '/image/update');
         }
 
         function goBack() { $window.history.back(); }

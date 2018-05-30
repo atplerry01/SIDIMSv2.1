@@ -10,7 +10,7 @@
         'LocalStorageModule', // Angular Local Storage
 
         'ngPrint',
-
+        'ngFileUpload',
         // Custom modules 
         'common',           // common functions, logger, spinner
         'common.bootstrap', // bootstrap dialog wrapper functions

@@ -130,7 +130,7 @@
             var orderBy;
 
             return EntityQuery.from('SidProductImage')
-                .select('id, sidProductId, imagePath')
+                .select('id, sidProductId, imageName')
                 .withParameters({ productId: sidProductId })
                 .toType('SidProductImage')
                 .using(self.manager).execute()
@@ -272,7 +272,7 @@
             console.log(clientId);
 
             return EntityQuery.from('ClientProducts')
-                .select('id, sidClientId, sidCardTypeId, variant, name')
+                .select('id, sidClientId, sidCardTypeId, variant, name, hasImage')
                 .withParameters({ clientId: clientId })
                 .toType('SidProduct')
                 .using(self.manager).execute()

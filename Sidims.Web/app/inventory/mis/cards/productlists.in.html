@@ -35,11 +35,11 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th data-priority="3">Sector</th>
                     <th data-priority="1">Client</th>
                     <th data-priority="3">Card Type</th>
                     <th data-priority="3">Variant</th>
                     <th data-priority="3">Product Name</th>
+                    <th>Image</th>
                     <th data-priority="6">Service Type</th>
                     <th data-priority="6"></th>
                     <th data-priority="6"></th>
@@ -55,9 +55,6 @@
                             {{c.jobName }}
                         </span>
                     </th>
-                    <td data-priority="3" colspan="1" data-columns="id8c140f573a4de-col-2">
-                        {{c.sidClient.sector.name}}
-                    </td>
                     <td data-priority="1" colspan="1" data-columns="id8c140f573a4de-col-3">
                         {{c.sidClient.name}}
                     </td>
@@ -69,6 +66,13 @@
                     </td>
                     <td data-priority="3" colspan="1" data-columns="id8c140f573a4de-col-5">
                         {{c.name}}
+                    </td>
+                    <td>
+                        <span class="pull-right padd dash-small-icon" data-ng-click="vm.createImage(c)">
+                            <i class="fa fa-image" style="color: green;"
+                               data-toggle="tooltip" data-placement="left"
+                               title="Create/UpdateImage"></i> {{c.hasImage}}
+                        </span>
                     </td>
                     <td data-priority="6" colspan="1" data-columns="id8c140f573a4de-col-6">
                         <span class="pull-right padd dash-small-icon" data-ng-click="vm.serviveType(c)">

@@ -7,6 +7,7 @@ namespace SID.Common.Model.Lookups
         public SidProduct()
         {
             IsDeleted = false;
+            HasImage = false;
         }
 
         public int Id { get; set; }
@@ -19,6 +20,7 @@ namespace SID.Common.Model.Lookups
 
 
         public bool IsDeleted { get; set; }
+        public bool HasImage { get; set; }
 
         [ForeignKey("SidClientId")]
         public virtual SidClient SidClient { get; set; }

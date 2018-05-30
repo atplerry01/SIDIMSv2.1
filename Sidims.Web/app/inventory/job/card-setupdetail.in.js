@@ -5,14 +5,14 @@
         .module('app')
         .controller('CardSetupDetailIN', CardSetupDetailIN);
 
-    CardSetupDetailIN.$inject = ['$location', '$routeParams', '$scope', 'common', 'datacontext', 'model', 'resourceService'];
+    CardSetupDetailIN.$inject = ['$location', '$routeParams', '$scope', 'common', 'datacontext', 'model', 'ngAuthSettings', 'resourceService'];
 
-    function CardSetupDetailIN($location, $routeParams, $scope, common, datacontext, model, resourceService) {
+    function CardSetupDetailIN($location, $routeParams, $scope, common, datacontext, model, ngAuthSettings, resourceService) {
         /* jshint validthis:true */
         var vm = this;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
-
+        var serviceBase = ngAuthSettings.apiResourceBaseUri;
 
         vm.cardsetup = undefined;
 
@@ -27,6 +27,7 @@
         vm.selectedClientVariant = [];
         vm.newProducts = [];
         vm.updateProductService = updateProductService;
+        vm.productImagePath = undefined;
 
         activate();
 
@@ -74,15 +75,11 @@
         }
       
         function getProductImage(entity) {
-            console.log(entity);
-
             return datacontext.inventory.getProductImage(entity)
                 .then(function (data) {
-                    vm.productImage = '';
                     vm.productImage = data[0];
-                    //vm.productImage.imagePath = "http://localhost:53401/uploads/15672683_120805.jpg";
-                    //console.log(vm.productImage.imagePath);
-                    console.log(vm.productImage);
+                    vm.productImagePath = serviceBase + 'uploads/'  + vm.productImage.imageName;
+                    console.log(vm.productImagePath);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });
