@@ -81,8 +81,8 @@
         }
 
         function isMailable(serviceType) {
-            if (serviceType.indexOf('mailing') >= 0) {
-                vm.requireMailing = true;
+            if (serviceType.indexOf('Mailing') >= 0) {
+                vm.requireMailing = true;   
             }
         }
 

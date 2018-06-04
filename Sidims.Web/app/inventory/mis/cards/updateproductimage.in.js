@@ -15,7 +15,6 @@
         var serviceBase = ngAuthSettings.apiResourceBaseUri;
 
         vm.goBack = goBack;
-        vm.save = save;
         vm.selectedClientVariant = [];
         $scope.message = "";
 

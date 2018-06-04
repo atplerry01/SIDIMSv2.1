@@ -113,15 +113,15 @@ namespace AuthorizationServer.Api.Controllers
                 var res = string.Format("Please Upload a image.");
                 dict.Add("error", res);
                 return Request.CreateResponse(HttpStatusCode.NotFound, dict);
-            }
+        }
             catch (Exception ex)
             {
-                var res = string.Format("some Message");
+                var res = string.Format(ex.ToString());
                 dict.Add("error", res);
                 return Request.CreateResponse(HttpStatusCode.NotFound, dict);
             }
 
-        }
+}
 
         
         public async Task<HttpResponseMessage> Upload2() //IFormFile file, IFormCollection files

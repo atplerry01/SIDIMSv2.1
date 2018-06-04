@@ -274,6 +274,7 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\CSController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\ImageUploadController - Copy.cs" />
     <Compile Include="Controllers\ImageUploadController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
     <Compile Include="Controllers\JobTrackersController.cs" />
@@ -377,7 +378,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
+    <Folder Include="uploads\" />
+    <Folder Include="_Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SID.Common.Model\SID.Common.Model.csproj">
