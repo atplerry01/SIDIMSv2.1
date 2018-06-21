@@ -29,7 +29,7 @@
         function getQCIncomingPersos(forceRefresh) {
             return datacontext.qacjob.getQCPendingPersos(forceRefresh).then(function (data) {
                 vm.qcIncomingPersos = data;
-                console.log(vm.qcIncomingPersos);
+                //console.log(vm.qcIncomingPersos);
                 return vm.qcIncomingPersos;
             });
         }

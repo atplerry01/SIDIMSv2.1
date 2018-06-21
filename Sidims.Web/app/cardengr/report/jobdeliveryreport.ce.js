@@ -35,13 +35,13 @@
             var lookups = datacontext.lookup.lookupCachedData;
             vm.departments = lookups.departments;
 
-            console.log(vm.departments);
+            //console.log(vm.departments);
         }
 
         function getCardDeliveryLogs(forceRefresh) {
             return datacontext.resourcejob.getCECardDeliveryLogs(forceRefresh).then(function (data) {
                 vm.carddeliverylogs = data;
-                console.log(vm.carddeliverylogs);
+                //console.log(vm.carddeliverylogs);
                 return vm.carddeliverylogs;
             });
         }
@@ -49,7 +49,7 @@
         function getCECardDelivery(forceRefresh) {
             return datacontext.resourcejob.getCECardDeliverys(forceRefresh).then(function (data) {
                 vm.carddeliverys = data;
-                console.log(vm.carddeliverys);
+                //console.log(vm.carddeliverys);
                 return vm.carddeliverys;
             });
         }
@@ -72,7 +72,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }

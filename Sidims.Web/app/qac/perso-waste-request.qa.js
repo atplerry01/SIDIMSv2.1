@@ -32,8 +32,8 @@
             vm.wasteErrorSources = lookups.wasteErrorSources;
             vm.wasteErrorSourceCodes = lookups.wasteErrorSourceCodes;
             vm.departments = lookups.departments;
-            console.log(lookups);
-            console.log(vm.wasteErrorSources);
+            //console.log(lookups);
+            //console.log(vm.wasteErrorSources);
         }
 
         function getQAWasteRequests(forceRefresh) {
@@ -76,7 +76,7 @@
                 getQAWasteRequests();           
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:" + response;
 			 });
         }
@@ -84,7 +84,7 @@
         function goBack() { $window.history.back(); }
 
         function updateErrorCode(entity) {
-            console.log(vm.wasteErrorSourceCodes);
+            //console.log(vm.wasteErrorSourceCodes);
 
             vm.newWasteInfo = [];
             var uid = entity.id;
@@ -95,12 +95,12 @@
                 }
             });
 
-            console.log(vm.newWasteInfo);
+            //console.log(vm.newWasteInfo);
         }
 
 
         $scope.change = function () {
-            console.log('OK');
+            //console.log('OK');
         }
    
 

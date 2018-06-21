@@ -14,7 +14,7 @@
         var log = getLogFn(controllerId);
 
         vm.gotoJobDetails = gotoJobDetails;
-        //vm.confirmReceipt = confirmReceipt;
+        vm.wasteReport = wasteReport;
         vm.jobs = [];
         vm.incomingJobs = [];
 
@@ -31,7 +31,7 @@
             var val = $routeParams.clientId;
             return datacontext.dispatchjob.getClientIncomingJobs(val, forceRefresh).then(function (data) {
                 vm.incomingJobs = data;
-                console.log(vm.incomingJobs);
+                //console.log(vm.incomingJobs);
                 return vm.incomingJobs;
             });
         }
@@ -42,13 +42,21 @@
             }
         }
 
+        function wasteReport(entity) {
+            //console.log(entity);
+
+            if (entity && entity.id) {
+                $location.path('/in/dispatch/client-wastes/' + entity.id);
+            }
+        }
+
         function goBack() { $window.history.back(); }
 
 
         //function getJobTrackers(forceRefresh) {
         //    return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
         //        vm.jobTrackers = data;
-        //        console.log(vm.jobTrackers);
+        //        //console.log(vm.jobTrackers);
         //        return vm.jobTrackers;
         //    });
         //}
@@ -68,20 +76,20 @@
         //        jobTrackerId: entity.jobTrackerId
         //    };
 
-        //    console.log(vm.newEntity);
+        //    //console.log(vm.newEntity);
         //    createEntity(vm.newEntity);
         //}
         
         //function createEntity(entity) {
         //    var resourceUri = model.resourceUri.inventory + '/carddeliveryconfirmation/create';
         //    resourceService.saveResource(resourceUri, entity).then(function (response) {
-        //        console.log(response);
+        //        //console.log(response);
         //            getIncomingJobs();
         //            // else Initialise
         //            //$location.path('/in/dispatch/incoming-jobs');
         //        },
         //        function (response) {
-        //            console.log(response);
+        //            //console.log(response);
         //        });
         //}
 

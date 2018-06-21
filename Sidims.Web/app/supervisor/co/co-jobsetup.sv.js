@@ -109,7 +109,7 @@
 
                 updateEntity(vm.newJob);
             } else {
-                console.log('error');
+                //console.log('error');
                 vm.errorMessage = 'No Job Selected'
             }
             
@@ -140,7 +140,7 @@
                 gotoJobStatus();
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {

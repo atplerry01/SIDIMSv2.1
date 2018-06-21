@@ -70,21 +70,21 @@
 
         function initLookups() {
             var lookups = datacontext.lookup.lookupCachedData;
-            console.log(lookups);
+            //console.log(lookups);
         }
 
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh,
                 vm.paging.currentPage, vm.paging.pageSize, vm.jobTrackersSearch)
                 .then(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     vm.jobTrackers = vm.filteredJobTrackers = data;
-                    console.log(vm.jobTrackers);
+                    //console.log(vm.jobTrackers);
                     getJobTrackerFilteredCount();
                     if (!vm.jobTrackerCount || forceRefresh) {
                         getJobTrackerCount();
                     }
-                    console.log(vm.jobTrackers);
+                    //console.log(vm.jobTrackers);
                     return data;
                 });
         }
@@ -151,7 +151,7 @@
         }
 
         function flagJob(entity) {
-            console.log(entity);
+            //console.log(entity);
             $location.path('/job-flag/' + entity.id);
         }
 
@@ -172,7 +172,7 @@
         }
 
         function revertJob(entity) {
-            console.log(entity);
+            //console.log(entity);
             var newEntity = {
                 id: entity.id
             };
@@ -195,12 +195,12 @@
         }
 
         function revertUnitJob(unit, entity, section) {
-            console.log(unit, entity, section);
+            //console.log(unit, entity, section);
             vm.toggleSpan = !vm.toggleSpan;
 
             if (section === 'in') {
                 if (entity.stage03Printing.name === "Queue" || entity.stage06FirstJobRun.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
                     var newEntity = {
                         id: entity.id
                     };
@@ -212,11 +212,11 @@
                 }
             } else if (section === 'pr') {
                 if (entity.stage06FirstJobRun.name === "Queue" || entity.stage10Dispatch.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
                 }
             } else if (section === 'ce1') {
                 if (entity.stage05QA.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
 
                     var newEntity = {
                         id: entity.id
@@ -224,14 +224,14 @@
 
                     var resourceUri = model.resourceUri.supervisor + '/firstcard/revert/' + entity.id;
                     resourceService.saveResource(resourceUri, newEntity).then(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         refresh();
                     });
 
                 }
             } else if (section === 'qa') {
                 if (entity.stage07CardEngrResume.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
 
                     var newEntity = {
                         id: entity.id
@@ -239,7 +239,7 @@
 
                     var resourceUri = model.resourceUri.supervisor + '/qaperso/revert/' + entity.id;
                     resourceService.saveResource(resourceUri, newEntity).then(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         refresh();
                     });
                 }
@@ -252,14 +252,14 @@
 
                     var resourceUri = model.resourceUri.supervisor + '/CEResumePerso/revert/' + entity.id;
                     resourceService.saveResource(resourceUri, newEntity).then(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         refresh();
                     });
 
                 }
             } else if (section === 'qc') {
                 if (entity.stage10Dispatch.name === "Queue" || entity.stage09Mailing.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
 
                     var newEntity = {
                         id: entity.id
@@ -267,18 +267,18 @@
 
                     var resourceUri = model.resourceUri.supervisor + '/QCPerso/revert/' + entity.id;
                     resourceService.saveResource(resourceUri, newEntity).then(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         refresh();
                     });
                 }
             } else if (section === 'ma') {
                 if (entity.stage10Dispatch.name === "Queue") {
-                    console.log(section + 'Can Revert');
+                    //console.log(section + 'Can Revert');
                 }
             } else if (section === 'dp') {
-                console.log(section);
+                //console.log(section);
                 if (entity.stage10MaterialAudit.name === "Queue" || entity.stage11CustomerService.name === "Queue") {
-                    //console.log(section + 'Can Revert');
+                    ////console.log(section + 'Can Revert');
                     
                     var newEntity = {
                         id: entity.id
@@ -286,7 +286,7 @@
 
                     var resourceUri = model.resourceUri.supervisor + '/DPPerso/revert/' + entity.id;
                     resourceService.saveResource(resourceUri, newEntity).then(function (response) {
-                        console.log(response);
+                        //console.log(response);
                         refresh();
                     });
 

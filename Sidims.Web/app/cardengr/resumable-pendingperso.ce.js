@@ -29,7 +29,7 @@
         function getResumableNewPersos(forceRefresh) {
             return datacontext.cardengrjob.getResumablePendingPersos(forceRefresh).then(function (data) {
                 vm.resumeNewPersos = data;
-                console.log(vm.resumeNewPersos);
+                //console.log(vm.resumeNewPersos);
                 return vm.resumeNewPersos;
             });
         }

@@ -28,7 +28,7 @@
         function getHeldCards(forceRefresh) {
             return datacontext.inventjob.getIncomingHeldPrints(forceRefresh).then(function (data) {
                 vm.heldcards = data;
-                console.log(vm.heldcards);
+                //console.log(vm.heldcards);
                 return vm.heldcards;
             });
         }
@@ -43,7 +43,7 @@
         function gotoJobDetails(entity) {
             if (entity && entity.id) {
 
-                console.log(entity);
+                //console.log(entity);
                 //$location.path('/in/held-card/' + entity.id)
             }
         }
@@ -60,11 +60,11 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.inventory + '/heldprint-receipt/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getHeldCards();               
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:" + response;
 			 });
         }
@@ -74,7 +74,7 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }

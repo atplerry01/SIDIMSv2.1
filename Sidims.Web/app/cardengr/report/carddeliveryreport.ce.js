@@ -28,7 +28,6 @@
         function getCardDeliveryReports(forceRefresh) {
             return datacontext.cardengrjob.getCECardDelivery(forceRefresh).then(function (data) {
                 vm.carddeliveryreports = data;
-                console.log(vm.carddeliveryreports);
                 return vm.carddeliveryreports;
             });
         }
@@ -36,7 +35,6 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }

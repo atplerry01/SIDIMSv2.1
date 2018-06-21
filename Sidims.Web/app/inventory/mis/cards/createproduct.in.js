@@ -47,7 +47,7 @@
             vm.sidClients = lookups.clients;
             vm.cardTypes = lookups.sidCardTypes;
 
-            console.log(vm.sidClients);
+            //console.log(vm.sidClients);
 
             var clientId = $routeParams.clientId;
             angular.forEach(vm.sidClients, function (todo, key) {
@@ -72,7 +72,7 @@
             if (vm.card.productName !== undefined) {
                 createEntity(vm.newEntity);
             } else {
-                console.log('null');
+                //console.log('null');
                 $scope.message = 'Error Product Name';
             }
             //

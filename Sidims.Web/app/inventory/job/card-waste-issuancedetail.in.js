@@ -34,12 +34,12 @@
 
         function getRequestedJob() {
             var val = $routeParams.wasteAnalysisId;
-            console.log(val);
+            //console.log(val);
             return datacontext.resourcejob.getCardWasteAnalysisById(val)
                 .then(function (data) {
                     vm.cardWaste = data;
-                    console.log(vm.cardWaste);
-                    console.log(vm.cardWaste.quantityBad);
+                    //console.log(vm.cardWaste);
+                    //console.log(vm.cardWaste.quantityBad);
                     vm.issuance.quantity = vm.cardWaste.quantityBad;
                     //getProductVariant(vm.jobTracker.jobId);
                     //getJobs();
@@ -59,7 +59,7 @@
 
         function save() {
           
-            console.log(vm.cardWaste);
+            //console.log(vm.cardWaste);
 
             vm.newEntity = {
                 id: vm.cardWaste.id,
@@ -70,7 +70,7 @@
                 WasteByUnitId: vm.cardWaste.wasteByUnitId,
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -81,7 +81,7 @@
                 $location.path('/in/waste-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save due to: "
                      + response.data.message;
 			 });
@@ -91,10 +91,10 @@
 
         function getProductVariant(jobId, forceRefresh) {
             return datacontext.resourcejob.getJobVariantByJobId(jobId, forceRefresh).then(function (data) {
-                console.log(data);
+                //console.log(data);
                 if (data.length !== 0) {
                     vm.jobVariants = data[0];
-                    console.log(vm.jobVariants);
+                    //console.log(vm.jobVariants);
                     vm.productName = true;
                 }
 
@@ -104,14 +104,14 @@
 
         function getClientVaultReport(forceRefresh) {
             var val = $routeParams.trackerId;
-            console.log(val);
+            //console.log(val);
             return datacontext.inventory.getClientVaultReportByTrackerId(val, forceRefresh).then(function (data) {
                 vm.clientVault = data;
 
                 if (vm.clientVault.length == 0) {
                     vm.createVault = true;
                 }
-                console.log(vm.clientVault);
+                //console.log(vm.clientVault);
                 return vm.clientVault;
             });
         }

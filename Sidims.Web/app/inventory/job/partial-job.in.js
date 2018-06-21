@@ -29,7 +29,7 @@
         function getPartialJobs(forceRefresh) {
             return datacontext.inventjob.getPartialJobs(forceRefresh).then(function (data) {
                 vm.partialJobs = data;
-                console.log(vm.partialJobs);
+                //console.log(vm.partialJobs);
                 return vm.partialJobs;
             });
         }
@@ -48,7 +48,7 @@
         function getInventoryUsers(forceRefresh) {
             return datacontext.inventaccount.getInventoryUsers(forceRefresh).then(function (data) {
                 vm.invusers = data;
-                console.log(vm.invusers);
+                //console.log(vm.invusers);
                 return vm.invusers;
             });
         }

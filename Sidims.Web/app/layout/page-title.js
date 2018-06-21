@@ -31,7 +31,7 @@
                function (event, current, previous) {
                    $scope.location = $location.path(); // '/Home'
                    angular.forEach(routes, function (todo) {
-                       console.log(todo.url);
+                       //console.log(todo.url);
                        if (todo.url == $scope.location) {
                            vm.title2 = todo.config.title;
                        }

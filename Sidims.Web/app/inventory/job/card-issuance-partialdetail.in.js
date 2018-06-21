@@ -47,7 +47,7 @@
                 }
             });
 
-            //console.log(todo);
+            ////console.log(todo);
         }
 
         function getRequestedJob() {
@@ -80,13 +80,13 @@
                 getCardEngrCollector();
             } else if (entity === 'Printing Only') {
                 // Load Printing
-                console.log('ok2');
+                //console.log('ok2');
             } else if (entity === 'Mailing Only') {
                 // Loading Mail
-                console.log('ok3');
+                //console.log('ok3');
             } else if (entity === 'Printing And Perso') {
                 // Loading Printing
-                console.log('ok4');
+                //console.log('ok4');
                 getCardEngrCollector();
             }
 

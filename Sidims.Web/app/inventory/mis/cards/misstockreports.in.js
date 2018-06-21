@@ -32,7 +32,7 @@
             var val = $routeParams.productId;
             return datacontext.inventory.getClientStockReports(val, forceRefresh).then(function (data) {
                 vm.stockrepots = data;
-                console.log(vm.stockrepots);
+                //console.log(vm.stockrepots);
                 return vm.stockrepots;
             });
         }

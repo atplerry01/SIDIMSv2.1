@@ -30,7 +30,7 @@
         function getWasteReports(forceRefresh) {
             return datacontext.inventory.getAllCardWasteReports(forceRefresh).then(function (data) {
                 vm.wastereports = data;
-                console.log(vm.wastereports);
+                //console.log(vm.wastereports);
                 return vm.wastereports;
             });
         }

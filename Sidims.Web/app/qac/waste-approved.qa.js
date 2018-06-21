@@ -29,21 +29,21 @@
         function initLookups() {
             var lookups = datacontext.lookup.lookupCachedData;
             vm.wasteErrorSources = lookups.wasteErrorSources;
-            console.log(lookups);
-            console.log(vm.wasteErrorSources);
+            //console.log(lookups);
+            //console.log(vm.wasteErrorSources);
 
         }
 
         function getApprovedWasteRequests(forceRefresh) {
             return datacontext.resourcejob.getIssuedWasteRequests(forceRefresh).then(function (data) {
                 vm.wasterequests = data;
-                console.log(vm.wasterequests);
+                //console.log(vm.wasterequests);
                 return vm.wasterequests;
             });
         }
 
         function confirmWaste(entity) {
-            console.log(entity);
+            //console.log(entity);
 
             // JobBadCardApproval
             var newEntity = {
@@ -58,13 +58,13 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/wasteapproval/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getQAWasteRequests();
                 //getSplitAnalysis();
                 //$location.path('/in/card-issuance/' + val);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:" + response;
 			 });
         }

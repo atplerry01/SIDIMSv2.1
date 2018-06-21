@@ -274,7 +274,6 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\CSController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\ImageUploadController - Copy.cs" />
     <Compile Include="Controllers\ImageUploadController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
     <Compile Include="Controllers\JobTrackersController.cs" />
@@ -331,6 +330,30 @@
     <Compile Include="Migrations\201805301043011_UpdateProductImage1.Designer.cs">
       <DependentUpon>201805301043011_UpdateProductImage1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806190728463_AddWasteLog.cs" />
+    <Compile Include="Migrations\201806190728463_AddWasteLog.Designer.cs">
+      <DependentUpon>201806190728463_AddWasteLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806190737448_AddWasteLog2.cs" />
+    <Compile Include="Migrations\201806190737448_AddWasteLog2.Designer.cs">
+      <DependentUpon>201806190737448_AddWasteLog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806190742192_AddWasteLog3.cs" />
+    <Compile Include="Migrations\201806190742192_AddWasteLog3.Designer.cs">
+      <DependentUpon>201806190742192_AddWasteLog3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201447096_UpdateWasteLog.cs" />
+    <Compile Include="Migrations\201806201447096_UpdateWasteLog.Designer.cs">
+      <DependentUpon>201806201447096_UpdateWasteLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201514067_UpdateWasteLog2.cs" />
+    <Compile Include="Migrations\201806201514067_UpdateWasteLog2.Designer.cs">
+      <DependentUpon>201806201514067_UpdateWasteLog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201554596_UpdateWasteLog3.cs" />
+    <Compile Include="Migrations\201806201554596_UpdateWasteLog3.Designer.cs">
+      <DependentUpon>201806201554596_UpdateWasteLog3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\CardAnalysisModel.cs" />
@@ -379,7 +402,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="uploads\" />
-    <Folder Include="_Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SID.Common.Model\SID.Common.Model.csproj">
@@ -405,6 +427,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805301043011_UpdateProductImage1.resx">
       <DependentUpon>201805301043011_UpdateProductImage1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806190728463_AddWasteLog.resx">
+      <DependentUpon>201806190728463_AddWasteLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806190737448_AddWasteLog2.resx">
+      <DependentUpon>201806190737448_AddWasteLog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806190742192_AddWasteLog3.resx">
+      <DependentUpon>201806190742192_AddWasteLog3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201447096_UpdateWasteLog.resx">
+      <DependentUpon>201806201447096_UpdateWasteLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201514067_UpdateWasteLog2.resx">
+      <DependentUpon>201806201514067_UpdateWasteLog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201554596_UpdateWasteLog3.resx">
+      <DependentUpon>201806201554596_UpdateWasteLog3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

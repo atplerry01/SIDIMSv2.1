@@ -33,14 +33,14 @@
             vm.wasteErrorSources = lookups.wasteErrorSources;
             vm.wasteErrorSourceCodes = lookups.wasteErrorSourceCodes;
             vm.departments = lookups.departments;
-            console.log(lookups);
-            console.log(vm.wasteErrorSources);
+            //console.log(lookups);
+            //console.log(vm.wasteErrorSources);
         }
 
         function getQAWasteRequests(forceRefresh) {
             return datacontext.resourcejob.getPrintQAWasteRequests(forceRefresh).then(function (data) {
                 vm.wasterequests = data;
-                console.log(vm.wasterequests);
+                //console.log(vm.wasterequests);
                 return vm.wasterequests;
             });
         }
@@ -74,18 +74,18 @@
                 QuantityHeld: entity.quantityHeld
             };
 
-            //console.log(newEntity);
+            ////console.log(newEntity);
             createEntity(newEntity);
         }
 
         function createEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/printwasteapproval/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getQAWasteRequests();
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:" + response;
 			 });
         }
@@ -94,7 +94,7 @@
 
 
         function updateErrorCode(entity) {
-            console.log(vm.wasteErrorSourceCodes);
+            //console.log(vm.wasteErrorSourceCodes);
 
             vm.newWasteInfo = [];
             var uid = entity.id;
@@ -105,7 +105,7 @@
                 }
             });
 
-            console.log(vm.newWasteInfo);
+            //console.log(vm.newWasteInfo);
         }
     
     }

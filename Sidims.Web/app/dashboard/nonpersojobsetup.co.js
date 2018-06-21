@@ -60,7 +60,7 @@
                 return datacontext.resourcejob.getByNonPersoJobId(val)
                 .then(function (data) {
                     vm.nonPersoJob = data;
-                    console.log(vm.nonPersoJob);
+                    //console.log(vm.nonPersoJob);
                     initLookups();
                     return vm.nonPersoJob;
                 }, function (error) {
@@ -99,7 +99,7 @@
                 jobType: 'NonPerso'
             };
 
-            console.log(vm.newJob);
+            //console.log(vm.newJob);
             createEntity(vm.newJob);
         }
 
@@ -120,7 +120,7 @@
 			     }
 			     $scope.message = "Failed to save resource due to:" + errors.join(' ');
 
-			     console.log(response);
+			     //console.log(response);
                  //Todo: Please remove the method
 			     //gotoJobStatus();
 			 });

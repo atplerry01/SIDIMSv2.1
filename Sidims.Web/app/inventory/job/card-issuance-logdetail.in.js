@@ -36,7 +36,7 @@
             var val = $routeParams.id;
             return datacontext.inventjob.getCardIssuanceLogs(val, forceRefresh).then(function (data) {
                 vm.cardissuancelogs = data;
-                console.log(vm.cardissuancelogs);
+                //console.log(vm.cardissuancelogs);
                 return vm.cardissuancelogs;
             });
         }
@@ -44,7 +44,7 @@
         function getCardIssuances(forceRefresh) {
             return datacontext.inventjob.getCardIssuances(forceRefresh).then(function (data) {
                 vm.cardissuances = data;
-                console.log(vm.cardissuances);
+                //console.log(vm.cardissuances);
                 return vm.cardissuances;
             });
         }
@@ -59,7 +59,7 @@
         function getInventoryUsers(forceRefresh) {
             return datacontext.inventaccount.getInventoryUsers(forceRefresh).then(function (data) {
                 vm.invusers = data;
-                console.log(vm.invusers);
+                //console.log(vm.invusers);
                 return vm.invusers;
             });
         }
@@ -80,7 +80,7 @@
                 }
             });
 
-            //console.log(todo);
+            ////console.log(todo);
         }
 
         function getRequestedJob() {
@@ -113,13 +113,13 @@
                 getCardEngrCollector();
             } else if (entity === 'Printing Only') {
                 // Load Printing
-                console.log('ok2');
+                //console.log('ok2');
             } else if (entity === 'Mailing Only') {
                 // Loading Mail
-                console.log('ok3');
+                //console.log('ok3');
             } else if (entity === 'Printing And Perso') {
                 // Loading Printing
-                console.log('ok4');
+                //console.log('ok4');
                 getCardEngrCollector();
             }
 

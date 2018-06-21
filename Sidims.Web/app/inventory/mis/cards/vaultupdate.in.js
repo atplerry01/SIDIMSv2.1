@@ -35,7 +35,7 @@
                 quantity: vm.issuance.quantity
             };
 
-            //console.log(vm.newEntity);
+            ////console.log(vm.newEntity);
             createProductVault(vm.newEntity);
         }
 
@@ -43,7 +43,7 @@
          
             var resourceUri = model.resourceUri.inventory + '/directcard/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 $location.path('/in/mis/card/mis-reports')
                 //getClientVaultReport();
                 //vm.createVault = false;

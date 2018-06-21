@@ -40,7 +40,7 @@
         function getVariants(forceRefresh) {
             return datacontext.cardopslookup.getVariants(forceRefresh).then(function (data) {
                 vm.variants = data;
-                console.log(vm.variants);
+                //console.log(vm.variants);
                 return vm.variants;
             });
         }
@@ -53,7 +53,7 @@
                 return datacontext.cardopslookup.getVariantById(val)
                 .then(function (data) {
                     vm.variant = data;
-                    console.log(vm.variant);
+                    //console.log(vm.variant);
                 }, function (error) {
                     logError('Unable to get variant ' + val);
                 });

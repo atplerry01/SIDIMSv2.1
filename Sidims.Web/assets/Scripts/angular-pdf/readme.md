@@ -147,7 +147,7 @@ Check [`bower.json` file](https://github.com/sayanee/angularjs-pdf/blob/master/b
 	```js
 	$scope.onError = function(error) {
     	// handle the error
-    	// console.log(error);
+    	// //console.log(error);
   	}
 	```
 
@@ -172,7 +172,7 @@ Check [`bower.json` file](https://github.com/sayanee/angularjs-pdf/blob/master/b
 	$scope.onProgress = function(progress) {
 		// handle a progress bar
     	// progress% = progress.loaded / progress.total
-    	// console.log(progress);
+    	// //console.log(progress);
   }
   ```
 

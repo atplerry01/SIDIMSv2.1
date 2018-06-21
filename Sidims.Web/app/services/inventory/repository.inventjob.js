@@ -30,14 +30,10 @@
             this.getCardIssuanceLogByTrackerId = getCardIssuanceLogByTrackerId;
             this.getAllCardIssuanceLogs = getAllCardIssuanceLogs;
             this.getPartialJobs = getPartialJobs;
-            //this.getCardWasteJobs = getCardWasteJobs;
             this.getIncomingHeldCards = getIncomingHeldCards;
             this.getIncomingHeldPrints = getIncomingHeldPrints;
             this.getCESplitAnalysis = getCESplitAnalysis;
             this.getCESplitAnalysisHeldCard = getCESplitAnalysisHeldCard;
-
-            //this.getIncomingCEJobSplitByJobTrackerId = getIncomingCEJobSplitByJobTrackerId;
-
             this.getApprovedCardWastes = getApprovedCardWastes;
             this.getApprovedPrintWastes = getApprovedPrintWastes;
 
@@ -65,15 +61,13 @@
             var orderBy;
 
             return EntityQuery.from('InventoryJobs')
-                .select('id, jobName, sidClientId, serviceTypeId, remark, quantity')
+                .select('id, jobName, sidClientId, serviceTypeId, remarkId, quantity')
                 .toType('Job')
                 .using(self.manager).execute()
                 .then(querySucceeded, self._queryFailed);
 
             function querySucceeded(data) {
                 entity = data.results;
-                self._areItemsLoaded(true);
-                //self.log('Retrieved [Job Partials] from remote data source', entity.length, true);
                 return entity;
             }
         }
@@ -150,8 +144,6 @@
 
             function querySucceeded(data) {
                 entity = data.results;
-                self._areItemsLoaded(true);
-                //self.log('Retrieved [Issuance Log Partials] from remote data source', entity.length, true);
                 return entity;
             }
         }

@@ -99,7 +99,7 @@
                .then(success);
                 return primePromise;
             } else {
-                console.log(page);
+                //console.log(page);
             }
 
             if (page) {
@@ -184,7 +184,7 @@
                 return primePromise;
 
             } else if (page == 'Admin') {
-                console.log('Admin');
+                //console.log('Admin');
             } else if (page == 'Inventory') {
 
                 primePromise = $q.all([

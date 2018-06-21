@@ -69,13 +69,13 @@
             return datacontext.inventory.getClientProducts2(val, forceRefresh)
                 .then(function (data) {
                     vm.products = data;
-                    console.log(vm.products);
+                    //console.log(vm.products);
                     return data;
                 });
         }
 
         function gotoclientProductDetails(entity) {
-            console.log($routeParams);
+            //console.log($routeParams);
 
             var clientId = $routeParams.id;
             var productId = $routeParams.productId;
@@ -88,7 +88,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }

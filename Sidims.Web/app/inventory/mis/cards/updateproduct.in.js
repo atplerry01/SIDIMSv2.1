@@ -63,7 +63,7 @@
                 .then(function (data) {
                     vm.product = data;
                     initLookups(vm.product.sidClientId);
-                    console.log(vm.product);
+                    //console.log(vm.product);
                 }, function (error) {
                     logError('Unable to get Product ' + val);
                 });
@@ -78,7 +78,7 @@
                 shortCode: vm.product.shortCode,
             };
 
-            //console.log(vm.newEntity);
+            ////console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -86,11 +86,11 @@
             var clientId = $routeParams.clientId;
             var resourceUri = model.resourceUri.inventory + '/sidproduct/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 $location.path('in/mis/card/client/' + response.data.sidClientId + '/products')
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
 			     $scope.message = "Failed to save due to: " + response.data.message;
 			 });
         }

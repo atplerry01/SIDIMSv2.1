@@ -29,7 +29,7 @@
         function getIncomingJobs(forceRefresh) {
             return datacontext.inventjob.getIncomingJobs(forceRefresh).then(function (data) {
                 vm.incomingJobs = data;
-                console.log(vm.incomingJobs);
+                //console.log(vm.incomingJobs);
                 return vm.incomingJobs;
             });
         }

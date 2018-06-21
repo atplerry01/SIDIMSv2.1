@@ -28,7 +28,6 @@
         function getIncomingPersos(forceRefresh) {
             return datacontext.cardengrjob.getIncomingPersos(forceRefresh).then(function (data) {
                 vm.incomingPersos = data;
-                console.log(vm.incomingPersos);
                 return vm.incomingPersos;
             });
         }

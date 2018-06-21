@@ -50,7 +50,7 @@
                 return datacontext.cardopslookup.getRemarkById(val)
                 .then(function (data) {
                     vm.remark = data;
-                    console.log(vm.remark);
+                    //console.log(vm.remark);
 
                 }, function (error) {
                     logError('Unable to get Remark ' + val);

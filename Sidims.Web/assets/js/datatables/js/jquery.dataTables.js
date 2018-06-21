@@ -310,7 +310,7 @@
 				newKey = key.replace( match[0], match[2].toLowerCase() );
 				map[ newKey ] = key;
 	
-				//console.log( key, match );
+				////console.log( key, match );
 				if ( match[1] === 'o' )
 				{
 					_fnHungarianMap( o[key] );
@@ -4946,8 +4946,8 @@
 				throw new Error(msg);
 			}
 		}
-		else if ( window.console && console.log ) {
-			console.log( msg );
+		else if ( window.console && //console.log ) {
+			//console.log( msg );
 		}
 	}
 	
@@ -5107,7 +5107,7 @@
 			$(settings.nTable).trigger( e+'.dt', args );
 		}
 		
-		console.log( e );
+		//console.log( e );
 	
 		return ret;
 	}

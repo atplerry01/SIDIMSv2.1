@@ -27,9 +27,9 @@
 
         // upload later on form submit or something similar
         $scope.submit = function () {
-            console.log('enter');
+            //console.log('enter');
             if ($scope.file) {
-                console.log($scope.file);
+                //console.log($scope.file);
                 $scope.upload($scope.file);
             }
         };
@@ -41,12 +41,12 @@
                 data: { file: file }
             }).then(function (resp) {
                 getProductImage($routeParams.productId);
-                console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+                //console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
             }, function (resp) {
-                console.log('Error status: ' + resp.status);
+                //console.log('Error status: ' + resp.status);
             }, function (evt) {
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+                //console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
             });
         };
 
@@ -99,7 +99,7 @@
                 .then(function (data) {
                     vm.productImage = data[0];
                     vm.productImagePath = serviceBase + 'uploads/' + vm.productImage.imageName;
-                    console.log(vm.productImagePath);
+                    //console.log(vm.productImagePath);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });
@@ -109,11 +109,11 @@
             var clientId = $routeParams.clientId;
             var resourceUri = model.resourceUri.inventory + '/sidproduct/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 $location.path('in/mis/card/client/' + response.data.sidClientId + '/products')
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
 			     $scope.message = "Failed to save due to: " + response.data.message;
 			 });
         }

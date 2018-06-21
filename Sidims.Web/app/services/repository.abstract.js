@@ -65,7 +65,7 @@
 
             if (!forceRemote) {
                 // check cache first
-                console.log('entityName:' + entityName);
+                ////console.log('entityName:' + entityName);
                 var entity = manager.getEntityByKey(entityName, id);
                 if (entity && !entity.isPartial) {
                     //self.log('Retrieved [' + entityName + '] id:' + entity.id + ' from cache.', entity, true);

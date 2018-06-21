@@ -31,7 +31,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }
@@ -42,7 +42,7 @@
             return datacontext.resourcejob.getJobTrackerByJobId(val)
                 .then(function (data) {
                     vm.jobTracker = data;
-                    console.log(vm.jobTracker);
+                    //console.log(vm.jobTracker);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });

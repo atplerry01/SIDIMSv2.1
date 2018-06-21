@@ -284,7 +284,7 @@
                 publish(response);
 
                 if (options.debug && console) {
-                    console.log(response);
+                    //console.log(response);
                 }
 
                 return $toastElement;

@@ -49,7 +49,7 @@
             return datacontext.resourcejob.getJobTrackerById(val, forceRefresh).then(function (data) {
                 vm.jobTracker = data;
 
-                console.log(vm.jobTracker);
+                //console.log(vm.jobTracker);
 
                 getProductVariant(vm.jobTracker.jobId);
                 getJobByTrackerId();
@@ -134,7 +134,7 @@
         function getJobSplitCEAnalysis(val, forceRefresh) {
             return datacontext.resourcejob.getJobSplitCEAnalysisByJobTrackerId(val, forceRefresh).then(function (data) {
                 vm.jobsplitceanalysis = data;
-                console.log(vm.jobsplitceanalysis);
+                //console.log(vm.jobsplitceanalysis);
                 return vm.jobsplitceanalysis;
             });
         }
@@ -169,7 +169,7 @@
 
         function getProductVariant(jobId, forceRefresh) {
             return datacontext.resourcejob.getJobVariantByJobId(jobId, forceRefresh).then(function (data) {
-                console.log(data);
+                //console.log(data);
                 if (data.length !== 0) {
                     vm.jobVariants = data[0];
                     vm.productName = true;
@@ -201,7 +201,7 @@
 
         function getClientVaultReport(forceRefresh) {
             var val = $routeParams.trackerId;
-            console.log(val);
+            //console.log(val);
             return datacontext.inventory.getClientVaultReportByTrackerId(val, forceRefresh).then(function (data) {
                 vm.clientVault = data;
 
@@ -215,7 +215,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }
@@ -225,7 +225,7 @@
             angular.forEach(vm.department, function (todo, key) {
                 if (todo.name === 'Mailing') {
                     vm.mailingDepartment.push(todo);
-                    console.log(vm.mailingDepartment);
+                    //console.log(vm.mailingDepartment);
                 }
             });
         }

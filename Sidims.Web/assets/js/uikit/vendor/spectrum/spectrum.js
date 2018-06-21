@@ -104,11 +104,11 @@
     var log = function() { };
     if (window.console) {
       if (Function.prototype.bind) {
-        log = Function.prototype.bind.call(console.log, console);
+        log = Function.prototype.bind.call(//console.log, console);
       }
       else {
         log = function() {
-          Function.prototype.apply.call(console.log, console, arguments);
+          Function.prototype.apply.call(//console.log, console, arguments);
         };
       }
     }

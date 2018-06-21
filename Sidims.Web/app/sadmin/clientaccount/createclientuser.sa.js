@@ -54,7 +54,7 @@
                 $location.path('sa/client/' + $routeParams.clientId + '/userlist');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 
@@ -69,7 +69,7 @@
                 vm.user = {};
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 
@@ -80,8 +80,8 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
-                console.log(vm.jobTracker.job);
+                //console.log(vm.jobs);
+                //console.log(vm.jobTracker.job);
 
                 // setups all requested items
                 vm.cardsetup = {

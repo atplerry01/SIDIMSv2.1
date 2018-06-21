@@ -54,7 +54,7 @@
             return datacontext.resourcejob.getJobBatchTrackerById(val)
                 .then(function (data) {
                     vm.jobBatchTracker = data;
-                    console.log(vm.jobBatchTracker);
+                    //console.log(vm.jobBatchTracker);
                     getJobIssuanceLog(vm.jobBatchTracker.jobTrackerId);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
@@ -85,7 +85,7 @@
                 $location.path('/pr/incoming-print');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {
@@ -107,7 +107,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }
@@ -125,7 +125,7 @@
             return datacontext.inventjob.getAllCardIssuanceLogs()
                 .then(function (data) {
                     vm.allIssuanceLogs = data;
-                    console.log(vm.allIssuanceLogs);
+                    //console.log(vm.allIssuanceLogs);
                 }, function (error) {
                     logError('Unable to get CardIssuanceLog ' + val);
                 });
@@ -134,7 +134,7 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }

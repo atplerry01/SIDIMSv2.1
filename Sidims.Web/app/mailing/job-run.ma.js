@@ -86,7 +86,7 @@
             return datacontext.resourcejob.getJobSplitByJobTrackerId(entityId)
                 .then(function (data) {
                     vm.jobSplits = data;
-                    console.log(vm.jobSplits);
+                    //console.log(vm.jobSplits);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });
@@ -95,9 +95,9 @@
         function getBatchTracker(entityId) {
             return datacontext.resourcejob.getJobBatchTrackerByTrackerId(entityId)
                 .then(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     vm.jobBatchTracker = data[0];
-                    console.log(vm.jobBatchTracker);
+                    //console.log(vm.jobBatchTracker);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });
@@ -188,16 +188,16 @@
             createEntity(newObject);
         }
         function createEntity(entity) {
-            console.log(entity);
+            //console.log(entity);
 
             var resourceUri = model.resourceUri.ma + '/MailingSplitCard/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 //vm.cardreceipt = {};
                 $location.path('/ma/incoming-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to";
 			 });
         }
@@ -209,7 +209,7 @@
             var val = $routeParams.trackerId;
             return datacontext.inventjob.getCardIssuanceLogByTrackerId(val, forceRefresh).then(function (data) {
                 vm.cardissuancelogs = data;
-                console.log(vm.cardissuancelogs);
+                //console.log(vm.cardissuancelogs);
                 return vm.cardissuancelogs;
             });
         }

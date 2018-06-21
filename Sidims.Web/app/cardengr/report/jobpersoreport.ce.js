@@ -38,7 +38,7 @@
             return datacontext.resourcejob.getJobSplitCEAnalysisByDepartment(department, forceRefresh).then(function (data) {
                 vm.splitceanalysis = data;
                
-                console.log(vm.splitceanalysis);
+                //console.log(vm.splitceanalysis);
                 return vm.splitceanalysis;
             });
         }
@@ -68,7 +68,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }

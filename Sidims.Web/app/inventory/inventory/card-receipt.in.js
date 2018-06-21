@@ -28,7 +28,7 @@
         function getCardReceipts(forceRefresh) {
             return datacontext.inventory.getEmbedCardReceipts(forceRefresh).then(function (data) {
                 vm.cardreceipts = data;
-                console.log(vm.cardreceipts);
+                //console.log(vm.cardreceipts);
                 return vm.cardreceipts;
             });
         }

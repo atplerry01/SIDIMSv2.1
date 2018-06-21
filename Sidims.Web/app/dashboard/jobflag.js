@@ -40,13 +40,13 @@
             var val = $routeParams.trackerId;
             return datacontext.resourcejob.getJobTrackerById(val, forceRefresh).then(function (data) {
                 vm.jobTracker = data;
-                console.log(vm.jobTracker);
+                //console.log(vm.jobTracker);
                 return vm.jobTracker;
             });
         }
 
         function save() {
-            console.log(vm.flag.department);
+            //console.log(vm.flag.department);
             var newFlag = {
                 jobTrackerId: $routeParams.trackerId,
                 targetUnitId: vm.flag.department.id,
@@ -55,7 +55,7 @@
                 recommendation: vm.flag.recommendation
             };
 
-            console.log(newFlag);
+            //console.log(newFlag);
             createEntity(newFlag);
         }
 
@@ -67,7 +67,7 @@
                 $location.path('/job/audit-trail/' + $routeParams.trackerId);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save due to: "
                      + response.data.message;
 			 });

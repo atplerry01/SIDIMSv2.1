@@ -29,7 +29,7 @@
         function getReceiptLogReports(forceRefresh) {
             return datacontext.inventory.AllCardReceiptReports(forceRefresh).then(function (data) {
                 vm.receiptrepots = data;
-                console.log(vm.receiptrepots);
+                //console.log(vm.receiptrepots);
                 return vm.receiptrepots;
             });
         }

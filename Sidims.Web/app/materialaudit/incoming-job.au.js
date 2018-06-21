@@ -29,7 +29,7 @@
         function getIncomingJobs(forceRefresh) {
             return datacontext.materialaudit.getIncomingJobs(forceRefresh).then(function (data) {
                 vm.incomingJobs = data;
-                console.log(vm.incomingJobs);
+                //console.log(vm.incomingJobs);
                 return vm.incomingJobs;
             });
         }
@@ -44,7 +44,7 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }

@@ -40,7 +40,7 @@
             return datacontext.inventjob.getCardIssuanceById(val)
                 .then(function (data) {
                     vm.cardIssuance = data;
-                    console.log(vm.cardIssuance);
+                    //console.log(vm.cardIssuance);
                     getProductVariant(vm.cardIssuance.jobId);
                     getJobs();
                 }, function (error) {
@@ -50,10 +50,10 @@
 
         function getProductVariant(jobId, forceRefresh) {
             return datacontext.resourcejob.getJobVariantByJobId(jobId, forceRefresh).then(function (data) {
-                console.log(data);
+                //console.log(data);
                 if (data.length !== 0) {
                     vm.jobVariants = data[0];
-                    console.log(vm.jobVariants);
+                    //console.log(vm.jobVariants);
                     vm.productName = true;
                 }
                 return vm.jobVariants;
@@ -92,7 +92,7 @@
                 $location.path('/in/partial-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save due to: "
                      + response.data.message;
 			 });
@@ -103,14 +103,14 @@
    
         function getClientVaultReport(forceRefresh) {
             var val = $routeParams.trackerId;
-            console.log(val);
+            //console.log(val);
             return datacontext.inventory.getClientVaultReportByTrackerId(val, forceRefresh).then(function (data) {
                 vm.clientVault = data;
 
                 if (vm.clientVault.length == 0) {
                     vm.createVault = true;
                 }
-                console.log(vm.clientVault);
+                //console.log(vm.clientVault);
                 return vm.clientVault;
             });
         }

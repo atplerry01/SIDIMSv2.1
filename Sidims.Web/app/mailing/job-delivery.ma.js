@@ -27,7 +27,7 @@
         function getPendingDeliveryJob(forceRefresh) {
             return datacontext.mailingjob.getMAPendingDeliverys(forceRefresh).then(function (data) {
                 vm.pendingjobs = data;
-                console.log(vm.pendingjobs);
+                //console.log(vm.pendingjobs);
                 return vm.pendingjobs;
             });
 
@@ -36,7 +36,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }

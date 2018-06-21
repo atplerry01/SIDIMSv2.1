@@ -181,6 +181,7 @@
             // Dispatch
             dispatch.addItem('Incoming Jobs', '/in/dispatch/incoming-jobs', 'fa-angle-right');
             dispatch.addItem('Delivery Reports', '/in/dispatch/delivery-reports', 'fa-angle-right');
+            dispatch.addItem('Waste Reports', '/in/dispatch/waste-reports', 'fa-angle-right');
 
             // MIS Report
             var miscard = mis.addItem('Embedded Cards', '/in/MIS/cards');
@@ -231,6 +232,7 @@
             // Dispatch
             dispatch.addItem('Incoming Jobs', '/in/dispatch/incoming-jobs', 'fa-angle-right');
             dispatch.addItem('Delivery Reports', '/in/dispatch/delivery-reports', 'fa-angle-right');
+            dispatch.addItem('Waste Reports', '/in/dispatch/waste-reports', 'fa-angle-right');
 
             // MIS Report
             var miscard = mis.addItem('Embedded Cards', '/in/MIS/cards');
@@ -534,9 +536,7 @@
 
             //// Subitems of Jobs
             maudits.addItem('Incoming Jobs', '/cs/incoming-jobs', 'fa-angle-right');
-            maudits.addItem('Pending', '/student/accounts/students', 'fa-angle-right');
-            maudits.addItem('Verified', '/student/accounts/students', 'fa-angle-right');
-
+          
         }
 
         this.createCSSupervisorMenu = function () {

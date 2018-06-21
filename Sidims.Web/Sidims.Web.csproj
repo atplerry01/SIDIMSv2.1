@@ -117,6 +117,12 @@
     <Content Include="app\cardops\job\jobsetupupdate.co.js" />
     <Content Include="app\cardops\lookup\dictionary.co.html" />
     <Content Include="app\cardops\lookup\dictionary.co.js" />
+    <Content Include="app\inventory\dispatch\client-waste.dp.html" />
+    <Content Include="app\inventory\dispatch\client-waste.dp.js" />
+    <Content Include="app\inventory\dispatch\waste-report.dp.html" />
+    <Content Include="app\inventory\dispatch\waste-report.dp.js" />
+    <Content Include="app\inventory\dispatch\waste-reportdetail.dp.html" />
+    <Content Include="app\inventory\dispatch\waste-reportdetail.dp.js" />
     <Content Include="app\inventory\job\card-productdetail.in.html" />
     <Content Include="app\inventory\job\card-productdetail.in.js" />
     <Content Include="app\inventory\mis\cards\update-client.in.html" />
@@ -127,6 +133,7 @@
     <Content Include="app\inventory\mis\cards\updateproductimage.in.js" />
     <Content Include="app\inventory\mis\cards\updateproduct.in.html" />
     <Content Include="app\inventory\mis\cards\updateproduct.in.js" />
+    <Content Include="app\printing\printdetail.pr - Copy.html" />
     <Content Include="app\qac\job-check.qa - Copy.html" />
     <Content Include="app\qac\pending-perso.qc.html" />
     <Content Include="app\qac\pending-perso.qc.js" />
@@ -287,8 +294,6 @@
     <Content Include="app\printing\printanalysisdetail.pr.js" />
     <Content Include="app\printing\printanalysis.pr.js" />
     <Content Include="app\printing\printanalysis.pr.html" />
-    <Content Include="app\printing\printdetail.pr - Copy.html" />
-    <Content Include="app\printing\printdetail.pr - Copy.js" />
     <Content Include="app\qac\cardcompleteddelivery.qc.html" />
     <Content Include="app\qac\cardcompleteddelivery.qc.js" />
     <Content Include="app\qac\cardcompleteddeliverydetail.qc.html" />

@@ -103,7 +103,6 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
                 return vm.users;
             });
         }

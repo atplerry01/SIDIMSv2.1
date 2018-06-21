@@ -109,12 +109,8 @@
             });
         }
 
-        function refreshDeliveryLog() {
-            //getCECardDeliverables();
-        }
-
         function getCardIssuanceLogs(entityId, forceRefresh) {
-            return datacontext.inventjob.getCardIssuanceLogs(entityId, forceRefresh).then(function (data) {
+            return datacontext.inventjob.getCardIssuanceLogByTrackerId(entityId).then(function (data) {
                 vm.cardissuancelogs = data;
                 return vm.cardissuancelogs;
             });
@@ -217,9 +213,9 @@
 
             //Todo: plus heldcard
             if (newQty > vm.cardIssuance.totalQuantityIssued) {
-                console.log('Quantity Surpass');
+                //console.log('Quantity Surpass');
             } else {
-                console.log('Ok');
+                //console.log('Ok');
             }
 
             deliveryCreateEntity(entity);
@@ -254,7 +250,7 @@
                 //getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -282,7 +278,7 @@
                 getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 

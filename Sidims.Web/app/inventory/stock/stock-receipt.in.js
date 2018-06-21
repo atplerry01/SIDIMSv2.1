@@ -35,7 +35,7 @@
             
             return datacontext.inventory.getEmbedCardRequestByProducts(val, forceRefresh).then(function (data) {
                 vm.cardrequests = data;
-                console.log(vm.cardrequests)
+                //console.log(vm.cardrequests)
                 return vm.cardrequests;
             });
         }
@@ -64,7 +64,7 @@
 
             return datacontext.inventory.getProductById(val, forceRefresh).then(function (data) {
                 vm.product = data;
-                console.log(vm.product);
+                //console.log(vm.product);
                 return vm.product;
             });
         }
@@ -85,7 +85,7 @@
 
             return datacontext.inventory.getClientStockReports(val, forceRefresh).then(function (data) {
                 vm.clientstockreports = data;
-                console.log(vm.clientstockreports);
+                //console.log(vm.clientstockreports);
                 return vm.clientstockreports;
             });
         }
@@ -106,7 +106,7 @@
         function getProducts(forceRefresh) {
             return datacontext.inventory.getAllClientProducts(forceRefresh).then(function (data) {
                 vm.clientProducts = data;
-                console.log(vm.clientProducts);
+                //console.log(vm.clientProducts);
                 return vm.clientProducts;
             });
         }
@@ -121,7 +121,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }

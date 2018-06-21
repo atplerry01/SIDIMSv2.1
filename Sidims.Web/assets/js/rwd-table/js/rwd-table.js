@@ -403,7 +403,7 @@
                 that.$dropdownContainer.append($toggle);
 
                 $toggle.click(function(){
-                    // console.log("cliiiick!");
+                    // //console.log("cliiiick!");
                     $checkbox.prop('checked', !$checkbox.prop('checked'));
                     $checkbox.trigger('change');
                 });
@@ -572,8 +572,8 @@
                 $cell.hide(); //just in case
             }
 
-            // console.log('numOfHidden: ' + numOfHidden);
-            // console.log("new colSpan:" +Math.max((colSpan - numOfHidden),1));
+            // //console.log('numOfHidden: ' + numOfHidden);
+            // //console.log("new colSpan:" +Math.max((colSpan - numOfHidden),1));
 
             //update colSpan to match number of visible columns that i belongs to
             $cell.prop('colSpan',Math.max((colSpan - numOfHidden),1));

@@ -42,7 +42,7 @@
         function getVariants(forceRefresh) {
             return datacontext.cardopslookup.getVariants(forceRefresh).then(function (data) {
                 vm.variants = data;
-                console.log(vm.variants);
+                //console.log(vm.variants);
                 return vm.variants;
             });
         }
@@ -96,7 +96,7 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.lookups + '/variant/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 vm.variant = {};
                 getVariants();
             },

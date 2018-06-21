@@ -77,7 +77,6 @@
         function getJobTrackerCount() {
             return datacontext.resourcejob.getJobTrackerCount()
                 .then(function (data) {
-                    console.log(data);
                     return vm.jobTrackerCount = data;
                 });
         }

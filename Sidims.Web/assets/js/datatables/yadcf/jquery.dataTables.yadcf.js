@@ -1308,7 +1308,7 @@ var yadcf = (function ($) {
 				if (filter_container_id === undefined) {
 					//Can't show filter inside a column for a hidden one (place it outside using filter_container_id) 
 					if (oTable.fnSettings().aoColumns[column_number].bVisible === false) {
-						//console.log('Yadcf warning: Can\'t show filter inside a column N#' + column_number + ' for a hidden one (place it outside using filter_container_id)');
+						////console.log('Yadcf warning: Can\'t show filter inside a column N#' + column_number + ' for a hidden one (place it outside using filter_container_id)');
 						continue;
 					}
 					col_num_visible = column_number;
@@ -2148,7 +2148,7 @@ var yadcf = (function ($) {
 					}, 10);
 					break;
 				default:
-					console.log('exFilterColumn is not supported for ' + optionsObj.filter_type);
+					//console.log('exFilterColumn is not supported for ' + optionsObj.filter_type);
 					break;
 				}
 			}

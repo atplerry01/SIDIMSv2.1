@@ -7,6 +7,11 @@ namespace SID.Common.Model.Inventory
 {
     public class JobWaste
     {
+        public JobWaste()
+        {
+            IsDispatch = false;
+        }
+
         public int Id { get; set; }
         public int JobId { get; set; }
         public int WasteTypeId { get; set; }
@@ -14,7 +19,7 @@ namespace SID.Common.Model.Inventory
         public int TotalWasteQuantity { get; set; }
         public int PendingWasteQuantity { get; set; }
         public string CreatedById { get; set; }
-
+        public bool IsDispatch { get; set; }
 
         [ForeignKey("JobId")]
         public virtual Job Job { get; set; }

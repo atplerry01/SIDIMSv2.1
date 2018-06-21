@@ -30,7 +30,7 @@
         function getDispatchReports(forceRefresh) {
             return datacontext.dispatchjob.getAllDispatchDelivery(forceRefresh).then(function (data) {
                 vm.dispatchreports = data;
-                console.log(vm.dispatchreports);
+                //console.log(vm.dispatchreports);
                 return vm.dispatchreports;
             });
         }

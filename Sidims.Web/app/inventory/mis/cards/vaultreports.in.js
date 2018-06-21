@@ -29,7 +29,7 @@
         function getVaultReports(forceRefresh) {
             return datacontext.inventory.AllClientVaultReports(forceRefresh).then(function (data) {
                 vm.vaultrepots = data;
-                console.log(vm.vaultrepots);
+                //console.log(vm.vaultrepots);
                 return vm.vaultrepots;
             });
         }

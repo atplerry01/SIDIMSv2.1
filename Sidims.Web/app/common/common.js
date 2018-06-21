@@ -59,7 +59,7 @@
 
         function createSearchThrottle(viewmodel, list, filteredList, filter, delay) {
            
-            console.log(viewmodel)
+            //console.log(viewmodel)
             // custom delay or use default
             delay = +delay || 300;
             // if only vm and list parameters were passed, set others by naming convention 

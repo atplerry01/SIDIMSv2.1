@@ -237,7 +237,7 @@
                 .then(querySucceeded, self._queryFailed);
 
             function querySucceeded(data) {
-                console.log(data);
+                //console.log(data);
                 entity = data.results;
                 //self.log('Retrieved [Client Partials] from remote data source', entity.length, true);
                 return entity;
@@ -269,7 +269,7 @@
             var entity = [];
             var orderBy;
             
-            console.log(clientId);
+            //console.log(clientId);
 
             return EntityQuery.from('ClientProducts')
                 .select('id, sidClientId, sidCardTypeId, variant, name, hasImage')
@@ -280,7 +280,7 @@
 
             function querySucceeded(data) {
                 entity = data.results;
-                console.log(entity);
+                //console.log(entity);
                 //self.log('Retrieved [Product Partials] from remote data source', data.results.length, true);
                 return entity;
             }
@@ -448,7 +448,7 @@
                 .then(querySucceeded, self._queryFailed);
 
             function querySucceeded(data) {
-                console.log(data);
+                //console.log(data);
                 entity = self._setIsPartialTrue(data.results);
                 self._areItemsLoaded(true);
                 //self.log('Retrieved [EmbedCardReceiptLogs Partials] from remote data source', entity.length, true);

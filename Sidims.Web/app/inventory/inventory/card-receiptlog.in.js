@@ -32,7 +32,7 @@
                 return datacontext.inventory.getReceiptLogByRequestId(val)
                      .then(function (data) {
                          vm.receiptlog = data;
-                         console.log(vm.receiptlog);
+                         //console.log(vm.receiptlog);
                      }, function (error) {
                          logError('Unable to get cardreceiptlog ' + val);
                      });

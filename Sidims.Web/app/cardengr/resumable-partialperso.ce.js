@@ -29,7 +29,7 @@
         function getResumablePartialPersos(forceRefresh) {
             return datacontext.cardengrjob.getResumablePartialPersos(forceRefresh).then(function (data) {
                 vm.resumePartialPersos = data;
-                console.log(vm.resumePartialPersos);
+                //console.log(vm.resumePartialPersos);
                 return vm.resumePartialPersos;
             });
         }
@@ -43,7 +43,7 @@
 
         function gotoJobDetails(entity) {
             if (entity && entity.id) {
-                console.log(entity.job.id);
+                //console.log(entity.job.id);
                 $location.path('/ce/first-card/' + entity.job.id)
             }
         }

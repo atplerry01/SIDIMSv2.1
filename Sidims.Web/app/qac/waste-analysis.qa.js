@@ -26,13 +26,13 @@
         function getQAWasteRequests(forceRefresh) {
             return datacontext.resourcejob.getQAWasteRequests(forceRefresh).then(function (data) {
                 vm.wasterequests = data;
-                console.log(vm.wasterequests);
+                //console.log(vm.wasterequests);
                 return vm.wasterequests;
             });
         }
 
         function confirmWaste(entity) {
-            console.log(entity);
+            //console.log(entity);
             var newEntity = {
                 id: entity.id,
                 jobSplitId: entity.jobSplitId
@@ -44,7 +44,7 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/waste-request/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 //getSplitAnalysis();
                 //$location.path('/in/card-issuance/' + val);
             },

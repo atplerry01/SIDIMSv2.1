@@ -28,7 +28,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }
@@ -36,7 +36,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }

@@ -360,6 +360,19 @@ namespace AuthorizationServer.Api.Controllers
         }
 
         [HttpGet]
+        public IQueryable<WasteDeliveryNote> WasteDeliveryNotes()
+        {
+            return _repository.WasteDeliveryNotes;
+        }
+
+        [HttpGet]
+        public IQueryable<WasteDeliveryNote> WasteDeliveryNoteById(int id)
+        {
+            var test = _repository.WasteDeliveryNotes.Where(i => i.Id == id);
+            return _repository.WasteDeliveryNotes.Where(i => i.Id == id);
+        }
+
+        [HttpGet]
         public IQueryable<DeliveryProfile> DeliveryProfiles()
         {
             return _repository.DeliveryProfiles;
@@ -369,6 +382,12 @@ namespace AuthorizationServer.Api.Controllers
         public IQueryable<CardWasteAnalysis> CardWasteAnalysis()
         {
             return _repository.CardWasteAnalysis;
+        }
+
+        [HttpGet]
+        public IQueryable<CardWasteAnalysis> PendingCardWaste(int clientId)
+        {
+            return _repository.CardWasteAnalysis.Where(w => w.IsWasteDispatch == false && w.IsCardCollected == true && w.JobTracker.Job.SidClientId == clientId);
         }
 
         [HttpGet]
@@ -651,6 +670,12 @@ namespace AuthorizationServer.Api.Controllers
         public IQueryable<DeliveryNoteLog> DispatchDeliveryNoteLogs(int noteId)
         {
             return _repository.DeliveryNoteLogs.Where(a => a.DeliveryNoteId == noteId);
+        }
+
+        [HttpGet]
+        public IQueryable<WasteDeliveryNoteLog> WasteDeliveryNoteLogs(int noteId)
+        {
+            return _repository.WasteDeliveryNoteLogs.Where(a => a.WasteDeliveryNoteId == noteId);
         }
 
         #endregion
@@ -1061,6 +1086,13 @@ namespace AuthorizationServer.Api.Controllers
         {
             return _repository.DeliveryNotes;
         }
+
+        [HttpGet]
+        public IQueryable<WasteDeliveryNote> WasteDispatchDeliveryNotes()
+        {
+            return _repository.WasteDeliveryNotes;
+        }
+
 
         [HttpGet]
         public IQueryable<CardDeliveryLog> DPCardDeliveryLogConfirmations()

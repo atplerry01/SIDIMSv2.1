@@ -1600,6 +1600,18 @@
                     }
                 }
             }, {
+                url: '/in/dispatch/client-wastes/:clientId',
+                config: {
+                    title: 'Card Variant Details',
+                    templateUrl: 'app/inventory/dispatch/client-waste.dp.html',
+                    controller: 'ClientWasteDP',
+                    controllerAs: 'vm',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
                 url: '/in/dispatch/receive-job/:id',
                 config: {
                     title: 'Card Variant Details',
@@ -1641,6 +1653,30 @@
                     title: 'Card Variant Details',
                     templateUrl: 'app/inventory/dispatch/delivery-reportdetail.dp.html',
                     controller: 'DeliveryReportDetailIN',
+                    controllerAs: 'vm',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
+                url: '/in/dispatch/waste-reports',
+                config: {
+                    title: 'Card Variant Details',
+                    templateUrl: 'app/inventory/dispatch/waste-report.dp.html',
+                    controller: 'WasteReportIN',
+                    controllerAs: 'vm',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
+                url: '/in/dispatch/waste-report/:id',
+                config: {
+                    title: 'Card Variant Details',
+                    templateUrl: 'app/inventory/dispatch/waste-reportdetail.dp.html',
+                    controller: 'WasteReportDetailIN',
                     controllerAs: 'vm',
                     settings: {
                         nav: 2,

@@ -1485,7 +1485,7 @@ function $UrlMatcherFactory() {
    * $stateProvider.state('list', {
    *   url: "/list/{item:listItem}",
    *   controller: function($scope, $stateParams) {
-   *     console.log($stateParams.item);
+   *     //console.log($stateParams.item);
    *   }
    * });
    *
@@ -2934,9 +2934,9 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
        * // somewhere else
        * $scope.$on('$stateNotFound',
        * function(event, unfoundState, fromState, fromParams){
-       *     console.log(unfoundState.to); // "lazy.state"
-       *     console.log(unfoundState.toParams); // {a:1, b:2}
-       *     console.log(unfoundState.options); // {inherit:false} + default options
+       *     //console.log(unfoundState.to); // "lazy.state"
+       *     //console.log(unfoundState.toParams); // {a:1, b:2}
+       *     //console.log(unfoundState.options); // {inherit:false} + default options
        * })
        * </pre>
        */

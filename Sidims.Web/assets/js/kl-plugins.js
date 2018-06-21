@@ -4,7 +4,7 @@ Easy video background jquery plugin
 
  */
 
-(function(){function h(){var a=navigator.userAgent.toLowerCase();return-1!=a.indexOf("msie")?parseInt(a.split("msie")[1]):!1}if(void 0==jQuery)console.log("Jquery not included!");else if(void 0==Modernizr.video)console.log("Modernizr not included!");else{var b=jQuery,k=h(),g=0,e=0;jQuery.fn.extend({ensureLoad:function(a){return this.each(function(){this.complete||4===this.readyState?a.call(this):"uninitialized"===this.readyState&&0===this.src.indexOf("data:")?(b(this).trigger("error"),a.call(this)):
+(function(){function h(){var a=navigator.userAgent.toLowerCase();return-1!=a.indexOf("msie")?parseInt(a.split("msie")[1]):!1}if(void 0==jQuery)//console.log("Jquery not included!");else if(void 0==Modernizr.video)//console.log("Modernizr not included!");else{var b=jQuery,k=h(),g=0,e=0;jQuery.fn.extend({ensureLoad:function(a){return this.each(function(){this.complete||4===this.readyState?a.call(this):"uninitialized"===this.readyState&&0===this.src.indexOf("data:")?(b(this).trigger("error"),a.call(this)):
 
 (b(this).one("load",a),k&&(void 0!=this.src&&-1==this.src.indexOf("?"))&&(this.src=this.src+"?"+(new Date).getTime()))})}});video_background=function(a,f){this.hidden=!1;this.$holder=a;this.id="video_background_video_"+g;g++;this.parameters={position:"absolute","z-index":"-1",video_ratio:!1,loop:!0,autoplay:!0,muted:!1,mp4:!1,webm:!1,ogg:!1,flv:!1,youtube:!1,priority:"html5",fallback_image:!1,sizing:"fill",start:0};b.each(f,b.proxy(function(a,b){this.parameters[a]=b},this));this.$video_holder=b('<div id="'+
 

@@ -52,18 +52,6 @@
     var serviceBase = 'http://localhost:53401/';
     var resourceBase = 'http://localhost:53401/';
 
-    //var clientName = window.location.origin;
-    //console.log(clientName);
-
-    //if (clientName == 'http://localhost:55094') {
-    //    var serviceBase = 'http://localhost:53401/';
-    //    var resourceBase = 'http://localhost:53401/';
-
-    //} else if (clientName == 'http://62.173.38.182') {
-    //    var serviceBase = 'http://62.173.38.182/';
-    //    var resourceBase = 'http://62.173.38.182/';
-    //}
-
     app.constant('ngAuthSettings', {
         apiServiceBaseUri: serviceBase,
         apiResourceBaseUri: resourceBase,

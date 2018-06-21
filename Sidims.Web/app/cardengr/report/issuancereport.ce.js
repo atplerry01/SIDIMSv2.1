@@ -38,7 +38,7 @@
         function getCardIssuanceLogs(forceRefresh) {
             return datacontext.inventjob.getCardIssuanceLogs(forceRefresh).then(function (data) {
                 vm.cardIssuancelogs = data;
-                console.log(vm.cardIssuancelogs);
+                //console.log(vm.cardIssuancelogs);
                 return vm.cardIssuancelogs;
             });
         }
@@ -60,7 +60,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }

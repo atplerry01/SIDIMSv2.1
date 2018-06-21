@@ -30,7 +30,7 @@
         function getgPrintAnalysis(forceRefresh) {
             return datacontext.printingjob.getPrintAnalysis(forceRefresh).then(function (data) {
                 vm.printanalysis = data;
-                console.log(vm.printanalysis);
+                //console.log(vm.printanalysis);
                 return vm.printanalysis;
             });
         }

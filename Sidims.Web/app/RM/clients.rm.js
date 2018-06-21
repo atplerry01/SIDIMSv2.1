@@ -27,7 +27,7 @@
         function getClients(forceRefresh) {
             return datacontext.inventory.getClients(forceRefresh).then(function (data) {
                 vm.clients = data;
-                console.log(vm.clients);
+                //console.log(vm.clients);
                 return vm.clients;
             });
         }
@@ -45,7 +45,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }

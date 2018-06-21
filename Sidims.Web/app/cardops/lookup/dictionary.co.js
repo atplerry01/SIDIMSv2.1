@@ -110,7 +110,7 @@
         function getDictionaryServiceTypes(clientId, forceRefresh) {
             return datacontext.cardopslookup.getDictionaryServiceTypes(clientId, forceRefresh).then(function (data) {
                 vm.dicServiceType = data;
-                console.log(vm.dicServiceType);
+                //console.log(vm.dicServiceType);
                 return data;
             });
         }
@@ -191,7 +191,7 @@
 
             var resourceUri = model.resourceUri.co + '/dictionary/clientname/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getDictionaryClientName(vm.selectedClient.sidClientId);
             },
              function (response) {
@@ -260,10 +260,10 @@
                 serviceCodeName: vm.selectedService.serviceCodeName
             };
            
-            console.log(entity);
+            //console.log(entity);
             var resourceUri = model.resourceUri.co + '/dictionary/servicetype/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getDictionaryServiceTypes(entity.sidClientId);
             },
              function (response) {

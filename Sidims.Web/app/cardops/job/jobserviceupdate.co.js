@@ -42,7 +42,7 @@
                 return datacontext.resourcejob.getJobByTrackerId(val)
                 .then(function (data) {
                     vm.jobsetup = data[0];
-                    console.log(vm.jobsetup);
+                    //console.log(vm.jobsetup);
                     return vm.jobsetup;
                 }, function (error) {
                     logError('Unable to get variant ' + val);
@@ -70,10 +70,10 @@
                     serviceTypeId: vm.jobsetup.serviceType.id
                 };
 
-                console.log(vm.newJob);
+                //console.log(vm.newJob);
                 updateEntity(vm.newJob);
             } else {
-                console.log('error');
+                //console.log('error');
                 vm.errorMessage = 'No Service Selected';
             }
 
@@ -82,7 +82,7 @@
         function updateEntity(entity) {
             var resourceUri = model.resourceUri.co + '/servicetype/update';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 //vm.serverJob = {};
                 //vm.jobsetup = {};
                 gotoJobStatus();

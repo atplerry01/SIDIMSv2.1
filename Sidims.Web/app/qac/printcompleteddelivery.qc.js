@@ -32,7 +32,7 @@
             return datacontext.resourcejob.getJobSplitByJobTrackerId(val)
                 .then(function (data) {
                     vm.jobSplits = data;
-                    console.log(vm.jobSplits);
+                    //console.log(vm.jobSplits);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });

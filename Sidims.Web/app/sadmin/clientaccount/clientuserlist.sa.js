@@ -27,10 +27,10 @@
 
         function getClients(forceRefresh) {
             var clientId = $routeParams.clientId;
-            console.log(clientId);
+            //console.log(clientId);
             return datacontext.inventory.getClientUsers(clientId, forceRefresh).then(function (data) {
                 vm.clientUsers = data;
-                console.log(vm.clientUsers);
+                //console.log(vm.clientUsers);
                 return vm.clientUsers;
             });
         }
@@ -39,7 +39,7 @@
             var clientId = $routeParams.clientId;
             return datacontext.inventory.getSelectedClientUsers(clientId, forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }

@@ -22,7 +22,6 @@
         activate();
 
         function activate() {
-            
             var promises = [getRequestedDeliveryNote(), getJobTrackers(), getJobs(), getProductionStaffs()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated Jobs View'); });
@@ -31,7 +30,7 @@
         // get DeliveryNoteById
         function getRequestedDeliveryNote() {
             var val = $routeParams.id;
-            console.log(val);
+            //console.log(val);
 
             return datacontext.dispatchjob.getDeliveryNoteById(val)
                 .then(function (data) {
@@ -53,7 +52,7 @@
             return datacontext.dispatchjob.getDeliveryProfileById(entityId)
                 .then(function (data) {
                     vm.deliveryProfile = data;
-                    console.log(vm.deliveryProfile);
+                    //console.log(vm.deliveryProfile);
                 }, function (error) {
                     logError('Unable to get deliveryProfile ' + entityId);
                 });
@@ -62,7 +61,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }
@@ -70,7 +69,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }
@@ -78,7 +77,7 @@
         function getDeliveryNoteLogByNoteIds(deliveryNoteId, forceRefresh) {
             return datacontext.dispatchjob.getDeliveryNoteLogByNoteId(deliveryNoteId, forceRefresh).then(function (data) {
                 vm.deliveryNoteLogs = data;
-                console.log(vm.deliveryNoteLogs);
+                //console.log(vm.deliveryNoteLogs);
                 return vm.deliveryNoteLogs;
             });
         }
@@ -86,7 +85,7 @@
         function getDispatchDelivery(clientId, forceRefresh) {
             return datacontext.dispatchjob.getDispatchDelivery(clientId, forceRefresh).then(function (data) {
                 vm.dispatchDelivery = data;
-                console.log(vm.dispatchDelivery);
+                //console.log(vm.dispatchDelivery);
                 return vm.dispatchDelivery;
             });
         }
@@ -116,7 +115,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }

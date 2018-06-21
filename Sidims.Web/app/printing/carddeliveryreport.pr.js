@@ -28,7 +28,7 @@
         function getCardDeliveryReports(forceRefresh) {
             return datacontext.printingjob.getPrintCardDelivery(forceRefresh).then(function (data) {
                 vm.carddeliveryreports = data;
-                console.log(vm.carddeliveryreports);
+                //console.log(vm.carddeliveryreports);
                 return vm.carddeliveryreports;
             });
         }
@@ -36,7 +36,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }

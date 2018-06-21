@@ -43,7 +43,7 @@
             var selectedClient;
             var newObject = [];
 
-            console.log($scope.selection.objects.length); // Todo
+            //console.log($scope.selection.objects.length); // Todo
          
             angular.forEach($scope.selection.objects, function (todo, key) {
                 var newObjectX = todo.job.sidClientId;
@@ -134,7 +134,7 @@
                 newObject.push(newObjectX);
             });
 
-            console.log(newObject);
+            //console.log(newObject);
             createEntity(newObject);
         }
     
@@ -146,7 +146,7 @@
 
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }

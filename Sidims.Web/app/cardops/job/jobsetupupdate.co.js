@@ -88,8 +88,8 @@
                 return datacontext.resourcejob.getJobByTrackerId(val)
                 .then(function (data) {
                     vm.jobsetup = data[0];
-                    console.log(vm.jobsetup);
-                    console.log(vm.jobsetup.sidClient);
+                    //console.log(vm.jobsetup);
+                    //console.log(vm.jobsetup.sidClient);
                     getJobByTrackerId(val);
                     return vm.jobsetup;
                 }, function (error) {
@@ -104,7 +104,7 @@
                     vm.jobTracker = data;
 
                     if (vm.jobTracker.stage02Inventory.name == 'Queue') {
-                        console.log('false');
+                        //console.log('false');
                         vm.isQuantityEditable = true;
                     };
 
@@ -115,7 +115,7 @@
         }
 
         function gotoJobDetails(entity) {
-            console.log(entity);
+            //console.log(entity);
             if (entity && entity.id) {
                 $location.path('/co/job-setup/' + entity.id);
             }
@@ -140,7 +140,11 @@
                 vm.remark = vm.jobsetup.remark.id;
             }
 
-            //console.log(vm.jobsetup.remark);
+            //if (vm.jobsetup.remark !== undefined) {
+            //    vm.newJob.remarkId = vm.jobsetup.remark.id;
+            //}
+
+            //console.log(vm.jobsetup);
 
             //if (vm.jobsetup.remark !== undefined || vm.jobsetup.remark !== null || vm.jobsetup.remark !== "" ) {
             //    vm.remark = vm.jobsetup.remark.id;
@@ -161,15 +165,15 @@
                     //sidSectorId: vm.jobsetup.sector.id,
                     sidClientId: vm.jobsetup.sidClient.id,
                     sidCardTypeId: vm.jobsetup.sidCardType.id,
-                    remark: vm.remark,
+                    remarkId: vm.remark,
                     //ServiceTypeId: vm.jobsetup.serviceType.id,
                     quantity: vm.jobsetup.quantity
                 };
 
-                console.log(vm.newJob);
+                //console.log(vm.newJob);
                 updateEntity(vm.newJob);
             } else {
-                console.log('error');
+                //console.log('error');
                 vm.errorMessage = 'No Job Selected';
             }
 

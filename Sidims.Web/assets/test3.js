@@ -48,7 +48,7 @@
         var linker = function (scope, element, attr) {
            
             scope.$watch('accountTypes', function () {
-                console.log(scope.accountTypes);
+                //console.log(scope.accountTypes);
                 element.trigger('liszt:updated');
             })
 

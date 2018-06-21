@@ -48,7 +48,7 @@
                 if (todo.sidProductId == productId) {
                     //vm.card.clientName = todo.sidProduct.sidClient.name;
                     vm.clientProductServices.push(todo);
-                    console.log(todo);
+                    //console.log(todo);
                 }
             });
 

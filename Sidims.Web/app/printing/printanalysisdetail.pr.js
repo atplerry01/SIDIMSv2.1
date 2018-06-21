@@ -107,7 +107,7 @@
             return datacontext.resourcejob.getIncomingPrintCESplitAnalysisByJobTrackerId(entityId)
                 .then(function (data) {
                     vm.jobSplitCEAnalysis = data;
-                    console.log(vm.jobSplitCEAnalysis);
+                    //console.log(vm.jobSplitCEAnalysis);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });
@@ -125,7 +125,7 @@
         function getProductionStaffs(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.staffs = data;
-                console.log(vm.staffs);
+                //console.log(vm.staffs);
                 return vm.staffs;
             });
         }
@@ -144,7 +144,7 @@
             var val = $routeParams.id;
             return datacontext.inventjob.getCardIssuanceLogByTrackerId(val, forceRefresh).then(function (data) {
                 vm.cardissuancelogs = data;
-                console.log(vm.cardissuancelogs);
+                //console.log(vm.cardissuancelogs);
                 return vm.cardissuancelogs;
             });
         }
@@ -186,7 +186,7 @@
             return datacontext.resourcejob.getJobSplitPrintCEAnalysisById(entityId)
                 .then(function (data) {
                     vm.ceJobSplit = data;
-                    console.log(vm.ceJobSplit);
+                    //console.log(vm.ceJobSplit);
                 }, function (error) {
                     logError('Unable to get jobSplitCEAnalysis ' + val);
                 });
@@ -206,7 +206,7 @@
                 createdOn: vm.ceJobSplit.createdOn
             };
 
-            console.log(newEntity);
+            //console.log(newEntity);
             updateJobSplitEntity(newEntity);
         }
 
@@ -225,7 +225,7 @@
         vm.del = {};
 
         function saveDeliverable() {
-            console.log(vm.del);
+            //console.log(vm.del);
             var entity = {
                 jobTrackerId: $routeParams.id,
                 rangeFrom: vm.del.rangeFrom,
@@ -235,15 +235,15 @@
             var rangeVal = ((vm.del.rangeFrom - vm.del.rangeTo) + 1);
             var newQty = (rangeVal + vm.getRangeTotal + vm.cardIssuance.totalHeld);
 
-            console.log('getRangeTotal' + vm.getRangeTotal);
-            console.log('totalHeld' + vm.cardIssuance.totalHeld);
-            console.log('newQty' + newQty);
+            //console.log('getRangeTotal' + vm.getRangeTotal);
+            //console.log('totalHeld' + vm.cardIssuance.totalHeld);
+            //console.log('newQty' + newQty);
 
             //Todo: plus heldcard
             if (newQty > vm.cardIssuance.totalQuantityIssued) {
-                console.log('Quantity Surpass');
+                //console.log('Quantity Surpass');
             } else {
-                console.log('Ok');
+                //console.log('Ok');
             }
 
             deliveryCreateEntity(entity);
@@ -253,12 +253,12 @@
             var val = $routeParams.id;
             var resourceUri = model.resourceUri.ce + '/carddeliverylog/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getCardDeliveryLogs();
                 vm.del = {};
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -278,7 +278,7 @@
                 getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 

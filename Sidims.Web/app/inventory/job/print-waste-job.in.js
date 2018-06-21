@@ -29,7 +29,7 @@
         function getWasteJobs(forceRefresh) {
             return datacontext.inventjob.getApprovedPrintWastes(forceRefresh).then(function (data) {
                 vm.wastejobs = data;
-                console.log(vm.wastejobs);
+                //console.log(vm.wastejobs);
                 return vm.wastejobs;
             });
         }

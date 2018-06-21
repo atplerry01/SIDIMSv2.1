@@ -137,6 +137,8 @@ namespace AuthorizationServer.Api.Infrastructure
         public DbSet<StockStatus> StockStatus { get; set; }
         public DbSet<JobWaste> JobWastes { get; set; }
         public DbSet<JobWasteLog> JobWasteLogs { get; set; }
+        public DbSet<WasteDeliveryNote> WasteDeliveryNotes { get; set; }
+        public DbSet<WasteDeliveryNoteLog> WasteDeliveryNoteLogs { get; set; }
 
         public DbSet<NonPersoJob> NonPersoJobs { get; set; }
 

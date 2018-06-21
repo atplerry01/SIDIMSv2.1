@@ -28,7 +28,7 @@
         function getPrintDeliverables(forceRefresh) {
             return datacontext.printingjob.getPrintDeliverables(forceRefresh).then(function (data) {
                 vm.incomingPrints = data;
-                console.log(vm.incomingPrints);
+                //console.log(vm.incomingPrints);
                 return vm.incomingPrints;
             });
         }

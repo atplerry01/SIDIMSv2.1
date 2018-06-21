@@ -9,7 +9,7 @@
 				var theSlider = $(args.sliderObject),
 					activeSlide = args.currentSlideNumber - 1,
 					sliderContainer = theSlider.closest('.iosslider-slideshow');
-				// console.log(args);
+				// //console.log(args);
 				// add active to bullets
 				sliderContainer.find('.kl-ios-selectors-block .iosslider__bull-item').removeClass('selected');
 				sliderContainer.find('.kl-ios-selectors-block .iosslider__bull-item:eq(' + activeSlide + ')').addClass('selected');

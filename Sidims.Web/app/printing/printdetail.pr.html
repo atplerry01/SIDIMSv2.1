@@ -52,15 +52,64 @@
                                             <span>Add Split</span>
                                         </button>
 
+
+                                        <i ng-click="vm.revertView()" class="fa fa-undo" style="" data-toggle="tooltip" data-placement="left" title="Revert View"></i>
+
                                         <br /><br />
 
-                                        <table>
 
+                                        <table class="tab-content" ng-if="!vm.withSplit">
+                                            <tr style="font-size:12px">
+                                                <td>
+                                                    <div class="input-text form-group">
+                                                        <label class="control-label" for="inputLoginPassword">
+                                                            Machine:
+                                                            <span class="form-required" title="This field is required.">*</span>
+                                                        </label>
+
+                                                        <select style="width:120% !important; padding:5px"
+                                                                data-ng-options="r.name for r in vm.machineLists"
+                                                                data-ng-model="vm.split.machine" class="form-control"></select>
+
+                                                    </div>
+
+                                                </td>
+
+                                                <td>
+                                                    <div class="input-text form-group">
+                                                        <label class="control-label" for="inputLoginPassword">
+                                                            Range From
+                                                            <span class="form-required" title="This field is required.">*</span>
+                                                        </label>
+                                                        <input type="text" name="contact_name" style="width:90% !important"
+                                                               data-ng-model="vm.split.rangeFrom"
+                                                               ng-init="1"
+                                                               class="input-name form-control" placeholder="" />
+                                                    </div>
+
+                                                </td>
+
+                                                <td>
+                                                    <div class="input-text form-group">
+                                                        <label class="control-label" for="inputLoginPassword">
+                                                            To
+                                                            <span class="form-required" title="This field is required.">*</span>
+                                                        </label>
+                                                        <input type="text" name="contact_name" style="width:90% !important"
+                                                               ng-model="vm.split.rangeTo"
+                                                               class="input-name form-control" placeholder="" />
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="tab-content" ng-if="vm.withSplit">
                                             <tr style="font-size:12px" ng-repeat="item in inputs">
                                                 <td>
                                                     <div class="input-text form-group">
                                                         <label class="control-label" for="inputLoginPassword">
-                                                            Machine Number
+                                                            Machine:
                                                             <span class="form-required" title="This field is required.">*</span>
                                                         </label>
 
@@ -81,6 +130,7 @@
                                                         </label>
                                                         <input type="text" name="contact_name" style="width:90% !important"
                                                                ng-model="item.rangeFrom"
+                                                               ng-init="1"
                                                                class="input-name form-control" placeholder="" />
                                                     </div>
 
@@ -107,7 +157,6 @@
                                                 </td>
                                             </tr>
 
-
                                         </table>
 
                                         <div>
@@ -119,9 +168,14 @@
 
                                         </div>
 
-                                        <div class="input-text form-group">
+                                        <div class="input-text form-group" ng-if="!vm.withSplit">
+                                            <input type="submit" data-ng-click="vm.noSplitSave()"
+                                                   value="First Card Perso" class="btn btn-primary btn-large list-your-property arrow-right" />
+                                        </div>
+
+                                        <div class="input-text form-group" ng-if="vm.withSplit">
                                             <input type="submit" data-ng-click="vm.save()"
-                                                   value="First Card Print" class="btn btn-primary btn-large list-your-property arrow-right" />
+                                                   value="First Card Perso Wth Split" class="btn btn-primary btn-large list-your-property arrow-right" />
                                         </div>
 
                                     </div>
@@ -220,7 +274,7 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th width="1%">#</th>
+                        <th>#</th>
                         <th>Qty Issued</th>
                         <th>Remain</th>
                         <th>IssuedBy</th>

@@ -61,7 +61,7 @@
             return datacontext.resourcejob.getJobTrackerById(val)
                 .then(function (data) {
                     vm.jobTracker = data;
-                    console.log(vm.jobTracker);
+                    //console.log(vm.jobTracker);
 
                     getCEJobSplitAnalysis(vm.jobTracker.id);
                     getCardDeliveryLogs(vm.jobTracker.id);
@@ -78,7 +78,7 @@
         function getCardIssuanceLogByTrackerId(entityId, forceRefresh) {
             return datacontext.inventjob.getCardIssuanceLogByTrackerId(entityId, forceRefresh).then(function (data) {
                 vm.cardIssuanceLog = data[0];
-                console.log(vm.cardIssuanceLog);
+                //console.log(vm.cardIssuanceLog);
                 return vm.cardIssuanceLog;
             });
         }
@@ -181,7 +181,7 @@
             var totalDeliveryLog = (previousDelivery + rangeVal);
 
             if (totalDeliveryLog > vm.cardIssuanceLog.quantityIssued) {
-                console.log('Quantity Surpass');
+                //console.log('Quantity Surpass');
             } else {
                 deliveryCreateEntity(entity);
             }
@@ -195,7 +195,7 @@
                 vm.del = {};
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                     var errors = [];
                     for (var key in response.data.modelState) {
                         for (var i = 0; i < response.data.modelState[key].length; i++) {
@@ -222,7 +222,7 @@
                 getCardDeliveryLogs(vm.jobTracker.id);
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 

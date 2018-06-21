@@ -77,7 +77,7 @@
         function getServerJobRefreshs(fileType, forceRefresh) {
             return datacontext.resourcejob.getServerJobQueues2(fileType, forceRefresh, vm.paging.currentPage, vm.paging.pageSize, vm.serverJobsSearch)
                 .then(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     vm.serverJobs = vm.filteredServerJobs = data;
                     if (!vm.serverJobCount || forceRefresh) {
                         getServerJobCount();
@@ -126,7 +126,7 @@
                 getServerJobRefreshs(vm.fileType);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }

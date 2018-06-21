@@ -90,7 +90,7 @@
                     scope.onPageRender();
                 }
             }).catch(function (reason) {
-                console.log(reason);
+                //console.log(reason);
             });
           });
         };
@@ -199,7 +199,7 @@
         scope.$watch('pdfUrl', function(newVal) {
           if (newVal !== '') {
             if (debug) {
-              console.log('pdfUrl value change detected: ', scope.pdfUrl);
+              //console.log('pdfUrl value change detected: ', scope.pdfUrl);
             }
             url = newVal;
             scope.pageNum = scope.pageToDisplay = pageToDisplay;

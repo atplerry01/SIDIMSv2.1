@@ -63,6 +63,7 @@
             cardWasteAnalysis: 'CardWasteAnalysis',
             printWasteAnalysis: 'PrintWasteAnalysis',
             deliveryNote: 'DeliveryNote',
+            wasteDeliveryNote: 'WasteDeliveryNote',
             deliveryProfile: 'DeliveryProfile'
         };
 
@@ -102,6 +103,7 @@
             registerJobTracker(metadataStore);
             registerCardIssuanceLog(metadataStore);
             registerDeliveryNote(metadataStore);
+            registerWasteDeliveryNote(metadataStore);
             registerClientStockReport(metadataStore);
         }
 
@@ -168,7 +170,7 @@
             Object.defineProperty(ApplicationUser.prototype, 'accountType', {
                 get: function () {
                     var accountType = this.applicationUserAccountTypeList;
-                    console.log(accountType);
+                    //console.log(accountType);
                     return accountType;
                 }
             });
@@ -262,6 +264,30 @@
             });
 
             Object.defineProperty(DeliveryNote.prototype, 'fullFormattedDate', {
+                get: function () {
+                    var date = this.createdOn;
+                    var value = moment.utc(date).format('LLLL');
+                    return value;
+                }
+            });
+        }
+
+        //DeliveryNote
+        function registerWasteDeliveryNote(metadataStore) {
+            metadataStore.registerEntityTypeCtor('WasteDeliveryNote', WasteDeliveryNote);
+
+            function WasteDeliveryNote() { }
+
+            Object.defineProperty(WasteDeliveryNote.prototype, 'formattedDate', {
+
+                get: function () {
+                    var date = this.transactionDate;
+                    var value = moment.utc(date).format('L'); //MMMM Do YYYY, h:mm:ss a
+                    return value;
+                }
+            });
+
+            Object.defineProperty(WasteDeliveryNote.prototype, 'fullFormattedDate', {
                 get: function () {
                     var date = this.createdOn;
                     var value = moment.utc(date).format('LLLL');

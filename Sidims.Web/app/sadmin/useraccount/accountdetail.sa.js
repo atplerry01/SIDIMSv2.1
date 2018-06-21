@@ -87,7 +87,7 @@
                 getRequestedAccount();
             },
 			 function (response) {
-			     //console.log(response);
+			     ////console.log(response);
 			 });
         }
 
@@ -99,7 +99,7 @@
             var resourceUri = model.resourceUri.accounts + '/ResetPassword';
             resourceService.saveResource(resourceUri, vm.resetPasswordModel).then(function (response) {
                 vm.resetMessage =  'Reset Completed'
-                console.log(response);
+                //console.log(response);
             })
         }
 

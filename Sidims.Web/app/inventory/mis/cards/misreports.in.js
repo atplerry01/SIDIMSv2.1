@@ -153,7 +153,7 @@
         function getVaultReports(pred, forceRefresh) {
             return datacontext.inventory.getClientVaultReports(pred, forceRefresh).then(function (data) {
                 vm.vaultrepots = data;
-                console.log(vm.vaultrepots);
+                //console.log(vm.vaultrepots);
                 return vm.vaultrepots;
             });
         }
@@ -161,7 +161,7 @@
         function getClientStockReports(pred, forceRefresh) {
             return datacontext.inventory.getClientStockReports(pred, forceRefresh).then(function (data) {
                 vm.stockreports = data;
-                console.log(vm.stockreports);
+                //console.log(vm.stockreports);
                 //getClientStockLogs(vm.stockreports.id);
                 return vm.stockreports;
             });
@@ -170,7 +170,7 @@
         function getClientStockLogs(pred, forceRefresh) {
             return datacontext.inventory.getClientStockLogByStockReportId(pred, forceRefresh).then(function (data) {
                 vm.stockreportlogs = data;
-                console.log(vm.stockreportlogs);
+                //console.log(vm.stockreportlogs);
                 return vm.stockreportlogs;
             });
         }
@@ -178,7 +178,7 @@
         function getCardIssuances(forceRefresh) {
             return datacontext.inventjob.getCardIssuances(forceRefresh).then(function (data) {
                 vm.cardissuances = data;
-                console.log(vm.cardissuances);
+                //console.log(vm.cardissuances);
                 return vm.cardissuances;
             });
         }

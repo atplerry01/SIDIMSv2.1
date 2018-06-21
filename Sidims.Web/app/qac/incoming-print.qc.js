@@ -28,7 +28,7 @@
         function getQCIncomingPrints(forceRefresh) {
             return datacontext.qacjob.getQCIncomingPrints(forceRefresh).then(function (data) {
                 vm.qcIncomingPrints = data;
-                console.log(vm.qcIncomingPrints);
+                //console.log(vm.qcIncomingPrints);
                 return vm.qcIncomingPrints;
             });
         }

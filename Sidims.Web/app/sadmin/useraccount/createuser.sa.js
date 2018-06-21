@@ -54,12 +54,12 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.accounts + '/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 createUserRole(response.data, entity);
                 
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 
@@ -74,7 +74,7 @@
                 vm.user = {};
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 
@@ -85,8 +85,8 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
-                console.log(vm.jobTracker.job);
+                //console.log(vm.jobs);
+                //console.log(vm.jobTracker.job);
 
                 // setups all requested items
                 vm.cardsetup = {

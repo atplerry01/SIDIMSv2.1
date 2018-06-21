@@ -29,7 +29,7 @@
         function getClients(forceRefresh) {
             return datacontext.inventory.getClients(forceRefresh).then(function (data) {
                 vm.clients = data;
-                console.log(vm.clients);
+                //console.log(vm.clients);
                 return vm.clients;
             });
         }

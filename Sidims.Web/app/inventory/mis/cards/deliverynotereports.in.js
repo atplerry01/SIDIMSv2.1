@@ -31,7 +31,7 @@
         function getDeliveryNoteReports(forceRefresh) {
             return datacontext.inventory.AllDeliveryNotes(forceRefresh).then(function (data) {
                 vm.deliverynotereports = data;
-                console.log(vm.deliverynotereports);
+                //console.log(vm.deliverynotereports);
                 return vm.deliverynotereports;
             });
         }

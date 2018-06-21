@@ -166,7 +166,7 @@
                 gotoJobStatus();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {

@@ -33,7 +33,7 @@
         }
 
         function unFlaggedJob(entity) {
-            console.log(entity);
+            //console.log(entity);
 
             var newFlag = {
                 id: entity.id,
@@ -43,7 +43,7 @@
                 recommendation: entity.recommendation
             };
 
-            console.log(newFlag);
+            //console.log(newFlag);
             createEntity(newFlag);
         }
 
@@ -53,7 +53,7 @@
                 getFlaggedJobs();
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save due to: "
                      + response.data.message;
 			 });

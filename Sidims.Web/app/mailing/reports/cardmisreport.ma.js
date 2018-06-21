@@ -36,7 +36,7 @@
         function getCardMISReports(forceRefresh) {
             return datacontext.mailingjob.getMAJobSplits(forceRefresh).then(function (data) {
                 vm.misreports = data;
-                console.log(vm.misreports);
+                //console.log(vm.misreports);
                 return vm.misreports;
             });
         }
@@ -53,7 +53,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }

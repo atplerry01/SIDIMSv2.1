@@ -28,7 +28,7 @@
                 });
 
             }, function (error) {
-                console.log('Error from Resource' + error.data.message);
+                //console.log('Error from Resource' + error.data.message);
             });
         }
 
@@ -45,7 +45,7 @@
                 });
 
             }, function (error) {
-                console.log('Error from Resource' + error.data.message);
+                //console.log('Error from Resource' + error.data.message);
             });
         }
 
@@ -100,7 +100,7 @@
             //$location.path('/');
 
             authService.login($scope.loginData).then(function (response) {
-                console.log(response);
+                //console.log(response);
 
                 // Get the users roles and claims information
 
@@ -112,7 +112,7 @@
             },
 			 function (err) {
 			     $scope.message = err.error_description;
-			     console.log($scope.message);
+			     //console.log($scope.message);
 			 });
 
         }
@@ -436,7 +436,7 @@
         };
 
         $scope.pageChanged = function () {
-            console.log('Page changed to: ' + $scope.currentPage);
+            //console.log('Page changed to: ' + $scope.currentPage);
         };
 
         $scope.maxSize = 5;

@@ -210,7 +210,7 @@
 
         function getTotalCardDeliveryLog() {
             var total = 0;
-            console.log(vm.carddeliverylogs);
+            //console.log(vm.carddeliverylogs);
             for (var i = 0; i < vm.carddeliverylogs.length; i++) {
                 var unitEntity = vm.carddeliverylogs[i];
                 total += ((unitEntity.rangeTo - unitEntity.rangeFrom) + 1);
@@ -232,34 +232,34 @@
             var previousDelivery = getTotalCardDeliveryLog();
             var totalDeliveryLog = (previousDelivery + rangeVal);
 
-            console.log(rangeVal);
-            console.log(vm.cardIssuanceLog.quantityIssued);
+            //console.log(rangeVal);
+            //console.log(vm.cardIssuanceLog.quantityIssued);
 
             if (totalDeliveryLog > vm.cardIssuanceLog.quantityIssued) {
-                //console.log('Invalid Range Detected A');
+                ////console.log('Invalid Range Detected A');
                 vm.errorMessage = 'Invalid Range Detected';
             } else if (rangeVal > 0 && totalDeliveryLog <= vm.cardIssuanceLog.quantityIssued) {
-                //console.log('Ok');
+                ////console.log('Ok');
                 deliveryCreateEntity(entity);
             } else if (rangeVal <= 0) {
-                console.log('Invalid Range Detected B');
+                //console.log('Invalid Range Detected B');
                 vm.errorMessage = 'Invalid Range Detected';
             } else {
-                console.log('Invalid Range Detected C');
+                //console.log('Invalid Range Detected C');
                 vm.errorMessage = 'Invalid Range Detected';
             }
 
             //var newQty = (rangeVal + vm.getRangeTotal + vm.cardIssuance.totalHeld);
 
            
-            //console.log(previousDelivery);
-            ////console.log(totalDeliveryLog);
+            ////console.log(previousDelivery);
+            //////console.log(totalDeliveryLog);
 
             ////Todo: plus heldcard
             //if (newQty > vm.cardIssuance.totalQuantityIssued) {
-            //    console.log('Quantity Surpass');
+            //    //console.log('Quantity Surpass');
             //} else {
-            //    console.log('Ok');
+            //    //console.log('Ok');
             //}
 
             //deliveryCreateEntity(entity);
@@ -274,7 +274,7 @@
                 };
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -295,7 +295,7 @@
                 getCECardDeliverables();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -323,7 +323,7 @@
                 getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 

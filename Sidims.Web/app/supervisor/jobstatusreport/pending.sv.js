@@ -130,7 +130,7 @@
         }
 
         function flagJob(entity) {
-            console.log(entity);
+            //console.log(entity);
             $location.path('/job-flag/' + entity.id);
         }
 

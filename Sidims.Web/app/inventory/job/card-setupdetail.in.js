@@ -79,7 +79,7 @@
                 .then(function (data) {
                     vm.productImage = data[0];
                     vm.productImagePath = serviceBase + 'uploads/'  + vm.productImage.imageName;
-                    console.log(vm.productImagePath);
+                    //console.log(vm.productImagePath);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });
@@ -105,11 +105,11 @@
             var resourceUri = model.resourceUri.inventory + '/jobvariant/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
                 vm.cardsetup = {};
-                console.log(response);
+                //console.log(response);
                 $location.path('/in/card-issuance/' + val);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 

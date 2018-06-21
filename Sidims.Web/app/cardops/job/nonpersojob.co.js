@@ -28,7 +28,7 @@
         function getNonPersoJobs(forceRefresh) {
             return datacontext.resourcejob.getNonPersoJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
+                //console.log(vm.jobs);
                 return vm.jobs;
             });
         }
@@ -36,7 +36,7 @@
         function getRMUsers(forceRefresh) {
             return datacontext.rm.getRMUsers(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }

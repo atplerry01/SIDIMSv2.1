@@ -61,7 +61,7 @@
             // Methods
             templatePath: function (features, view_name) {
                 if (features) {
-                    console.log(this.templatesDir + '/' + features + '/' + view_name + '.html');
+                    //console.log(this.templatesDir + '/' + features + '/' + view_name + '.html');
                     return this.templatesDir + '/' + features + '/' + view_name + '.html';
                 }
                 return this.templatesDir + '/' + view_name + '.html';
@@ -246,12 +246,16 @@
 
 
     <script src="app/inventory/dispatch/client-job.dp.js"></script>
+    <script src="app/inventory/dispatch/client-waste.dp.js"></script>
     <script src="app/inventory/dispatch/confirm-receipt.dp.js"></script>
     <script src="app/inventory/dispatch/delivery-note.dp.js"></script>
     <script src="app/inventory/dispatch/delivery-profile.dp.js"></script>
     <script src="app/inventory/dispatch/delivery-report.dp.js"></script>
     <script src="app/inventory/dispatch/delivery-reportdetail.dp.js"></script>
     <script src="app/inventory/dispatch/incoming-job.dp.js"></script>
+    <script src="app/inventory/dispatch/waste-report.dp.js"></script>
+    <script src="app/inventory/dispatch/waste-reportdetail.dp.js"></script>
+
     <script src="app/inventory/inventory/card-receipt.in.js"></script>
     <script src="app/inventory/inventory/card-receiptdetail.in.js"></script>
     <script src="app/inventory/inventory/card-receiptlog.in.js"></script>

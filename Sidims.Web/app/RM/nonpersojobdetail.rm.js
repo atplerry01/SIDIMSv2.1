@@ -75,7 +75,7 @@
                 serviceTypeId: vm.entity.serviceType.id,
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -85,7 +85,7 @@
                 $location.path('/rm/nonperso-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {

@@ -76,7 +76,7 @@
 
         function gotoAddProduct(entity) {
             var val = $routeParams.clientId;
-            console.log(val);
+            //console.log(val);
             $location.path('/in/mis/card/product/' + val + '/create');
         }
 

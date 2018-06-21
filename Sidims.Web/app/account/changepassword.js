@@ -50,10 +50,7 @@
 
         function createEntity(entity) {
             var resourceUri = model.resourceUri.accounts + '/ChangePassword';
-            resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
-                //createUserRole(response.data, entity);
-                
+            resourceService.saveResource(resourceUri, entity).then(function (response) {                
                 $scope.message = "";
                 vm.isSaving = true;
                 vm.message = "Please wait...";
@@ -62,8 +59,6 @@
                 $location.path('/')
             },
 			 function (response) {
-			     console.log(response);
-			     console.log(response.data);
 			     vm.isSaving = false;
 			     vm.message = "";
 			     vm.messageVisble = false;
@@ -92,10 +87,7 @@
             resourceService.updateResourcePartial(resourceUri, roleEntity).then(function (response) {
                 vm.user = {};
               
-            },
-			 function (response) {
-			     console.log(response);
-			 });
+            };
         }
 
 
@@ -105,10 +97,7 @@
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
-                console.log(vm.jobTracker.job);
-
-                // setups all requested items
+           
                 vm.cardsetup = {
                     cardType: vm.jobTracker.job.sidCardType.name
                 };

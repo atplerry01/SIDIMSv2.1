@@ -2517,6 +2517,63 @@ namespace AuthorizationServer.Api.Controllers
             return Ok<IList<DeliveryNoteLogModel>>(entity);
         }
 
+        [Route("GenerateWasteNote/create")]
+        public async Task<IHttpActionResult> GenerateWasteNotes(IList<DeliveryWasteLogModel> entity)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            UserId = User.Identity.GetUserId();
+
+            #region CreateDeliveryNoteAndLogs
+            
+            // Create the DeliveryNoteLog
+            foreach (var x in entity)
+            {
+                var wasteAnalysis = await context.CardWasteAnalysis.FindAsync(x.CardWasteAnalysisId);
+                var tracker = await context.JobTrackers.FindAsync(x.JobTrackerId);
+                var job = await context.Jobs.FindAsync(tracker.JobId);
+
+                var wasteDeliveryNote = new WasteDeliveryNote()
+                {
+                    CreatedById = UserId,
+                    SidClientId = job.SidClientId,
+                    DeliveryProfileId = entity[0].DeliveryProfileId,
+                    HasTemplate = entity[0].HasTemplate,
+                    Description = entity[0].Description,
+                    TransactionDate = DateTime.Now,
+                };
+
+                context.WasteDeliveryNotes.Add(wasteDeliveryNote);
+
+                // Create WasteLog
+                var wasteDeliveryNoteLog = new WasteDeliveryNoteLog()
+                {
+                    CardWasteAnalysisId = x.CardWasteAnalysisId,
+                    AuditStatus = false,
+                    CustomerServiceStatus = false,
+                    WasteDeliveryNoteId = wasteDeliveryNote.Id
+                };
+
+                context.WasteDeliveryNoteLogs.Add(wasteDeliveryNoteLog);
+
+                //Update the WasteAnalysis
+                wasteAnalysis.IsWasteDispatch = true;
+
+                context.CardWasteAnalysis.Attach(wasteAnalysis);
+                context.Entry(wasteAnalysis).State = EntityState.Modified;
+                //await context.SaveChangesAsync();
+
+            }
+
+            await context.SaveChangesAsync();
+
+            #endregion
+
+            return Ok<IList<DeliveryWasteLogModel>>(entity);
+        }
 
 
 

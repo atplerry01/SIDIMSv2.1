@@ -78,7 +78,7 @@ Chance instantiates itself onto the window. This means that in the simplest case
 ```html
 <script src="chance.js"></script>
 <script>
-    console.log(chance.string());
+    //console.log(chance.string());
 </script>
 ```
 

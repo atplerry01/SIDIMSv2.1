@@ -29,7 +29,7 @@
         function getDrivers(forceRefresh) {
             return datacontext.materialaudit.getDrivers(forceRefresh).then(function (data) {
                 vm.drivers = data;
-                console.log(vm.drivers);
+                //console.log(vm.drivers);
                 return vm.drivers;
             });
         }
@@ -53,7 +53,7 @@
                 $location.path('/au/incoming-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 

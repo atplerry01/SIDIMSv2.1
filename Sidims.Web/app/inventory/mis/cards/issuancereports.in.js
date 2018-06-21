@@ -30,7 +30,7 @@
         function getIssuanceReports(forceRefresh) {
             return datacontext.inventory.getAllIssuanceReports(forceRefresh).then(function (data) {
                 vm.issuancereports = data;
-                console.log(vm.issuancereports);
+                //console.log(vm.issuancereports);
                 return vm.issuancereports;
             });
         }

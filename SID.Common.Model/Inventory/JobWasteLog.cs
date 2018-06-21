@@ -8,6 +8,7 @@ namespace SID.Common.Model.Inventory
     public class JobWasteLog
     {
         public int Id { get; set; }
+        public int JobWasteId { get; set; }
         public int JobId { get; set; }
         public int WasteTypeId { get; set; }
         public int DepartmentId { get; set; }
@@ -16,7 +17,10 @@ namespace SID.Common.Model.Inventory
 
         [ForeignKey("JobId")]
         public virtual Job Job { get; set; }
-        
+
+        [ForeignKey("JobWasteId")]
+        public virtual JobWaste JobWaste { get; set; }
+
         [ForeignKey("WasteTypeId")]
         public virtual WasteType WasteType { get; set; }
 

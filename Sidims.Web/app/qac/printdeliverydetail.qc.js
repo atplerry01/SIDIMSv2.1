@@ -257,7 +257,7 @@
                 };
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -277,7 +277,7 @@
                 getCECardDeliverables();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -305,7 +305,7 @@
                 getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 

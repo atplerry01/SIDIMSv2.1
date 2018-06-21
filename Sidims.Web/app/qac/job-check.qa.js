@@ -92,7 +92,7 @@
                     vm.productImage = '';
                     vm.productImage = data[0];
                     vm.productImagePath = serviceBase + 'uploads/' + vm.productImage.imageName;
-                    console.log(vm.productImagePath);
+                    //console.log(vm.productImagePath);
                 }, function (error) {
                     logError('Unable to get JobTracker ' + val);
                 });
@@ -122,7 +122,7 @@
                 goBack();
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }

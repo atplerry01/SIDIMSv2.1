@@ -32,14 +32,14 @@
             return datacontext.dispatchjob.getJobBatchTrackerById(val)
                .then(function (data) {
                    vm.jobBatchTrackers = data;
-                   console.log(vm.jobBatchTrackers);
+                   //console.log(vm.jobBatchTrackers);
                }, function (error) {
                    logError('Unable to get JobBatchTracker ' + val);
                });
         }
 
         function save() {
-            console.log(vm.jobBatchTrackers);
+            //console.log(vm.jobBatchTrackers);
             
             var val = $routeParams.id;
             var batchId = $routeParams.batchId;
@@ -50,7 +50,7 @@
                 jobId: vm.jobBatchTrackers.jobId
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -62,7 +62,7 @@
                 $location.path('/in/dispatch/incoming-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {

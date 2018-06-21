@@ -42,7 +42,7 @@
         function getClients(forceRefresh) {
             return datacontext.cardopslookup.getClients(forceRefresh).then(function (data) {
                     vm.clients = data;
-                    console.log(vm.clients);
+                    //console.log(vm.clients);
                     return vm.clients;
                 });
         }
@@ -54,7 +54,7 @@
                 return datacontext.cardopslookup.getClientById(val)
                 .then(function (data) {
                     vm.client = data;
-                    console.log(vm.client);
+                    //console.log(vm.client);
                 }, function (error) {
                     logError('Unable to get client ' + val);
                 });

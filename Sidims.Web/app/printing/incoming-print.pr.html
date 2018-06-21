@@ -33,8 +33,6 @@
             <thead>
                 <tr>
                     <th>File Name</th>
-                    <th data-priority="3">Sector</th>
-                    <th data-priority="1">Client</th>
                     <th data-priority="3">Remark</th>
                     <th data-priority="3">Service Type</th>
                     <th data-priority="6">Job Status</th>
@@ -43,7 +41,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <tr data-ng-repeat="c in vm.incomingPrints"
                     data-ng-click="vm.gotoJobDetails(c)">
                     <th colspan="1" data-columns="id8c140f573a4de-col-0">
@@ -52,12 +49,6 @@
                             {{c.job.jobName }}
                         </span>
                     </th>
-                    <td data-priority="3" colspan="1" data-columns="id8c140f573a4de-col-2">
-                        {{c.job.sidSector.name}}
-                    </td>
-                    <td data-priority="1" colspan="1" data-columns="id8c140f573a4de-col-3">
-                        {{c.job.sidClient.name}}
-                    </td>
                     <td data-priority="3" colspan="1" data-columns="id8c140f573a4de-col-4">
                         {{c.job.remark.name}}
                     </td>
@@ -65,13 +56,13 @@
                         {{c.job.serviceType.name}}
                     </td>
                     <td data-priority="6" colspan="1" data-columns="id8c140f573a4de-col-6">
-                        {{c.job.jobStatus.name}}
+                        {{c.jobStatus.name}}
                     </td>
                     <td data-priority="6" colspan="1" data-columns="id8c140f573a4de-col-6">
                         {{c.job.quantity}}
                     </td>
                     <td data-priority="1" colspan="1" data-columns="id8c140f573a4de-col-1">
-                        {{c.formattedDate}}
+                        {{c.modifiedFormattedDate}}
                     </td>
 
                 </tr>

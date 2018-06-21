@@ -28,7 +28,7 @@
         function useraccounts(forceRefresh) {
             return datacontext.sadminaccount.getAccountPatials(forceRefresh).then(function (data) {
                 vm.accounts = data;
-                console.log(vm.accounts);
+                //console.log(vm.accounts);
                 return vm.accounts;
             });
         }

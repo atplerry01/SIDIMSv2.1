@@ -29,7 +29,7 @@
         function getQAIncomingPersos(forceRefresh) {
             return datacontext.qacjob.getQAIncomingPersos(forceRefresh).then(function (data) {
                 vm.qaIncomingPersos = data;
-                console.log(vm.qaIncomingPersos);
+                //console.log(vm.qaIncomingPersos);
                 return vm.qaIncomingPersos;
             });
         }

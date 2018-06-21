@@ -401,11 +401,11 @@ if (typeof PDFJS === 'undefined') {
       error: function() {},
       warn: function() {}
     };
-  } else if (!('bind' in console.log)) {
+  } else if (!('bind' in //console.log)) {
     // native functions in IE9 might not have bind
-    console.log = (function(fn) {
+    //console.log = (function(fn) {
       return function(msg) { return fn(msg); };
-    })(console.log);
+    })(//console.log);
     console.error = (function(fn) {
       return function(msg) { return fn(msg); };
     })(console.error);

@@ -620,7 +620,7 @@ node dx.vectormaputils.node.js Source [--output Output] [--precision Precision] 
 function runFromConsole() {
     var args = process.argv.slice(2);
     if (args.indexOf('--help') >= 0) {
-        console.log(MESSAGE_HELP);
+        //console.log(MESSAGE_HELP);
         return;
     }
     var options = {};

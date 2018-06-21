@@ -65,7 +65,7 @@
 
 
         function save() {
-            console.log(vm.client);
+            //console.log(vm.client);
 
             vm.newEntity = {
                 id: vm.client.id,
@@ -74,15 +74,15 @@
                 shortCode: vm.client.shortCode
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
 
             var val = $routeParams.id;
             if (val == 'new' && isNaN(val)) {
                 //create a new entity
-                console.log('create');
+                //console.log('create');
                 createEntity(vm.newEntity);
             } else {
-                console.log('update');
+                //console.log('update');
                 updateEntity(vm.newEntity);
             }
       
@@ -94,7 +94,7 @@
                 $location.path('/in/mis/card/clients');
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
 			     $scope.message = "Failed to save due to: " + response.data.message;
 			 });
         }
@@ -105,7 +105,7 @@
                 $location.path('/in/mis/card/clients');
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                     $scope.message = "Failed to save due to: " + response.data.message;
                 });
         }

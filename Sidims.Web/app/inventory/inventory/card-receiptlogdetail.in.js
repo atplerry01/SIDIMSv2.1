@@ -31,11 +31,11 @@
 
         function initLookups() {
             var lookups = datacontext.lookup.lookupCachedData;
-            console.log(lookups);
+            //console.log(lookups);
 
             vm.vendors = lookups.vendors;
           
-            console.log(vm.vendors);
+            //console.log(vm.vendors);
         }
 
         function getRequestedSCMCardRequest() {
@@ -45,7 +45,7 @@
                 return datacontext.inventory.getSCMCardRequestById(val)
                 .then(function (data) {
                     vm.cardreceipt = data;
-                    console.log(vm.cardreceipt);
+                    //console.log(vm.cardreceipt);
                 }, function (error) {
                     logError('Unable to get cardrequest ' + val);
                 });
@@ -73,7 +73,7 @@
                 remark: vm.cardreceipt.remark
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -81,7 +81,7 @@
             var val = $routeParams.id;
             var resourceUri = model.resourceUri.inventory + '/cardreceipt/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 vm.cardreceipt = {};
                 loadRequestedSCMCardRequest();
                 $location.path('/in/inventory/card-request/' + val + '/receiptlogs');
@@ -105,7 +105,7 @@
                 return datacontext.inventory.getSCMCardRequestById(val)
                 .then(function (data) {
                     vm.cardrequest = data;
-                    console.log(vm.cardrequest);
+                    //console.log(vm.cardrequest);
                 }, function (error) {
                     logError('Unable to get cardrequest ' + val);
                 });

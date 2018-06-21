@@ -30,7 +30,7 @@
             var val = $routeParams.productId;
             return datacontext.inventory.getClientStockLogs(val, forceRefresh).then(function (data) {
                 vm.stocklogs = data;
-                console.log(vm.stocklogs);
+                //console.log(vm.stocklogs);
                 return vm.stocklogs;
             });
         }
@@ -39,7 +39,7 @@
             var val = $routeParams.productId;
             return datacontext.inventory.getClientReturnLogs(val, forceRefresh).then(function (data) {
                 vm.returnlogs = data;
-                console.log(vm.returnlogs);
+                //console.log(vm.returnlogs);
                 return vm.returnlogs;
             });
         }

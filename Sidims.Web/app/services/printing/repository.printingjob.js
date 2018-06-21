@@ -49,7 +49,7 @@
             var orderBy;
 
             return EntityQuery.from('IncomingPrints')
-                .select('id, jobId')
+                .select('id, jobId, jobStatusId, modifiedOn')
                 .toType('JobTracker')
                 .using(self.manager).execute()
                 .then(querySucceeded, self._queryFailed);

@@ -58,12 +58,12 @@
                 $window.location.reload();
             },
 			 function (err) {
-			     console.log(err);
+			     //console.log(err);
 			     vm.isSaving = false;
 			     vm.message = "";
 			     vm.messageVisble = false;
 			     $scope.message = err.error_description;
-			     console.log(err.error_description);
+			     //console.log(err.error_description);
 			 });
         }
 
@@ -127,7 +127,7 @@
             },
 			 function (err) {
 			     $scope.message = err.error_description;
-			     console.log($scope.message);
+			     //console.log($scope.message);
 			 });
 
         }

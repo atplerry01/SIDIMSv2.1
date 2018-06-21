@@ -21,20 +21,25 @@
             // Exposed data access functions
             this.getById = getById;
             this.getDeliveryNoteById = getDeliveryNoteById;
+            this.getWasteDeliveryNoteById = getWasteDeliveryNoteById;
             this.getDeliveryProfileById = getDeliveryProfileById;
             this.getJobBatchTrackerById = getJobBatchTrackerById;
             
             this.getIncomingJobs = getIncomingJobs;
             this.getDeliveryNoteLogByNoteId = getDeliveryNoteLogByNoteId;
+            this.getWasteLogByNoteId = getWasteLogByNoteId;
             this.getDeliveryReports = getDeliveryReports;
+            this.getWasteDeliveryReports = getWasteDeliveryReports;
             this.getDeliveryProfiles = getDeliveryProfiles;
             this.getJobBatchTrackerByTrackId = getJobBatchTrackerByTrackId;
+            this.getCardWasteAnalysis = getCardWasteAnalysis;
 
             this.getClientIncomingJobs = getClientIncomingJobs;
             this.getDispatchDelivery = getDispatchDelivery;
             this.getDispatchDeliveryGenerated = getDispatchDeliveryGenerated;
 
             this.getAllDispatchDelivery = getAllDispatchDelivery;
+            this.getPendingCardWaste = getPendingCardWaste;
         }
 
         AbstractRepository.extend(Ctor);
@@ -53,9 +58,14 @@
             return this._getById(entityNames.deliveryNote, id, forceRemote);
         }
 
+        function getWasteDeliveryNoteById(id, forceRemote) {
+            return this._getById(entityNames.wasteDeliveryNote, id, forceRemote);
+        }
+
         function getDeliveryProfileById(id, forceRemote) {
             return this._getById(entityNames.deliveryProfile, id, forceRemote);
         }
+
 
         function getClientIncomingJobs(forceRemote) {
             var self = this;
@@ -190,7 +200,44 @@
             }
         }
 
+        function getWasteLogByNoteId(noteId, forceRemote) {
+            var self = this;
+            var entity = [];
+            var orderBy;
 
+            return EntityQuery.from('WasteDeliveryNoteLogs')
+                .select('id, auditStatus, cardWasteAnalysisId, wasteDeliveryNoteId')
+                .withParameters({ noteId: noteId })
+                .toType('WasteDeliveryNoteLog')
+                .using(self.manager).execute()
+                .then(querySucceeded, self._queryFailed);
+
+            function querySucceeded(data) {
+                entity = data.results;
+                //self.log('Retrieved [DeliveryNoteLog Partials] from remote data source', entity.length, true);
+                return entity;
+            }
+        }
+
+        function getWasteLogByNoteId(noteId, forceRemote) {
+            var self = this;
+            var entity = [];
+            var orderBy;
+
+            return EntityQuery.from('WasteDeliveryNoteLogs')
+                .select('id, auditStatus, cardWasteAnalysisId, wasteDeliveryNoteId')
+                .withParameters({ noteId: noteId })
+                .toType('WasteDeliveryNoteLog')
+                .using(self.manager).execute()
+                .then(querySucceeded, self._queryFailed);
+
+            function querySucceeded(data) {
+                entity = data.results;
+                //self.log('Retrieved [DeliveryNoteLog Partials] from remote data source', entity.length, true);
+                return entity;
+            }
+        }
+        
         function getDeliveryReports(forceRemote) {
             var self = this;
             var entity = [];
@@ -199,6 +246,63 @@
             return EntityQuery.from('DispatchDeliveryNotes')
                 .select('id, sidClientId, deliveryProfileId, createdById, description, transactionDate')
                 .toType('DeliveryNote')
+                .using(self.manager).execute()
+                .then(querySucceeded, self._queryFailed);
+
+            function querySucceeded(data) {
+                entity = data.results;
+                //self.log('Retrieved [DeliveryNotes Partials] from remote data source', entity.length, true);
+                return entity;
+            }
+        }
+
+        function getCardWasteAnalysis(forceRemote) {
+            var self = this;
+            var entity = [];
+            var orderBy;
+
+            return EntityQuery.from('AllCardWasteAnalysis')
+                .select('id, jobSplitId, jobSplitCEAnalysisId, jobTrackerId, modifiedById, quantityBad, wasteByUnitId, wasteErrorSourceId')
+                .toType('CardWasteAnalysis')
+                .using(self.manager).execute()
+                .then(querySucceeded, self._queryFailed);
+
+            function querySucceeded(data) {
+                entity = data.results;
+                //self.log('Retrieved [DeliveryNotes Partials] from remote data source', entity.length, true);
+                return entity;
+            }
+        }
+
+
+        function getWasteDeliveryReports(forceRemote) {
+            var self = this;
+            var entity = [];
+            var orderBy;
+
+            return EntityQuery.from('WasteDispatchDeliveryNotes')
+                .select('id, sidClientId, deliveryProfileId, createdById, description, transactionDate')
+                .toType('WasteDeliveryNote')
+                .using(self.manager).execute()
+                .then(querySucceeded, self._queryFailed);
+
+            function querySucceeded(data) {
+                entity = data.results;
+                //self.log('Retrieved [DeliveryNotes Partials] from remote data source', entity.length, true);
+                return entity;
+            }
+        }
+
+
+        function getPendingCardWaste(clientId, forceRemote) {
+            var self = this;
+            var entity = [];
+            var orderBy;
+
+            return EntityQuery.from('PendingCardWaste')
+                .select('id, jobTrackerId, jobSplitId, quantityBad, wasteErrorSourceId, createdById, createdOn')
+                .withParameters({ clientId: clientId })
+                .toType('CardWasteAnalysis')
                 .using(self.manager).execute()
                 .then(querySucceeded, self._queryFailed);
 

@@ -79,6 +79,8 @@ namespace AuthorizationServer.Api.Infrastructure
             get { return Context.DispatchDelivery; }
         }
 
+
+
         public IQueryable<NonPersoJob> NonPersoJobs
         {
             get { return Context.NonPersoJobs; }
@@ -216,6 +218,16 @@ namespace AuthorizationServer.Api.Infrastructure
         public IQueryable<DeliveryNoteLog> DeliveryNoteLogs
         {
             get { return Context.DeliveryNoteLogs; }
+        }
+
+        public IQueryable<WasteDeliveryNote> WasteDeliveryNotes
+        {
+            get { return Context.WasteDeliveryNotes; }
+        }
+
+        public IQueryable<WasteDeliveryNoteLog> WasteDeliveryNoteLogs
+        {
+            get { return Context.WasteDeliveryNoteLogs; }
         }
 
 

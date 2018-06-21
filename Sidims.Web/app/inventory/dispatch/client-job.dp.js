@@ -160,11 +160,11 @@
                 newObject.push(newObjectX);
             });
 
-            //console.log(jobTags);
+            ////console.log(jobTags);
 
             //var fruits = ["Banana", "Orange", "Apple", "Mango"];
             //var energy = jobTags.join();
-            //console.log(energy);
+            ////console.log(energy);
             createNoteEntity(newObject);
         }
 

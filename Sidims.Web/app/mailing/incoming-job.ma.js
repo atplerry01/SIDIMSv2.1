@@ -29,7 +29,7 @@
         function getMAIncomingPersos(forceRefresh) {
             return datacontext.mailingjob.getMAIncomingPersos(forceRefresh).then(function (data) {
                 vm.mailingIncomingPersos = data;
-                console.log(vm.mailingIncomingPersos);
+                //console.log(vm.mailingIncomingPersos);
                 return vm.mailingIncomingPersos;
             });
         }

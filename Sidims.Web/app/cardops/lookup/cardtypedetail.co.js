@@ -38,13 +38,13 @@
         function getRequestedCardType() {
             var val = $routeParams.id;
 
-            console.log(val);
+            //console.log(val);
 
             if (val) {
                 return datacontext.cardopslookup.getCardTypeById(val)
                 .then(function (data) {
                     vm.cardtype = data;
-                    console.log(vm.cardtype);
+                    //console.log(vm.cardtype);
                 }, function (error) {
                     logError('Unable to get CardType ' + val);
                 });

@@ -53,7 +53,7 @@
         function roleSetups() {
 
             if (vm.auth.fullName == undefined || vm.auth.fullName === '') {
-                console.log('empty');
+                //console.log('empty');
                 $route.reload();
             }
 
@@ -72,14 +72,14 @@
         }
 
         function search($event) {
-            console.log('enter');
+            //console.log('enter');
             if ($event.keyCode === keyCodes.esc) {
                 vm.searchText = '';
                 return;
             }
 
             if ($event.type === '' || $event.keyCode === keyCodes.enter) {
-                console.log('enter');
+                //console.log('enter');
                 var route = 'products/search/';
                 $location.path(route + vm.searchText);
             }

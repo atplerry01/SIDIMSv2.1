@@ -13,6 +13,7 @@ namespace SID.Common.Model.Production
         public PrintWasteAnalysis()
         {
             IsCardCollected = false;
+            IsWasteDispatch = false;
 
             CreatedOn = DateTime.Now;
             ModifiedOn = DateTime.Now;
@@ -28,6 +29,7 @@ namespace SID.Common.Model.Production
         public int WasteByUnitId { get; set; }
 
         public bool IsCardCollected { get; set; }
+        public bool IsWasteDispatch { get; set; }
 
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; }

@@ -38,7 +38,7 @@
 
         function initLookups() {
             var lookups = datacontext.lookup.lookupCachedData;
-            console.log(lookups);
+            //console.log(lookups);
 
             vm.sectors = lookups.sectors;
             vm.clients = lookups.clients;
@@ -46,7 +46,7 @@
             vm.sidCardTypes = lookups.sidCardTypes;
             vm.sidChipTypes = lookups.sidChipTypes;
 
-            console.log(vm.sidChipTypes);
+            //console.log(vm.sidChipTypes);
         }
 
         function getSCMCardRequests(forceRefresh) {
@@ -63,7 +63,7 @@
                 return datacontext.inventory.getSCMCardRequestById(val)
                 .then(function (data) {
                     vm.cardrequest = data;
-                    console.log(vm.cardrequest);
+                    //console.log(vm.cardrequest);
                 }, function (error) {
                     logError('Unable to get cardrequest ' + val);
                 });
@@ -98,7 +98,7 @@
                     totalBatchQty: vm.cardrequest.quantity,
                 };
 
-                console.log(vm.updateEntity);
+                //console.log(vm.updateEntity);
                 updateClients(vm.updateEntity);
             }
         }

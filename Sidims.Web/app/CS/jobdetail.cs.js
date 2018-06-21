@@ -22,7 +22,7 @@
 
         function activate() {
             var promises = [
-               getRequestedDeliveryNote(), getDeliveryNoteLog(), getJobs()
+                getRequestedDeliveryNote(), getDeliveryNoteLog(), getJobTrackers(), getJobs()
             ];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated JobDetails View'); });
@@ -34,10 +34,10 @@
             return datacontext.resourcejob.getDeliveryNoteId(val, forceRefresh)
                 .then(function (data) {
                     vm.deliveryNote = data;
-
+                    
                     getDispatchDelivery(vm.deliveryNote.sidClientId);
 
-                    console.log(vm.deliveryNote);
+                    //console.log(vm.deliveryNote);
                 }, function (error) {
                     logError('Unable to get deliveryNote ' + val);
                 });
@@ -50,9 +50,18 @@
 
             return datacontext.dispatchjob.getDeliveryNoteLogByNoteId(val, forceRefresh).then(function (data) {
                 vm.deliveryNoteLogs = data;
-                console.log(vm.deliveryNoteLogs);
+                //console.log(vm.deliveryNoteLogs);
                 return vm.deliveryNoteLogs;
             });
+        }
+
+
+        function getJobTrackers(forceRefresh) {
+            return datacontext.resourcejob.getJobTrackers(forceRefresh)
+                .then(function (data) {
+                    vm.jobTrackers = data;
+                    return vm.jobTrackers;
+                });
         }
 
         function getJobs(forceRefresh) {
@@ -63,9 +72,11 @@
         }
 
         function getDispatchDelivery(clientId, forceRefresh) {
+            //console.log(clientId);
+
             return datacontext.dispatchjob.getDispatchDeliveryGenerated(clientId, forceRefresh).then(function (data) {
                 vm.dispatchDelivery = data;
-                console.log(vm.dispatchDelivery);
+                //console.log(vm.dispatchDelivery);
                 return vm.dispatchDelivery;
             });
         }
@@ -86,7 +97,7 @@
                 $location.path('/cs/incoming-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 

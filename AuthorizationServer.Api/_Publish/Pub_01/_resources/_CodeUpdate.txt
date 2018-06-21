@@ -1,4 +1,0 @@
-﻿>> add-migration InitialCreate
-Sql("DBCC CHECKIDENT ('Job', RESEED, 1000)");
-
-

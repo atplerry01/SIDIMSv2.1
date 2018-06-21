@@ -28,7 +28,7 @@
             var val = $routeParams.id;
             return datacontext.inventjob.getCESplitAnalysisHeldCard(val, forceRefresh).then(function (data) {
                 vm.cardanalysis = data;
-                console.log(vm.cardanalysis);
+                //console.log(vm.cardanalysis);
                 return vm.cardanalysis;
             });
         }
@@ -54,7 +54,7 @@
             var resourceUri = model.resourceUri.inventory + '/heldcard-receipt/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
                 vm.cardsetup = {};
-                console.log(response);
+                //console.log(response);
                 getSplitAnalysis();
                 //$location.path('/in/card-issuance/' + val);
             },

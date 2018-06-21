@@ -49,7 +49,7 @@
             return datacontext.resourcejob.getJobTrackerById(val)
                 .then(function (data) {
                     vm.jobTracker = data;
-                    console.log(vm.jobTracker);
+                    //console.log(vm.jobTracker);
                     //preLoadData();
                     getProductVariant(vm.jobTracker.jobId, vm.jobTracker.id);
                     getJobs();
@@ -61,7 +61,7 @@
 
         function preLoadData() {
             vm.issuance.quantity = vm.jobTracker.job.quantity;
-            console.log(vm.issuance.quantity);
+            //console.log(vm.issuance.quantity);
         }
 
         function getProductVariant(jobId, jobTrackerId, forceRefresh) {
@@ -104,7 +104,7 @@
         }
 
         function createProductVault() {
-            console.log(vm.jobVariants);
+            //console.log(vm.jobVariants);
             vm.newVault = {
                 sidProductId: vm.jobVariants.sidProductId,
                 openingStock: 0,
@@ -131,7 +131,7 @@
                 $location.path('/in/incoming-jobs');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save due to: "
                      + response.data.message;
 			 });

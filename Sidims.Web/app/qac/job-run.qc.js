@@ -66,7 +66,7 @@
             return datacontext.application.getUserDetail(username)
                 .then(function (data) {
                     vm.userInfo = data;
-                    console.log(vm.userInfo);
+                    //console.log(vm.userInfo);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });
@@ -83,10 +83,10 @@
         function updateCEAnalysis(entity) {
             var resourceUri = model.resourceUri.qac + '/jobhandle/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }
@@ -121,7 +121,7 @@
             var val = $routeParams.trackerId;
             return datacontext.resourcejob.getQCCardDeliveryLogByTrackerId(val, forceRefresh).then(function (data) {
                 vm.carddeliverylogs = data;
-                console.log(vm.carddeliverylogs);
+                //console.log(vm.carddeliverylogs);
 
                 return vm.carddeliverylogs;
             });
@@ -131,7 +131,7 @@
             return datacontext.resourcejob.getJobSplitByJobTrackerId(entityId)
                 .then(function (data) {
                     vm.jobSplits = data;
-                    console.log(vm.jobSplits);
+                    //console.log(vm.jobSplits);
                 }, function (error) {
                     logError('Unable to get JobSplit ' + entityId);
                 });
@@ -142,7 +142,7 @@
             var val = $routeParams.trackerId;
             return datacontext.resourcejob.getCECardDeliveryLogByTrackerId(val, forceRefresh).then(function (data) {
                 vm.ceCarddeliverylogs = data;
-                console.log(vm.ceCarddeliverylogs);
+                //console.log(vm.ceCarddeliverylogs);
                 return vm.ceCarddeliverylogs;
             });
         }
@@ -216,7 +216,7 @@
                 $location.path('/qc/incoming-persos');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }
@@ -242,7 +242,7 @@
                 $location.path('/qc/incoming-persos');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }
@@ -259,27 +259,27 @@
         }
 
         function saveDeliverable() {
-            console.log(vm.del);
+            //console.log(vm.del);
             var entity = {
                 jobTrackerId: $routeParams.trackerId,
                 rangeFrom: vm.del.rangeFrom,
                 rangeTo: vm.del.rangeTo,
                 description: vm.del.description
             };
-            console.log(entity);
+            //console.log(entity);
 
             var rangeVal = ((vm.del.rangeFrom - vm.del.rangeTo) + 1);
             var newQty = (rangeVal + vm.getRangeTotal + vm.cardIssuance.totalHeld);
 
-            console.log('getRangeTotal' + vm.getRangeTotal);
-            console.log('totalHeld' + vm.cardIssuance.totalHeld);
-            console.log('newQty' + newQty);
+            //console.log('getRangeTotal' + vm.getRangeTotal);
+            //console.log('totalHeld' + vm.cardIssuance.totalHeld);
+            //console.log('newQty' + newQty);
 
             //Todo: plus heldcard
             if (newQty > vm.cardIssuance.totalQuantityIssued) {
-                console.log('Quantity Surpass');
+                //console.log('Quantity Surpass');
             } else {
-                console.log('Ok');
+                //console.log('Ok');
             }
 
             deliveryCreateEntity(entity);
@@ -288,12 +288,12 @@
         function deliveryCreateEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/carddeliverylog/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getCardDeliveryLogs();
                 vm.del = {};
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
@@ -311,19 +311,19 @@
         function updateResourceEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/carddeliverylogconfirm/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getCECardDeliverables();
                 //getCardDeliveryLogs();
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }
@@ -342,24 +342,24 @@
         function deleteDeliveryEntity(entity) {
             var resourceUri = model.resourceUri.qac + '/carddeliverylog/delete';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getCardDeliveryLogs();
                 //vm.cardreceipt = {};
                 //$location.path('/ce/resumable/new-perso');
             },
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                 });
         }
 
         function getTotal(forceRefresh) {
-            console.log(vm.jobSplitCEAnalysis);
+            //console.log(vm.jobSplitCEAnalysis);
             var total = 0;
             for (var i = 0; i < vm.jobSplitCEAnalysis.length; i++) {
                 var unitEntity = vm.jobSplitCEAnalysis[i];
-                console.log(unitEntity);
+                //console.log(unitEntity);
                 total += ((unitEntity.jobSplit.rangeTo - unitEntity.jobSplit.rangeFrom) + 1); //(product.price * product.quantity);
-                console.log(total);
+                //console.log(total);
             }
             return total;
         }
@@ -369,7 +369,7 @@
             for (var i = 0; i < vm.jobSplitCEAnalysis.length; i++) {
                 var unitEntity = vm.jobSplitCEAnalysis[i];
                 total += unitEntity.quantityGood;
-                console.log(total);
+                //console.log(total);
             }
             return total;
         }
@@ -379,7 +379,7 @@
             for (var i = 0; i < vm.jobSplitCEAnalysis.length; i++) {
                 var unitEntity = vm.jobSplitCEAnalysis[i];
                 total += unitEntity.quantityBad;
-                console.log(total);
+                //console.log(total);
             }
             return total;
         }
@@ -389,7 +389,7 @@
             for (var i = 0; i < vm.jobSplitCEAnalysis.length; i++) {
                 var unitEntity = vm.jobSplitCEAnalysis[i];
                 total += unitEntity.quantityHeld;
-                console.log(total);
+                //console.log(total);
             }
             return total;
         }

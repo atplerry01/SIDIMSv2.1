@@ -29,7 +29,6 @@
         function getIncomingPrints(forceRefresh) {
             return datacontext.cardengrjob.getIncomingPrints(forceRefresh).then(function (data) {
                 vm.incomingPrints = data;
-                console.log(vm.incomingPrints);
                 return vm.incomingPrints;
             });
         }

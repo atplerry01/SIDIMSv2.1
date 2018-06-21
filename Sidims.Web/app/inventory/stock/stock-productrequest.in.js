@@ -36,7 +36,7 @@
             var val = $routeParams.id;
             return datacontext.inventory.getProductById(val, forceRefresh).then(function (data) {
                 vm.product = data;
-                console.log(vm.product);
+                //console.log(vm.product);
                 return vm.product;
             });
         }
@@ -46,7 +46,7 @@
             var val = $routeParams.id;
             return datacontext.inventory.getEmbedCardRequestByProducts(val, forceRefresh).then(function (data) {
                 vm.cardrequests = data;
-                console.log(vm.cardrequests);
+                //console.log(vm.cardrequests);
                 return vm.cardrequests;
             });
         }
@@ -65,7 +65,7 @@
                     vm.receiptlogView = true;
                 }
 
-                console.log(vm.cardreceiptlogs);
+                //console.log(vm.cardreceiptlogs);
                 return vm.cardreceiptlogs;
             });
         }
@@ -78,19 +78,19 @@
                 sidProductId: $routeParams.id
             };
 
-            console.log(newRequest);
+            //console.log(newRequest);
             createEntity(newRequest);
         }
 
         function createEntity(entity) {
             var resourceUri = model.resourceUri.inventory + '/cardrequest/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 vm.request = {};
                 $location.path('/in/inventory/vault-product/' + $routeParams.id);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }
@@ -105,7 +105,7 @@
                     $scope.message = "Product Vault not found, Please create a Product Vault";
                 }
 
-                console.log(vm.vaultreport);
+                //console.log(vm.vaultreport);
                 return vm.vaultreport;
             });
         }
@@ -130,7 +130,7 @@
         //    var val = $routeParams.id;
         //    return datacontext.inventory.getClientStockReports(val, forceRefresh).then(function (data) {
         //        vm.clientstockreports = data;
-        //        console.log(vm.clientstockreports);
+        //        //console.log(vm.clientstockreports);
         //        return vm.clientstockreports;
         //    });
         //}
@@ -151,7 +151,7 @@
         //function getProducts(forceRefresh) {
         //    return datacontext.inventory.getAllClientProducts(forceRefresh).then(function (data) {
         //        vm.clientProducts = data;
-        //        console.log(vm.clientProducts);
+        //        //console.log(vm.clientProducts);
         //        return vm.clientProducts;
         //    });
         //}
@@ -166,7 +166,7 @@
         //function getJobs(forceRefresh) {
         //    return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
         //        vm.jobs = data;
-        //        console.log(vm.jobs);
+        //        //console.log(vm.jobs);
         //        return vm.jobs;
         //    });
         //}

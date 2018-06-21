@@ -165,7 +165,6 @@
                     rangeTo: todo.rangeTo,
                 };
 
-                console.log(newObjectX);
                 newObject.push(newObjectX);
             });
 
@@ -178,7 +177,6 @@
                 $location.path('/ce/incoming-perso');
             },
              function (response) {
-                 console.log(response);
                  var errors = [];
                  for (var key in response.data.modelState) {
                      for (var i = 0; i < response.data.modelState[key].length; i++) {
@@ -203,14 +201,12 @@
 
         function getClientVaultReport(trackerId, forceRefresh) {
             var val = trackerId; //$routeParams.trackerId;
-            console.log(val);
             return datacontext.inventory.getClientVaultReportByTrackerId(val, forceRefresh).then(function (data) {
                 vm.clientVault = data;
 
                 if (vm.clientVault.length == 0) {
                     vm.createVault = true;
                 }
-                console.log(vm.clientVault);
                 return vm.clientVault;
             });
         }
@@ -225,7 +221,6 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }
@@ -233,7 +228,6 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
                 return vm.users;
             });
         }

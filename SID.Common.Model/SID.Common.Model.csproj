@@ -189,6 +189,8 @@
     <Compile Include="Inventory\ClientCardProduct.cs" />
     <Compile Include="Inventory\ClientStockLog.cs" />
     <Compile Include="Inventory\StockStatus.cs" />
+    <Compile Include="Inventory\WasteDeliveryNote.cs" />
+    <Compile Include="Inventory\WasteDeliveryNoteLog.cs" />
     <Compile Include="Lookups\DeliveryNoteTemplate.cs" />
     <Compile Include="Lookups\DeliveryProfile.cs" />
     <Compile Include="Lookups\Department.cs" />

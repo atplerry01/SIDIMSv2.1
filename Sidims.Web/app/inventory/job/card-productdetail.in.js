@@ -62,7 +62,7 @@
             return datacontext.resourcejob.getJobVariantByJobId(val, forceRefresh).then(function (data) {
                 vm.jobVariant = data[0];
                 vm.cardsetup = data[0];
-                console.log(vm.cardsetup);
+                //console.log(vm.cardsetup);
                 //if (vm.jobVariant.length !== 0) {
                 //    $location.path('/in/card-issuance/' + $routeParams.trackerId);
                 //}
@@ -83,7 +83,7 @@
                 sidVariantId: vm.cardsetup.sidVariant.id
             };
 
-            console.log(vm.newEntity);
+            //console.log(vm.newEntity);
             createEntity(vm.newEntity);
         }
 
@@ -92,19 +92,19 @@
             var resourceUri = model.resourceUri.inventory + '/jobvariant/update';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
                 vm.cardsetup = {};
-                console.log(response);
+                //console.log(response);
                 $location.path('/in/card-issuance/' + val);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			 });
         }
 
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
-                console.log(vm.jobs);
-                console.log(vm.jobTracker.job);
+                //console.log(vm.jobs);
+                //console.log(vm.jobTracker.job);
 
                 // setups all requested items
                 vm.cardsetup = {

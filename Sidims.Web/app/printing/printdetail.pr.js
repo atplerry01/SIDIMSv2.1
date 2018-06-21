@@ -12,9 +12,12 @@
         var vm = this;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
+        
+        vm.withSplit = false;
 
         vm.addRow = addRow;
         vm.machineLists = [];
+        vm.revertView = revertView;
 
         vm.jobBatchTracker = undefined;
         vm.allIssuanceLogs = [];
@@ -28,9 +31,12 @@
         vm.goBack = goBack;
         vm.save = save;
 
+        vm.noSplitSave = noSplitSave;
+
         vm.errorMessage = '';
         $scope.message = "";
         vm.splitIsValid = false;
+        vm.split = [];
 
         activate();
 
@@ -59,28 +65,21 @@
                     vm.machineLists.push(todo);
                 }
             });
-
-            console.log(vm.machineLists);
-
         }
-
-        $scope.inputs = [{}];
-
-        function addRow() {
-            $scope.inputs.push({});
-        }
-
-        $scope.del = function (i) {
-            $scope.inputs.splice(i, 1);
-        }
-
-
+        
         function getRequestedJobTrackerById() {
             var val = $routeParams.trackerId;
             return datacontext.resourcejob.getJobTrackerById(val)
                 .then(function (data) {
                     vm.jobTracker = data;
-                    console.log(vm.jobTracker);
+
+                    //console.log(vm.jobTracker);
+
+                    // Initialized the split data
+                    vm.split.machine = vm.machineLists[0];
+                    vm.split.rangeFrom = 1;
+                    vm.split.rangeTo = vm.jobTracker.job.quantity;
+
                     getClientVaultReport(vm.jobTracker.id);
                     getJobIssuanceLog(vm.jobTracker.id);
                 }, function (error) {
@@ -101,20 +100,39 @@
 
         function getClientVaultReport(trackerId, forceRefresh) {
             var val = trackerId; //$routeParams.trackerId;
-            console.log(val);
+            //console.log(val);
             return datacontext.inventory.getClientVaultReportByTrackerId(val, forceRefresh).then(function (data) {
                 vm.clientVault = data;
 
                 if (vm.clientVault.length == 0) {
                     vm.createVault = true;
                 }
-                console.log(vm.clientVault);
+                //console.log(vm.clientVault);
                 return vm.clientVault;
             });
         }
 
 
         function goBack() { $window.history.back(); }
+
+        function noSplitSave() {
+            var newObject = [];
+
+            // Compute the slit
+            angular.forEach($scope.inputs, function (todo, key) {
+                var newObjectX = {
+                    jobTrackerId: vm.jobTracker.id,
+                    departmentId: vm.split.machine.departmentId,
+                    sidMachineId: vm.split.machine.id,
+                    rangeFrom: vm.split.rangeFrom,
+                    rangeTo: vm.split.rangeTo,
+                };
+
+                newObject.push(newObjectX);
+            });
+
+            createEntity(newObject);
+        }
 
         function save() {
             // get the the 
@@ -132,11 +150,6 @@
                     $scope.message = "Invalid Range value detected";
                 }
             });
-
-
-            console.log(vm.issuanceLogs);
-            console.log(vm.issuanceLogs[0].quantityIssued);
-
 
             if (vm.issuanceLogs[0].quantityIssued == total) {
                 vm.splitIsValid = true;
@@ -159,7 +172,7 @@
 
             // Compute the slit
             angular.forEach($scope.inputs, function (todo, key) {
-                console.log(todo);
+                //console.log(todo);
                 var newObjectX = {
                     jobTrackerId: vm.jobTracker.id,
                     departmentId: todo.machine.departmentId,
@@ -180,11 +193,11 @@
         function createEntity(entity) {
             var resourceUri = model.resourceUri.printing + '/printSplitCard/create';
             resourceService.saveResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 $location.path('/pr/incoming-print');
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     var errors = [];
 			     for (var key in response.data.modelState) {
 			         for (var i = 0; i < response.data.modelState[key].length; i++) {
@@ -195,7 +208,18 @@
 			 });
         }
 
-        //
+        $scope.inputs = [{}];
+
+        function addRow() {
+            vm.withSplit = true;
+            $scope.inputs.push({});
+        }
+
+        $scope.del = function (i) {
+            $scope.inputs.splice(i, 1);
+        }
+
+
         function getJobs(forceRefresh) {
             return datacontext.resourcejob.getJobs(forceRefresh).then(function (data) {
                 vm.jobs = data;
@@ -206,7 +230,7 @@
         function getJobTrackers(forceRefresh) {
             return datacontext.resourcejob.getJobTrackers(forceRefresh).then(function (data) {
                 vm.jobTrackers = data;
-                console.log(vm.jobTrackers);
+                //console.log(vm.jobTrackers);
                 return vm.jobTrackers;
             });
         }
@@ -216,7 +240,7 @@
             return datacontext.inventjob.getAllCardIssuanceLogs()
                 .then(function (data) {
                     vm.allIssuanceLogs = data;
-                    console.log(vm.allIssuanceLogs);
+                    //console.log(vm.allIssuanceLogs);
                 }, function (error) {
                     logError('Unable to get CardIssuanceLog ' + val);
                 });
@@ -225,13 +249,17 @@
         function getProductionUsers(forceRefresh) {
             return datacontext.inventaccount.getProductionStaffs(forceRefresh).then(function (data) {
                 vm.users = data;
-                console.log(vm.users);
+                //console.log(vm.users);
                 return vm.users;
             });
         }
 
 
-
-    
+        function revertView() {
+            $scope.inputs = [{}];
+            //angular.forEach($scope.inputs, function (todo, key) { }
+            vm.withSplit = false;
+        }
+        
     }
 })();

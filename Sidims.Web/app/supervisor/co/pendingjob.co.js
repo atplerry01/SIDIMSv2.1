@@ -99,11 +99,11 @@
         function ServerJobMarkDeleted(entity) {
             var resourceUri = model.resourceUri.co + '/serverjob/delete';
             resourceService.updateResource(resourceUri, entity).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 getServerJobs(true);
             },
 			 function (response) {
-			     console.log(response);
+			     //console.log(response);
 			     $scope.message = "Failed to save resource due to:";
 			 });
         }
